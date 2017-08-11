@@ -1,0 +1,69 @@
+<html>
+<head>
+
+<!-- CSS SCRIPTS -->
+<style type="text/css">
+*  { margin:0 0; padding:0 0; }
+body{ background-color:#EEE; font-family: Helvetica,Tahoma,Arial,STXihei,"»ªÎÄÏ¸ºÚ","Microsoft YaHei","Î¢ÈíÑÅºÚ",sans-serif }
+div#content {  margin:0 auto; padding:20px 20px; width:1000px; height:800px; background-color:#EEE; border-left:solid 100px #bbb}
+</style>
+<!-- JAVA SCRIPTS --> 
+
+</head>
+<body>
+    <div id="content">
+    
+    <div id="card" style="display:block">
+    <div style="float:left"><img height=120px; src="./ODEREN_LOGO.PNG" /></div>
+    <div style="float:left; width:10px; height:130px"></div>
+    <div style="height:130px">
+        <p style="font-size:14px;"> <b style="font-size:20px">ODEREN</b> - A MATLAB Package to ODEs (UNDER DEVELOPMENT)</p>
+        <hr style="text-align:left"/>
+        <p style="font-size:12px"> by willowfly | resident of Never-Never-Land </p>
+        <p style="font-size:12px; padding-top:5px"> ODEREN is a matlab package to solve ordinary differential equations. 
+            I develop the package in order (1) to review some of the basic theories and algorithms for solving ODEs 
+            numerically, (2) to afford an convienent tool to solve my problems in research. </p>
+        <p style="font-size:12px; padding-top:5px"> If you have any problems using this tool, please contact </p>   
+        <p style="font-size:12px"> <b>E-MAIL: </b> renliujie@outlook.com, renliujie@fudan.edu.cn </p>
+    </div>
+    </div>
+    
+    <div id="program" style="width:1000px; height:500px; font-size:14px; background-color:#eee; border:solid 5px #050">
+    <p><b style="font-size: 16px">How to use: </b> ODEREN offers an web interface for users to define their ODEs, 
+        the solutions parameters, such as time span, time interval and solution methods etc. Then the program will
+        automatically generate a matlab code that solves the user's specific problem. </p>
+    <p style="font-color:#005 ;padding-top:5px"><b style="font-size:16px"> PROBLEM DESCRIPTION </b></p> 
+    <textarea id="problem" style="width:500px; height:150px; resize:none">% problem description examples
+dy(1) = y(2);
+dy(2) = y(1)+0.1*y(2)+sin(t);
+% or in the matrix form
+K = [0 1; 1 0.1];
+b = [0; sin(t)];
+dy = K*y + b;
+% for implicit methods, you must use the matrix form
+    </textarea>
+    
+    <p style="font-color:#005 ;padding-top:5px"><b style="font-size:16px"> INITIAL VALUES </b></p> 
+    <textarea id="initial" style="width:500px; height:50px; resize:none">% initial value examples
+y0 = [1; 0];
+    </textarea>
+    
+    <p style="font-color:#005 ;padding-top:5px"><b style="font-size:16px"> SOLUTION TIME </b> </p> 
+    <textarea id="time" style="width:500px; height:65px; resize:none">%solution time description
+time = 0:0.01:1; % time definition
+auto_time = false; % define the time interval autimatically or not
+    </textarea>
+    <p style="font-color:#005; padding-top:5px"><b style="font-size:16px"> SOLUTION METHOD </b> 
+    <select name="method" style="width:339px"> 
+        <option value="0">Explicit: Euler-forward           </option> 
+        <option value="1">Explicit: Ô¤²â½ÃÕý·¨             </option>
+        <option value="2">Explicit: Runge-Kutta 4           </option>   
+    </select> 
+    </p> 
+    </div>
+    
+    
+    
+    </div>
+</body>
+</html>
