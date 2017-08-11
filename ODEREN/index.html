@@ -28,12 +28,12 @@ div#content {  margin:0 auto; padding:20px 20px; width:1000px; height:800px; bac
     </div>
     </div>
     
-    <div id="program" style="width:1000px; height:500px; font-size:14px; background-color:#eee; border:solid 5px #050">
+    <div id="program" style="padding:10px; width:1000px; height:500px; font-size:14px; background-color:#eee; border:solid 5px #050">
     <p><b style="font-size: 16px">How to use: </b> ODEREN offers an web interface for users to define their ODEs, 
         the solutions parameters, such as time span, time interval and solution methods etc. Then the program will
         automatically generate a matlab code that solves the user's specific problem. </p>
     <p style="font-color:#005 ;padding-top:5px"><b style="font-size:16px"> PROBLEM DESCRIPTION </b></p> 
-    <textarea id="problem" style="width:500px; height:150px; resize:none">% problem description examples
+    <textarea id="problem" style="width:500px; height:150px; resize:none; color:#858">% problem description examples
 dy(1) = y(2);
 dy(2) = y(1)+0.1*y(2)+sin(t);
 % or in the matrix form
@@ -41,20 +41,21 @@ K = [0 1; 1 0.1];
 b = [0; sin(t)];
 dy = K*y + b;
 % for implicit methods, you must use the matrix form
-    </textarea>
+</textarea>
     
     <p style="font-color:#005 ;padding-top:5px"><b style="font-size:16px"> INITIAL VALUES </b></p> 
-    <textarea id="initial" style="width:500px; height:50px; resize:none">% initial value examples
+    <textarea id="initial" style="width:500px; height:50px; resize:none; color:#858">% initial value examples
 y0 = [1; 0];
-    </textarea>
+</textarea>
     
     <p style="font-color:#005 ;padding-top:5px"><b style="font-size:16px"> SOLUTION TIME </b> </p> 
-    <textarea id="time" style="width:500px; height:65px; resize:none">%solution time description
+    <textarea id="time" style="width:500px; height:65px; resize:none; color:#858">%solution time description
 time = 0:0.01:1; % time definition
 auto_time = false; % define the time interval autimatically or not
-    </textarea>
+</textarea>
+
     <p style="font-color:#005; padding-top:5px"><b style="font-size:16px"> SOLUTION METHOD </b> 
-    <select name="method" style="width:339px"> 
+    <select name="method" style="width:339px; color:#858"> 
         <option value="0">Explicit: Euler-forward           </option> 
         <option value="1">Explicit: 预测矫正法             </option>
         <option value="2">Explicit: Runge-Kutta 4           </option>   
