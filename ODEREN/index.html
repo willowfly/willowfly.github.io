@@ -134,11 +134,12 @@ div#content {  margin:0 auto; padding:20px 20px; width:1000px; height:800px; bac
     </div>
     </div>
     
-    <div id="program" style="padding:10px; width:1000px; height:500px; font-size:14px; background-color:#eee; border:solid 5px #050">
+    <div id="program" style="padding:10px; width:1000px; height:520px; font-size:14px; background-color:#eee; border:solid 5px #050">
 
     <p><b style="font-size: 16px">How to use: </b> ODEREN offers an web interface for users to define their ODEs, 
         the solutions parameters, such as time span, time interval and solution methods etc. Then the program will
-        automatically generate a matlab code that solves the user's specific problem. </p>
+        automatically generate a matlab code that solves the user's specific problem. The results will be exported
+        to <code>output.txt</code> with first columns - time, other columns - y. </p>
     
     <div style="margin:0 auto; text-align:center; height:30px">
     <button id="generate" type="button" style="font-size:20px; font-weight:bold; color:#500">GENERATE</button></div>    
@@ -156,7 +157,7 @@ dy = K*y + b; % for implicit method, dy is not necessary
 % for implicit methods, you must use the matrix form
 </textarea>
 
-    <textarea id="output" style="float:right; width:450px; height:400px; resize:none; color:#858"> </textarea>
+    <textarea id="output" style="float:right; width:480px; height:415px; resize:none; color:#585"> </textarea>
     
     <p style="font-color:#005 ;padding-top:5px"><b style="font-size:16px"> INITIAL VALUES </b></p> 
     <textarea id="initial" style="width:500px; height:50px; resize:none; color:#858">% initial value examples
