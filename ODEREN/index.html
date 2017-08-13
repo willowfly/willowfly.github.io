@@ -8,12 +8,91 @@ body{ background-color:#EEE; font-family: Helvetica,Tahoma,Arial,STXihei,"华文
 div#content {  margin:0 auto; padding:20px 20px; width:1000px; height:800px; background-color:#EEE; border-left:solid 100px #bbb}
 </style>
 <!-- JAVA SCRIPTS --> 
-
+<script src="./jquery.min.js"></script>
+<script type="text/javascript">
+    function generateCode(){
+        var temp    = $("#generate").html();
+        $("#generate").html("Generating Codes");
+        var problem = $("#problem").val();
+        var initial = $("#initial").val();
+        var time    = $("#time").val();
+        var method  = $("#method option:selected").val();
+        // method 0 - Euler Forward
+        if(method==0){
+        var code    = "dy = problem(y0,t0);\n"
+                    + "y1 = y0+dt*dy;\n";
+        }
+        // method 1 - 预测矫正
+        if(method==1){
+        var code    = "dy1 = problem(y0,t0);\n"
+                    + "y1 = y0+dt*dy1;\n"
+                    + "t1 = t0+dt; dy2 = problem(y1,t0);\n"
+                    + "dy = (dy1+dy2)/2;\n"
+                    + "y1 = y0+dt*dy;\n";
+        }
+        // method 2 - Runge-Kutta 4
+        if(method==2){
+        var code    = "K1 = problem(y0,t0);\n"
+                    + "K2 = problem(y0+K1*dt/3,t0+dt/3);\n"
+                    + "K3 = problem(y0-K1*dt/3+K2*dt, t0+2*dt/3);\n"
+                    + "K4 = problem(y0+K1*dt-K2*dt+K3*dt, t0+dt);\n"
+                    + "y1 = y0 + dt/8*(K1+3*K2+3*K3+K4);\n";    
+        }       
+        
+        
+        $("#output").text("function main()\nclose all; clear all; clc;\n");
+        $("#output").text($("#output").val() + "fid=fopen('output.txt','w');\n");
+        $("#output").text($("#output").val() + time + "\n");
+        $("#output").text($("#output").val() + initial  + "\n");
+        $("#output").text($("#output").val() 
+            +"dt=time(2)-time(1); t0=time(1);\n"
+            +"fprintf(fid,'%10.5f\\t',t0,y0'); fprintf(fid,'\\n');\n"
+        );
+        
+        $("#output").text($("#output").val()
+            +"while(true)\n"
+            +"  if(auto_time==false) t1=t0+dt; end\n"
+            +"  y1=method(@problem,y0,t0,dt); \n"
+            +"  fprintf(fid,'%10.5f\\t',t1,y1'); fprintf(fid,'\\n');\n"
+            +"  if(t1>=time(end)) break; end\n"
+            +"  t0=t1; y0=y1;\n"
+            +"end\n"
+        );
+        
+        $("#output").text($("#output").val() + "fclose(fid);\n");
+        $("#output").text($("#output").val() + "end\n");
+        
+        // method function
+        $("#output").text($("#output").val() 
+            +"\n\n\n"
+            +"function y1=method(problem,y0,t0,dt)\n"
+            +code
+            +"end\n"
+        );
+        
+        // problem function
+        $("#output").text($("#output").val() 
+            +"\n\n\n"
+            +"function dy=problem(y,t)\n"
+            +problem
+            +"end\n"
+        );
+        $("#generate").html(temp);
+        
+        $("#output").select(); 
+        document.execCommand("Copy"); 
+    }
+    
+    $(document).ready(function(){
+        $("#generate").click(generateCode);
+    });
+    
+</script>
 </head>
 <body>
     <div id="content">
     
-    <div id="card" style="display:block">
+    <div id="card" style="display:block"> 
     <div style="float:left"><img height=120px; src="./ODEREN_LOGO.png"/></div>
     <div style="float:left; width:10px; height:130px"></div>
     <div style="height:130px">
@@ -29,9 +108,16 @@ div#content {  margin:0 auto; padding:20px 20px; width:1000px; height:800px; bac
     </div>
     
     <div id="program" style="padding:10px; width:1000px; height:500px; font-size:14px; background-color:#eee; border:solid 5px #050">
+
     <p><b style="font-size: 16px">How to use: </b> ODEREN offers an web interface for users to define their ODEs, 
         the solutions parameters, such as time span, time interval and solution methods etc. Then the program will
         automatically generate a matlab code that solves the user's specific problem. </p>
+    
+    <div style="margin:0 auto; text-align:center; height:30px">
+    <button id="generate" type="button" style="font-size:20px; font-weight:bold; color:#500">GENERATE</button></div>    
+     
+    
+    
     <p style="font-color:#005 ;padding-top:5px"><b style="font-size:16px"> PROBLEM DESCRIPTION </b></p> 
     <textarea id="problem" style="width:500px; height:150px; resize:none; color:#858">% problem description examples
 dy(1) = y(2);
@@ -42,6 +128,8 @@ b = [0; sin(t)];
 dy = K*y + b;
 % for implicit methods, you must use the matrix form
 </textarea>
+
+    <textarea id="output" style="float:right; width:450px; height:400px; resize:none; color:#858"> </textarea>
     
     <p style="font-color:#005 ;padding-top:5px"><b style="font-size:16px"> INITIAL VALUES </b></p> 
     <textarea id="initial" style="width:500px; height:50px; resize:none; color:#858">% initial value examples
@@ -49,18 +137,22 @@ y0 = [1; 0];
 </textarea>
     
     <p style="font-color:#005 ;padding-top:5px"><b style="font-size:16px"> SOLUTION TIME </b> </p> 
-    <textarea id="time" style="width:500px; height:65px; resize:none; color:#858">%solution time description
+    <textarea id="time" style="width:500px; height:65px; resize:none; color:#858">% solution time description
 time = 0:0.01:1; % time definition
 auto_time = false; % define the time interval autimatically or not
 </textarea>
 
     <p style="font-color:#005; padding-top:5px"><b style="font-size:16px"> SOLUTION METHOD </b> 
-    <select name="method" style="width:339px; color:#858"> 
+    <select id="method" style="width:339px; color:#858"> 
         <option value="0">Explicit: Euler-forward           </option> 
-        <option value="1">Explicit: 预测矫正法             </option>
+        <option value="1">Explicit: Improved Euler          </option>
         <option value="2">Explicit: Runge-Kutta 4           </option>   
     </select> 
     </p> 
+    
+    
+    
+    
     </div>
     
     
