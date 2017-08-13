@@ -22,7 +22,7 @@ div#content {  margin:0 auto; padding:20px 20px; width:1000px; height:800px; bac
         var code    = "dy = problem(y0,t0);\n"
                     + "y1 = y0+dt*dy;\n";
         }
-        // method 1 - 预测矫正
+        // method 1 - improved Euler
         if(method==1){
         var code    = "dy1 = problem(y0,t0);\n"
                     + "y1 = y0+dt*dy1;\n"
@@ -38,9 +38,25 @@ div#content {  margin:0 auto; padding:20px 20px; width:1000px; height:800px; bac
                     + "K4 = problem(y0+K1*dt-K2*dt+K3*dt, t0+dt);\n"
                     + "y1 = y0 + dt/8*(K1+3*K2+3*K3+K4);\n";    
         }       
+        // method 3 - Euler Backwarda with linear K
+        if(method==3){
+        var code    = "t1 = t0+dt;"
+                    + "[K b] = problem(y0,t1);\n"
+                    + "I=eye(length(y0));\n"
+                    + "y1 = (dt*K-I)\\(-dt*b-y0);\n";    
+        }
+        // method 4 - Euler-theta with linear K
+        if(method==4){
+        var code    = $("#method_para").val();
+        var code    = code
+                    + "t_theta = t0+theta*dt;\n"
+                    + "[K b] = problem(y0,t_theta);\n"
+                    + "I=eye(length(y0));\n"
+                    + "y1 = (dt*theta*K-I)\\(-dt*b-y0-dt*(1-theta)*K*y0);\n";    
+        }
+
         
-        
-        $("#output").text("function main()\nclose all; clear all; clc;\n");
+        $("#output").text("function main()\n");
         $("#output").text($("#output").val() + "fid=fopen('output.txt','w');\n");
         $("#output").text($("#output").val() + time + "\n");
         $("#output").text($("#output").val() + initial  + "\n");
@@ -49,12 +65,13 @@ div#content {  margin:0 auto; padding:20px 20px; width:1000px; height:800px; bac
             +"fprintf(fid,'%10.5f\\t',t0,y0'); fprintf(fid,'\\n');\n"
         );
         
+        
         $("#output").text($("#output").val()
             +"while(true)\n"
             +"  if(auto_time==false) t1=t0+dt; end\n"
+            +"  if(t1>time(end)) break; end\n"
             +"  y1=method(@problem,y0,t0,dt); \n"
             +"  fprintf(fid,'%10.5f\\t',t1,y1'); fprintf(fid,'\\n');\n"
-            +"  if(t1>=time(end)) break; end\n"
             +"  t0=t1; y0=y1;\n"
             +"end\n"
         );
@@ -71,12 +88,22 @@ div#content {  margin:0 auto; padding:20px 20px; width:1000px; height:800px; bac
         );
         
         // problem function
+        if(method<3){ // for explicit methods
         $("#output").text($("#output").val() 
             +"\n\n\n"
             +"function dy=problem(y,t)\n"
             +problem
             +"end\n"
         );
+        } else {
+        $("#output").text($("#output").val() 
+            +"\n\n\n"
+            +"function [K b]=problem(y,t)\n"
+            +problem
+            +"end\n"
+        );    
+        }
+        
         $("#generate").html(temp);
         
         $("#output").select(); 
@@ -121,11 +148,11 @@ div#content {  margin:0 auto; padding:20px 20px; width:1000px; height:800px; bac
     <p style="font-color:#005 ;padding-top:5px"><b style="font-size:16px"> PROBLEM DESCRIPTION </b></p> 
     <textarea id="problem" style="width:500px; height:150px; resize:none; color:#858">% problem description examples
 dy(1) = y(2);
-dy(2) = y(1)+0.1*y(2)+sin(t);
-% or in the matrix form
-K = [0 1; 1 0.1];
-b = [0; sin(t)];
-dy = K*y + b;
+dy(2) =-y(1)-0.1*y(2)-sin(t);
+% or in the matrix form 
+K = [0 1; -1 -0.1];
+b = [0; -sin(t)];
+dy = K*y + b; % for implicit method, dy is not necessary
 % for implicit methods, you must use the matrix form
 </textarea>
 
@@ -138,7 +165,7 @@ y0 = [1; 0];
     
     <p style="font-color:#005 ;padding-top:5px"><b style="font-size:16px"> SOLUTION TIME </b> </p> 
     <textarea id="time" style="width:500px; height:65px; resize:none; color:#858">% solution time description
-time = 0:0.01:1; % time definition
+time = 0:0.1:20; % time definition
 auto_time = false; % define the time interval autimatically or not
 </textarea>
 
@@ -147,15 +174,18 @@ auto_time = false; % define the time interval autimatically or not
         <option value="0">Explicit: Euler-forward           </option> 
         <option value="1">Explicit: Improved Euler          </option>
         <option value="2">Explicit: Runge-Kutta 4           </option>   
+        <option value="3">Implicit: Euler-backward - linear K </option>   
+        <option value="4">Implicit: Euler-theta - linear K </option>   
     </select> 
     </p> 
-    
-    
-    
-    
+    <textarea id="method_para" style="width:500px; height:80px; resize:none; color:#858">% solution parameters
+theta = 0.5; % E.G. Euler-theta method
+</textarea>
     </div>
     
     
+    <div style="font-size:12px;">
+    <b>Aug.13, 2017 update notes:</b> i added Euler-forward, improved Euler, RK4, Euler-backward and Euler-theta methods.</div>
     
     </div>
 </body>
