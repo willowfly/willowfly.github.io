@@ -56,6 +56,17 @@ div#content {  margin:0 auto; padding:20px 20px; width:1000px; height:800px; bac
                     + "I=eye(length(y0));\n"
                     + "y1 = (dt*theta*K-I)\\(-dt*b-y0-dt*(1-theta)*K*y0);\n";    
         }
+        // method 5 - Runge-Kutta Raudau s2r3
+        if(method==5){
+        var code    = $("#method_para").val();
+        var code    = "[K b] = problem(y0,t0+dt/3);\n"
+                    + "I = eye(length(y0));\n"
+                    + "K1 = (I-dt*K/3)\\(K*y0+b);\n"
+                    + "[K b] = problem(y0,t0+dt);\n"
+                    + "K2 = K*(y0+dt*K1)+b;\n"
+                    + "y1 = y0+dt*(3*K1+K2)/4;\n";
+        }
+        
         
         $("#output").val("function main()\n");
         $("#output").val("function main()\n");
@@ -178,7 +189,10 @@ auto_time = false; % define the time interval autimatically or not
         <option value="1">Explicit: Improved Euler          </option>
         <option value="2">Explicit: Runge-Kutta 4           </option>   
         <option value="3">Implicit: Euler-backward - linear K </option>   
-        <option value="4">Implicit: Euler-theta - linear K </option>   
+        <option value="4">Implicit: Euler-theta - linear K </option>  
+        <option value="5">Implicit: Runge-Kutta 3 - linear K (for stiff problem) </option>  
+        
+        
     </select> 
     </p> 
     <textarea id="method_para" style="width:500px; height:80px; resize:none; color:#858">% solution parameters
@@ -187,8 +201,8 @@ theta = 0.5; % E.G. Euler-theta method
     </div>
     
     
-    <div style="font-size:12px;">
-    <b>Aug.13, 2017 update notes:</b> i added Euler-forward, improved Euler, RK4, Euler-backward and Euler-theta methods.</div>
+    <div style="font-size:12px;"><b>Aug.14, 2017 update notes:</b> i added RK3 method, which is stable for stiff problems.</div>
+    <div style="font-size:12px;"><b>Aug.13, 2017 update notes:</b> i added Euler-forward, improved Euler, RK4, Euler-backward and Euler-theta methods.</div>
     
     </div>
 </body>
