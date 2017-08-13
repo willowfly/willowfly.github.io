@@ -14,8 +14,7 @@ div#content {  margin:0 auto; padding:20px 20px; width:1000px; height:800px; bac
 <script src="./jquery.min.js"></script>
 <script type="text/javascript">
     function generateCode(){
-        var temp    = $("#generate").html();
-        $("#generate").html("Generating Codes");
+        
         var problem = $("#problem").val();
         var initial = $("#initial").val();
         var time    = $("#time").val();
@@ -57,19 +56,19 @@ div#content {  margin:0 auto; padding:20px 20px; width:1000px; height:800px; bac
                     + "I=eye(length(y0));\n"
                     + "y1 = (dt*theta*K-I)\\(-dt*b-y0-dt*(1-theta)*K*y0);\n";    
         }
-
         
-        $("#output").text("function main()\n");
-        $("#output").text($("#output").val() + "fid=fopen('output.txt','w');\n");
-        $("#output").text($("#output").val() + time + "\n");
-        $("#output").text($("#output").val() + initial  + "\n");
-        $("#output").text($("#output").val() 
+        $("#output").val("function main()\n");
+        $("#output").val("function main()\n");
+        $("#output").val($("#output").val() + "fid=fopen('output.txt','w');\n");
+        $("#output").val($("#output").val() + time + "\n");
+        $("#output").val($("#output").val() + initial  + "\n");
+        $("#output").val($("#output").val() 
             +"dt=time(2)-time(1); t0=time(1);\n"
             +"fprintf(fid,'%10.5f\\t',t0,y0'); fprintf(fid,'\\n');\n"
         );
         
         
-        $("#output").text($("#output").val()
+        $("#output").val($("#output").val()
             +"while(true)\n"
             +"  if(auto_time==false) t1=t0+dt; end\n"
             +"  if(t1>time(end)) break; end\n"
@@ -79,11 +78,11 @@ div#content {  margin:0 auto; padding:20px 20px; width:1000px; height:800px; bac
             +"end\n"
         );
         
-        $("#output").text($("#output").val() + "fclose(fid);\n");
-        $("#output").text($("#output").val() + "end\n");
+        $("#output").val($("#output").val() + "fclose(fid);\n");
+        $("#output").val($("#output").val() + "end\n");
         
         // method function
-        $("#output").text($("#output").val() 
+        $("#output").val($("#output").val() 
             +"\n\n\n"
             +"function y1=method(problem,y0,t0,dt)\n"
             +code
@@ -92,22 +91,20 @@ div#content {  margin:0 auto; padding:20px 20px; width:1000px; height:800px; bac
         
         // problem function
         if(method<3){ // for explicit methods
-        $("#output").text($("#output").val() 
+        $("#output").val($("#output").val() 
             +"\n\n\n"
             +"function dy=problem(y,t)\n"
             +problem
             +"end\n"
         );
         } else {
-        $("#output").text($("#output").val() 
+        $("#output").val($("#output").val() 
             +"\n\n\n"
             +"function [K b]=problem(y,t)\n"
             +problem
             +"end\n"
         );    
         }
-        
-        $("#generate").html(temp);
         
         $("#output").select(); 
         document.execCommand("Copy"); 
