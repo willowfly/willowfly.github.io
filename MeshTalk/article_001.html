@@ -1,0 +1,64 @@
+﻿<html>
+<head>
+
+<!-- CSS SCRIPTS -->
+<style type="text/css">
+*  { margin:0 0; padding:0 0; }
+body{ background-color:#EEE; font-family: Helvetica,Tahoma,Arial,STXihei,"华文细黑","Microsoft YaHei","微软雅黑",sans-serif }
+h1 { background-color:#000000; font-size:40px; font-weight:bold; color:#FFFFFF; text-align:center; }
+h5 { background-color:#000000; color:#FFFFFF; text-align:center; height:20px; }
+div#content {  margin:0 auto; padding:20px 20px; width:1000px; height:800px; background-color:#EEE; border-left:solid 100px #bbb}
+</style>
+<!-- JAVA SCRIPTS --> 
+<script src="./jquery.min.js"></script>
+<script type="text/javascript">
+    
+    $(document).ready(function(){
+        
+    });
+    
+</script>
+</head>
+<body>
+    <h1> Never-Never-Land </h1>
+    <h5>willowfly's personal website</h5>
+    <div id="content" style="font-size:15px">
+    
+    <!-- HERE TO ADD THE ARTICLE -->
+    <h2  style="text-align:center; font-size:24px">有限元网格概述 <small style="font-size:10px"> | ABCs of Finite Element Mesh</small></h2>
+    
+    
+    <br/>
+    <p style="text-align:center; font-size:13px"> Aug.2017 </p>
+    <br/>
+    
+    <abstract><b>摘要: </b> 本文对有限元网格相关的内容进行全面的介绍, 涉及的内容包括: 网格与单元的特征与种类, 网格生成的方法, 网格生成工具/软件, 网格的质量和尺寸, 网格的变形操作等. 
+    在文中不苛求对所有相关的知识都进行深入分析, 但力求对重要的内容皆有涉及. 
+    </abstract>
+    <br />
+    <br />
+    <p> 
+    有限元分析的流程分为前处理, 计算和后处理三部分, 其中前处理的最主要步骤就是将感兴趣的连续物理空间进行离散, 成为一个个单元. 而由多个单元连接组合而成的拓扑结构称为网格, 因此这一步骤我们通常称为 "划分网格". 
+        实际上, 不但有限元方法需要划分网格, 差分方法, 有限体积法也需要对物理区域进行网格划分, 而边界元法则需要对边界区域进行网格划分. 由于(1)对复杂区域的网格划分本身具有一定困难性, (2)网格的质量和数量和计算量以及计算结果的精确程度有重要的关系, 因此 CAE 工程师对网格划分尤为关注. 目前由于计算机计算能力的大幅提高, 以及网格划分工作耗时费力, 很多工程师偏向于使用自动网格划分工具, 
+        将网格划分得极度细密. 虽然这可以保证计算的正确和精确性, 但是有经验的工程师更希望花费一点时间对网格疏密进行调整, 或者使用结构或者全六面体网格. 第一, 这可以降低计算量同时保证精度, 从而在进行大规模, 多工况, 
+        或者寻优计算时节省时间, 第二优秀的网格在报告中可以增加(尽管只是主观上的)计算结果的可信度, 同时也利于提升CAE工程师的个人形象(并没有). 那么, 什么是优秀的网格呢? 专业点我们可以使用单元的角, 边, 体积等几何特性
+        对单元质量进行评价, 通过误差来对网格和实际几何的贴合度进行验证, 通过网格数量和类型来对计算量进行估算. 但是呢, 对于非内行来说, 我们只需要记住: 漂亮的网格往往就是优秀的网格. 
+    
+    
+    </p>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </div>
+</body>
+</html>
