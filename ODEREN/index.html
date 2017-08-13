@@ -153,8 +153,8 @@ div#content {  margin:0 auto; padding:20px 20px; width:1000px; height:800px; bac
     
     <p style="font-color:#005 ;padding-top:5px"><b style="font-size:16px"> PROBLEM DESCRIPTION </b></p> 
     <textarea id="problem" style="width:500px; height:150px; resize:none; color:#858">% problem description examples
-dy(1) = y(2);
-dy(2) =-y(1)-0.1*y(2)-sin(t);
+dy = [y(2); 
+      -y(1)-0.1*y(2)-sin(t)];
 % or in the matrix form 
 K = [0 1; -1 -0.1];
 b = [0; -sin(t)];
