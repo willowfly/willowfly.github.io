@@ -75,7 +75,7 @@ div#content {  margin:0 auto; padding:20px 20px; width:1000px; height:800px; bac
         $("#output").val($("#output").val() + initial  + "\n");
         $("#output").val($("#output").val() 
             +"dt=time(2)-time(1); t0=time(1);\n"
-            +"fprintf(fid,'%10.5f\\t',t0,y0'); fprintf(fid,'\\n');\n"
+            +"fprintf(fid,'%12.7e\\t',t0,y0'); fprintf(fid,'\\n');\n"
         );
         
         
@@ -84,7 +84,7 @@ div#content {  margin:0 auto; padding:20px 20px; width:1000px; height:800px; bac
             +"  if(auto_time==false) t1=t0+dt; end\n"
             +"  if(t1>time(end)) break; end\n"
             +"  y1=method(@problem,y0,t0,dt); \n"
-            +"  fprintf(fid,'%10.5f\\t',t1,y1'); fprintf(fid,'\\n');\n"
+            +"  fprintf(fid,'%12.7e\\t',t1,y1'); fprintf(fid,'\\n');\n"
             +"  t0=t1; y0=y1;\n"
             +"end\n"
         );
