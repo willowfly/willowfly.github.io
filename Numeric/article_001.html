@@ -121,9 +121,9 @@ div#content {  margin:0 auto; padding:20px 20px; width:1000px; background-color:
         <br/>&nbsp;&nbsp;&nbsp;&nbsp;
         It's not hard to find a analytical solution to the equation 
         \(p(x) = \sqrt{-x^2+x} \). 
-        But in order to get the numerical solution, more efforts is needed - we should repeat and repeat again
-        our solution process to get convergence. And sometimes, the solution even blows up. 
-        The simplest algrithm tries to seek for a convergent series of \(p_0, p_1, p_2,...,p_i,...\), with enought 
+        But in order to get the numerical solution, more efforts are needed because of the nonlinearity 
+        - we should repeat and repeat again our solution process to get a convergence. And sometimes, the solution even blows up. 
+        The iterative algrithm tries to seek for a convergent series of \(p_0, p_1, p_2,...,p_i,...\), with enought 
         large \(i\) values, \( p_{i+1} = p_{i}\). At each iteration step, we upgrade \(f(p)\) using the 
         previous solution \(p_i\), thus a new solution \( p_{i+1} \) is generated. We also introduce a relaxation factor
         \( \alpha\in (0,1]\) to prevent from blowing up. 
