@@ -1,0 +1,319 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<title>鱼鱼鱼的实验</title><link href='https://fonts.googleapis.com/css?family=Open%20Sans' rel='stylesheet' type='text/css' />
+<link href='night/mermaid.dark.css' rel='stylesheet' type='text/css' />
+<link href='night/codeblock.dark.css' rel='stylesheet' type='text/css' />
+<link href='night/sourcemode.dark.css' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; word-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export p { white-space: pre-wrap; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:first-child { margin-top: -20px; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; }
+button, input, select, textarea { color: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 2; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px !important; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 80px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-diagram-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; }
+  #write { margin-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  html.blink-to-pdf { font-size: 13px; }
+  .typora-export #write { padding-left: 1cm; padding-right: 1cm; padding-bottom: 0px; break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  @page { margin: 20mm 0px; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > img:only-child { display: block; margin: auto; }
+p > .md-image:only-child { display: inline-block; width: 100%; text-align: center; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.8; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.md-inline-math .MathJax_SVG .noError { display: none !important; }
+.md-math-block .MathJax_SVG_Display { text-align: center; margin: 0px; position: relative; text-indent: 0px; max-width: none; max-height: none; min-height: 0px; min-width: 100%; width: auto; overflow-y: hidden; display: block !important; }
+.MathJax_SVG_Display, .md-inline-math .MathJax_SVG_Display { width: auto; margin: inherit; display: inline-block !important; }
+.MathJax_SVG .MJX-monospace { font-family: var(--monospace); }
+.MathJax_SVG .MJX-sans-serif { font-family: sans-serif; }
+.MathJax_SVG { display: inline; font-style: normal; font-weight: 400; line-height: normal; zoom: 90%; text-indent: 0px; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0px; min-height: 0px; border: 0px; padding: 0px; margin: 0px; }
+.MathJax_SVG * { transition: none; }
+.MathJax_SVG_Display svg { vertical-align: middle !important; margin-bottom: 0px !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="mermaid"] svg, [lang="flow"] svg { max-width: 100%; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+
+
+.CodeMirror { height: auto; }
+.CodeMirror.cm-s-inner { background: inherit; }
+.CodeMirror-scroll { overflow-y: hidden; overflow-x: auto; z-index: 3; }
+.CodeMirror-gutter-filler, .CodeMirror-scrollbar-filler { background-color: rgb(255, 255, 255); }
+.CodeMirror-gutters { border-right: 1px solid rgb(221, 221, 221); background: inherit; white-space: nowrap; }
+.CodeMirror-linenumber { padding: 0px 3px 0px 5px; text-align: right; color: rgb(153, 153, 153); }
+.cm-s-inner .cm-keyword { color: rgb(119, 0, 136); }
+.cm-s-inner .cm-atom, .cm-s-inner.cm-atom { color: rgb(34, 17, 153); }
+.cm-s-inner .cm-number { color: rgb(17, 102, 68); }
+.cm-s-inner .cm-def { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-variable { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-variable-2 { color: rgb(0, 85, 170); }
+.cm-s-inner .cm-variable-3 { color: rgb(0, 136, 85); }
+.cm-s-inner .cm-string { color: rgb(170, 17, 17); }
+.cm-s-inner .cm-property { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-operator { color: rgb(152, 26, 26); }
+.cm-s-inner .cm-comment, .cm-s-inner.cm-comment { color: rgb(170, 85, 0); }
+.cm-s-inner .cm-string-2 { color: rgb(255, 85, 0); }
+.cm-s-inner .cm-meta { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-qualifier { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-builtin { color: rgb(51, 0, 170); }
+.cm-s-inner .cm-bracket { color: rgb(153, 153, 119); }
+.cm-s-inner .cm-tag { color: rgb(17, 119, 0); }
+.cm-s-inner .cm-attribute { color: rgb(0, 0, 204); }
+.cm-s-inner .cm-header, .cm-s-inner.cm-header { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-quote, .cm-s-inner.cm-quote { color: rgb(0, 153, 0); }
+.cm-s-inner .cm-hr, .cm-s-inner.cm-hr { color: rgb(153, 153, 153); }
+.cm-s-inner .cm-link, .cm-s-inner.cm-link { color: rgb(0, 0, 204); }
+.cm-negative { color: rgb(221, 68, 68); }
+.cm-positive { color: rgb(34, 153, 34); }
+.cm-header, .cm-strong { font-weight: 700; }
+.cm-del { text-decoration: line-through; }
+.cm-em { font-style: italic; }
+.cm-link { text-decoration: underline; }
+.cm-error { color: red; }
+.cm-invalidchar { color: red; }
+.cm-constant { color: rgb(38, 139, 210); }
+.cm-defined { color: rgb(181, 137, 0); }
+div.CodeMirror span.CodeMirror-matchingbracket { color: rgb(0, 255, 0); }
+div.CodeMirror span.CodeMirror-nonmatchingbracket { color: rgb(255, 34, 34); }
+.cm-s-inner .CodeMirror-activeline-background { background: inherit; }
+.CodeMirror { position: relative; overflow: hidden; }
+.CodeMirror-scroll { height: 100%; outline: 0px; position: relative; box-sizing: content-box; background: inherit; }
+.CodeMirror-sizer { position: relative; }
+.CodeMirror-gutter-filler, .CodeMirror-hscrollbar, .CodeMirror-scrollbar-filler, .CodeMirror-vscrollbar { position: absolute; z-index: 6; display: none; }
+.CodeMirror-vscrollbar { right: 0px; top: 0px; overflow: hidden; }
+.CodeMirror-hscrollbar { bottom: 0px; left: 0px; overflow: hidden; }
+.CodeMirror-scrollbar-filler { right: 0px; bottom: 0px; }
+.CodeMirror-gutter-filler { left: 0px; bottom: 0px; }
+.CodeMirror-gutters { position: absolute; left: 0px; top: 0px; padding-bottom: 30px; z-index: 3; }
+.CodeMirror-gutter { white-space: normal; height: 100%; box-sizing: content-box; padding-bottom: 30px; margin-bottom: -32px; display: inline-block; }
+.CodeMirror-gutter-wrapper { position: absolute; z-index: 4; background: 0px 0px !important; border: none !important; }
+.CodeMirror-gutter-background { position: absolute; top: 0px; bottom: 0px; z-index: 4; }
+.CodeMirror-gutter-elt { position: absolute; cursor: default; z-index: 4; }
+.CodeMirror-lines { cursor: text; }
+.CodeMirror pre { border-radius: 0px; border-width: 0px; background: 0px 0px; font-family: inherit; font-size: inherit; margin: 0px; white-space: pre; word-wrap: normal; color: inherit; z-index: 2; position: relative; overflow: visible; }
+.CodeMirror-wrap pre { word-wrap: break-word; white-space: pre-wrap; word-break: normal; }
+.CodeMirror-code pre { border-right: 30px solid transparent; width: fit-content; }
+.CodeMirror-wrap .CodeMirror-code pre { border-right: none; width: auto; }
+.CodeMirror-linebackground { position: absolute; left: 0px; right: 0px; top: 0px; bottom: 0px; z-index: 0; }
+.CodeMirror-linewidget { position: relative; z-index: 2; overflow: auto; }
+.CodeMirror-wrap .CodeMirror-scroll { overflow-x: hidden; }
+.CodeMirror-measure { position: absolute; width: 100%; height: 0px; overflow: hidden; visibility: hidden; }
+.CodeMirror-measure pre { position: static; }
+.CodeMirror div.CodeMirror-cursor { position: absolute; visibility: hidden; border-right: none; width: 0px; }
+.CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+.CodeMirror-focused div.CodeMirror-cursor { visibility: inherit; }
+.cm-searching { background: rgba(255, 255, 0, 0.4); }
+@media print {
+  .CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+}
+
+
+
+
+.cm-s-inner .cm-variable, .cm-s-inner .cm-operator, .cm-s-inner .cm-property { color: rgb(184, 191, 198); }
+.cm-s-inner .cm-keyword { color: rgb(200, 143, 208); }
+.cm-s-inner .cm-tag { color: rgb(125, 244, 106); }
+.cm-s-inner .cm-attribute { color: rgb(117, 117, 228); }
+.CodeMirror div.CodeMirror-cursor { border-left: 1px solid rgb(184, 191, 198); z-index: 3; }
+.cm-s-inner .cm-string { color: rgb(210, 107, 107); }
+.cm-s-inner .cm-comment, .cm-s-inner.cm-comment { color: rgb(218, 146, 74); }
+.cm-s-inner .cm-header, .cm-s-inner .cm-def, .cm-s-inner.cm-header, .cm-s-inner.cm-def { color: rgb(141, 141, 240); }
+.cm-s-inner .cm-quote, .cm-s-inner.cm-quote { color: rgb(87, 172, 87); }
+.cm-s-inner .cm-hr { color: rgb(216, 213, 213); }
+.cm-s-inner .cm-link { color: rgb(211, 211, 239); }
+.cm-s-inner .cm-negative { color: rgb(217, 80, 80); }
+.cm-s-inner .cm-positive { color: rgb(80, 230, 80); }
+.cm-s-inner .cm-string-2 { color: rgb(255, 85, 0); }
+.cm-s-inner .cm-meta, .cm-s-inner .cm-qualifier { color: rgb(183, 179, 179); }
+.cm-s-inner .cm-builtin { color: rgb(243, 179, 248); }
+.cm-s-inner .cm-bracket { color: rgb(153, 153, 119); }
+.cm-s-inner .cm-atom, .cm-s-inner.cm-atom { color: rgb(132, 182, 203); }
+.cm-s-inner .cm-number { color: rgb(100, 171, 143); }
+.cm-s-inner .cm-variable { color: rgb(184, 191, 198); }
+.cm-s-inner .cm-variable-2 { color: rgb(159, 186, 213); }
+.cm-s-inner .cm-variable-3 { color: rgb(28, 198, 133); }
+.CodeMirror-selectedtext, .CodeMirror-selected { background: rgb(74, 137, 220); text-shadow: none; color: rgb(255, 255, 255) !important; }
+.CodeMirror-gutters { border-right: none; }
+
+
+:root { --bg-color: #1e1e1e; --text-color: #a1a1a1; --window-border-color: #333; --window-border: 1px solid #555; --md-char-color: #C7C5C5; --meta-content-color: #5b808d; --blur-text-color: #C8C8C8; --drag-placeholder-color: #c7c5c5; --panel-border-color: #777777; --active-toggle-btn-color: #ddd; --table-border-color: #ccc; --primary-color: #428bca; --primary-btn-border-color: #285e8e; --primary-btn-text-color: #fff; --search-select-bg-color: #000; --search-select-text-color: #fff; --heading-char-color: #ddd; --color-popover-bg-color: #fafafa; --control-text-color: var(--text-color); --control-text-hover-color: var(--text-color); --side-bar-bg-color: #1a1a1a; --item-hover-bg-color: #111; --item-hover-text-color: #7c929e; --side-bar-fg-color: #DADCE0; --side-bar-menu-active-tint: var(--side-bar-menu-active-tint); --mac-title-bar-height: 20px; --sidebar-width: 270px; --active-file-bg-color: rgb(13, 33, 62); --active-file-text-color: #7c929e; --active-file-left-border-color: #7fa8f0; --active-file-border-color: #777; --focus-ring-color: #6eace2; --file-item-file-name-color: #7c929e; --file-item-summary: #616161; --outline-border-color: #363B40; --outline-item-hover-bg-color: #363B40; --outline-item-hover-fg-color: white; --sidebar-footer-bg-color: #131516; --sidebar-footer-heading-color: #7c929e; --sidebar-footer-fg-color: #818181; --toc-dropmenu-bg-color: #131516; --toc-dropmenu-fg-color: #9aa0a6; --monospace: monospace; }
+html, body { background-color: var(--bg-color); font-family: Roboto, "Open Sans", sans-serif; }
+html { font-size: 16px; }
+#write { max-width: 90%; font-size: 1rem; color: var(--fg-color); }
+h1, h2, h3, h4, h5, h6 { font-family: Helvetica, "Open Sans"; color: rgb(217, 48, 37); margin: 0px; }
+h1 { font-size: 32px; font-weight: 500; margin: 8px 0px; }
+h2 { font-size: 28px; font-weight: 400; margin: 4px 0px; }
+h3 { font-size: 24px; font-weight: 400; }
+h4, h5, h6 { font-size: 20px; font-weight: 400; }
+#write h1::before, #write h2::before, #write h3::before, #write h4::before, #write h5::before, #write h6::before { background-color: rgb(34, 34, 34); color: rgb(162, 52, 50); }
+p, ul, dd, ol, hr, address, pre, table, iframe, .wp-caption, .wp-audio-shortcode, .wp-video-shortcode { margin: 4px 0px; }
+code, kbd, pre, samp { font-family: "Roboto Mono", Menlo, monospace; padding: 2px 5px; }
+.md-fences { margin: 10px 0px; background-color: rgb(28, 30, 31); padding: 1em; border: 1px solid rgba(147, 152, 182, 0.3); border-radius: 2px; font-size: 1em; }
+.md-fences .CodeMirror.CodeMirror-wrap { padding-left: 5px; }
+.CodeMirror-gutters { border: none; }
+.CodeMirror-linenumber { color: rgb(68, 68, 68); }
+a, .md-def-url { color: rgb(81, 149, 234); text-decoration: none; }
+a:hover { text-decoration: underline; }
+#toc-dropmenu { background-color: var(--toc-dropmenu-bg-color); color: var(--toc-dropmenu-fg-color); }
+#toc-dropmenu .divider { background-color: rgba(229, 229, 229, 0.3); }
+.outline-item:hover { border-color: var(--outline-border-color); background-color: var(--outline-item-hover-bg-color); color: var(--outline-item-hover-fg-color); }
+.md-inline-math g, .md-inline-math svg { stroke: rgb(184, 191, 198) !important; fill: rgb(184, 191, 198) !important; }
+[md-inline="inline_math"] { color: rgb(156, 178, 233); }
+#math-inline-preview .md-arrow::after { background: black; }
+.md-inline-math script { color: rgb(129, 177, 219); }
+b, dt, strong { color: rgb(245, 56, 160); font-weight: 500; }
+mark { background: rgb(161, 66, 244); }
+blockquote { color: rgb(36, 193, 224); padding: 10px 20px; background: rgba(36, 193, 224, 0.05); border-left: 1px solid rgb(36, 193, 224); }
+.md-image > .md-meta { background-color: rgb(28, 30, 31); font-family: Roboto, "Open Sans"; font-size: 1em; }
+.md-expand.md-image > .md-meta { color: rgb(95, 99, 104); }
+.auto-suggest-container { border: 0px; background-color: rgb(82, 92, 101); }
+#typora-quick-open { background-color: rgb(82, 92, 101); }
+#typora-quick-open input { background-color: rgb(82, 92, 101); border-width: 0px 0px 1px; border-top-style: initial; border-right-style: initial; border-left-style: initial; border-top-color: initial; border-right-color: initial; border-left-color: initial; border-image: initial; border-bottom-style: solid; border-bottom-color: grey; }
+.typora-quick-open-item { background-color: inherit; color: inherit; }
+.typora-quick-open-item.active { background-color: rgb(77, 139, 219); color: white; }
+.typora-search-spinner > div { background-color: rgb(255, 255, 255); }
+.btn, .btn .btn-default { background: transparent; color: rgb(184, 191, 198); }
+.md-table-edit { border-top: 1px solid gray; background-color: rgb(54, 59, 64); }
+.popover-title { background: transparent; }
+#typora-sidebar { color: var(--side-bar-fg-color); }
+.sidebar-footer-main-item { background-color: var(--sidebar-footer-bg-color); color: var(--sidebar-footer-heading-color); }
+.dropdown-menu { color: var(--sidebar-footer-fg-color); }
+.file-list-item { border-bottom: 1px solid var(--window-border-color); }
+#typora-sidebar-resizer { border-left: 1px solid var(--window-border-color); }
+.file-list-item.active { border-left: 2px solid var(--active-file-left-border-color) ; }
+.file-list-item-file-name { color: var(--file-item-file-name-color); }
+.file-list-item-summary { font-weight: 500; font-family: "Helvetica Neue", sans-serif; color: var(--file-item-summary); }
+.sidebar-tabs { border-bottom: 0px; }
+.md-table-resize-popover { background-color: rgb(75, 83, 90); }
+.form-inline .input-group .input-group-addon { color: white; }
+#md-searchpanel { border-bottom: 1px dashed grey; }
+table { border: solid 1px var(--window-border-color); margin-bottom: 20px; }
+th { color: rgb(67, 158, 48); font-weight: 500; background-color: rgb(28, 30, 31); }
+table th, table td { padding: 8px; line-height: 1.5rem; border: 1px solid var(--window-border-color); }
+table tr:nth-child(2n) { background: var(--side-bar-bg-color); }
+
+
+
+
+
+ .typora-export p, .typora-export .footnote-line {white-space: normal;} 
+</style>
+</head>
+<body class='typora-export os-windows' >
+<div  id='write'  class = 'is-node'><h3><a name='header-n2' class='md-header-anchor '></a>实验方法和步骤-鱼鱼鱼</h3><p>——————————————————————————————————————————————————————————————</p><p>&nbsp;</p><h4><a name='header-n6' class='md-header-anchor '></a>1、冻存细胞</h4><p><span>	</span></p><p><span>	</span>材料准备：冻存管、冻存盒、冻存液、标签、马克笔、酒精、胰酶、PBS、细胞刮、离心机</p><ul><li>RBL弃上清、PBS冲洗、胰酶消化、中止消化、加入10ml离心管</li><li>配平，开始离心，3档*5min</li><li>弃上清，剩下1ml，加入1ml培养基，吹匀</li><li>分装在四个离心管（0.5ml*4个）</li><li>分别加入1.5ml冻存液（1.5ml*4个）</li><li>上下摇匀，放入冻存盒，放在-80℃冰箱过夜</li><li>放入液氮瓶</li></ul><p>&nbsp;</p><h4><a name='header-n25' class='md-header-anchor '></a>2、高温高压灭菌：待补充</h4><ul><li>枪头装盒子，贴变色胶带，写日期，用纱布包好，贴变色胶带</li><li>高温灭菌锅，先把水排掉（最底下有2个开关，右转，方向与管垂直即可），排完之后记得闭上</li><li>加2.5L 净水（两大杯加半杯，1000ml烧杯，几乎加满那种）</li><li>放入待消毒物品，打开开关，有两个（一个是排状开关，一个是普通开关）</li><li>关盖子，第二声响之后再拧1/8圈</li><li>按up或者down调节到  liquid(灭菌细胞培养箱的水用)或者solid(枪头用)</li><li>长按start，叮一声响即可，看到heat可以闪就行</li></ul><p>&nbsp;</p><p>&nbsp;</p><h4><a name='header-n43' class='md-header-anchor '></a>3、免疫荧光实验：</h4><p> <span>	</span></p><p><span>	</span>材料准备：PBS、免疫染色固定液、免疫染色洗涤液、封闭液(Quickblot)、DAPI、鬼笔环肽488、贴壁细胞、滴管</p><ul><li><p>RBL-2H3培养18h，PBS清洗3次*5min</p></li><li><p>固定：固定液25min</p></li><li><p>清洗：PBS清洗3次</p></li><li><p>封闭：Quickblot  10min，倒掉， #### 不清洗 ####</p></li><li><p>加荧光标记染料：</p><ul><li>鬼笔环肽：10-15min，PBS清洗两次    (浓度：1-5μg/ml最好)</li><li>DAPI：5min，一个孔1ml即可，PBS清洗2次          (碧云天的DAPI)，不用倒掉，保持观察时不干燥</li></ul></li><li><p>包锡纸，进行观察，拍照。</p></li></ul><h4><a name='header-n65' class='md-header-anchor '></a>4、PBS配置：</h4><ul><li>直接解冻，过滤即可(浓度看袋子上写的)</li></ul><h4><a name='header-n70' class='md-header-anchor '></a>5、培养基配置：</h4><ul><li><p>MEM+1/10的胎牛血清FBS+1/100的双抗+1/100的谷氨酰胺</p></li><li><p>其中：双抗37℃解冻，(Pen Strep Glutamine  ,100X)</p><p><span>	</span>   谷氨酰胺37℃解冻，(L-Glutamine 200mM,  100X)</p><p><span>	</span>   FBS37℃解冻</p></li></ul><h4><a name='header-n78' class='md-header-anchor '></a>6、染色体的制备与显带：</h4><p><span>	</span></p><p>制备：</p><p><span>	</span>试剂：DMEM培养液(内含10% FBS)、秋水仙素(5μg/ml)、0.075M KCl低渗液、固定液(甲醇/冰乙酸=3：1)、0.25%胰蛋白酶溶液</p><p><span>	</span>材料：Hela细胞</p><p><span>	</span>器材：试管架、刻度离心管、滴管、酒精灯、冰载玻片、离心机、离心管、培养箱、普通光学显微镜、水浴箱、天平等</p><p>&nbsp;</p><ul><li>Hela细胞染色体显带标本的制备</li></ul><p>         -  Hela细胞培养</p><p>         -  秋水仙素处理：加入秋水仙素20μL，使得终浓度为0.07μg/ml，混匀，37℃培养4h</p><p>         -  收集细胞：胰酶消化，待细胞变圆，加入适量DMEM培养液，用吸管吹打均匀，制成细胞悬液，收集到离心管中，1500r/min，10min</p><p>         -  低渗处理：弃上清，加入8ml 0.075M 的KCl溶液，混匀，37℃水浴15min</p><p>         -  预固定：低渗处理后，加入1ml固定液混匀，1500r/min，离心10min</p><p>         -  固定：弃上清，加入8ml固定液，混匀，室温静置15min，1500r/min离心，10min</p><p>         -  制备细胞悬液：弃上清，视细胞数量加入适量固定液制成细胞悬液</p><p>         -  制片：取细胞悬液2-3滴，滴于冰玻片上，并迅速吹干，酒精灯火焰烤干</p><p>         -  烤片：37℃ 7天，之后进行G显带</p><p>显带：</p><p><span>	</span>试剂：缓冲液(Chromed GB  20X 缓冲液)、缓冲液(Chromed TB  10X 缓冲液)、胰酶(0.5%)、Giemsa 染色液、0.9% NaCl溶液、蒸馏水</p><p><span>	</span>试剂配制：0.005%胰酶工作液150ml(其中：Chromed TB  10X 缓冲液  15ml、0.5%胰酶 1.5ml、蒸馏水133.5ml)、</p><p>                         Giemsa染色工作液150ml(其中：Chromed GB  20X 缓冲液  7.5ml、Chromed G 7.5ml、蒸馏水135ml)</p><p><span>	</span>准备液缸试剂：</p><p><span>	</span>1）胰酶工作液50ml ， 37℃，消化</p><p><span>	</span>2）0.9% NaCl 50ml，室温，终止</p><p><span>	</span>3）0.9% NaCl 50ml，室温，终止</p><p><span>	</span>4）Giemsa染色工作液 150ml，25℃，染色</p><p><span>	</span>5）蒸馏水 150ml，室温，清洗</p><p><span>	</span>6）蒸馏水 150ml，室温，清洗</p><p>&nbsp;</p><p>G显带方法：</p><ul><li>老化处理：显带前将滴有染色体的载玻片80℃老化3h ， 或者90℃ 老化1h，或者培养箱7d</li><li>消化处理：载玻片放入液缸1胰酶溶液消化处理60-80s（1min30s抽出一半，1min50s抽出另一半）</li><li>终止1：载玻片放入生理盐水1，15s</li><li>终止2：载玻片放入生理盐水2，60s</li><li>染色：载玻片放入染色工作液，120-160s</li><li>清洗：载玻片放入蒸馏水，60s</li><li>显带结束，离心甩干或者烘干载玻片表面的水分</li></ul><p>&nbsp;</p><p>&nbsp;</p><h4><a name='header-n128' class='md-header-anchor '></a>6、溶液配制：</h4><ul><li><h6><a name='header-n131' class='md-header-anchor '></a>用液体试剂配置</h6><ul><li><p>根据稀释前后溶质质量相等原理：</p><p>稀释质量分数* 密度 * 欲配溶液体积 = 浓溶液质量分数* 密度 * 需用浓溶液体积</p></li></ul></li><li><h6><a name='header-n137' class='md-header-anchor '></a>物质的量浓度溶液的配置</h6><ul><li><p>根据稀释前后溶质的量相等原则：</p><p>稀释前浓度 * 稀释前体积 = 稀释后的浓度 * 稀释后的体积</p></li></ul></li><li><h6><a name='header-n143' class='md-header-anchor '></a>用固体试剂配置</h6><ul><li>需称取的质量 = 欲配溶液浓度 * 欲配溶液体积 * 摩尔质量M / 1000</li></ul></li><li><h6><a name='header-n148' class='md-header-anchor '></a>用液体试剂配置</h6><ul><li>原溶液体积 * 比重 * 原溶液百分浓度 = 物质的量浓度 * 欲配制溶液体积 * 摩尔质量M /1000</li></ul></li></ul><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang=""><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 9px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">例如：配0.1M的NaOH，查M=40g/mol，n=0.1mol/L*10ml，m=n * M=需要称的NaOH粉末的质量</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 22px;"></div><div class="CodeMirror-gutters" style="display: none; height: 22px;"></div></div></div></pre><h5><a name='header-n153' class='md-header-anchor '></a>单位换算表</h5><p><span>	</span>  M=mol/L</p><p>&nbsp;</p><h4><a name='header-n156' class='md-header-anchor '></a>7、鼠尾胶Collagen I 使用方案：</h4><p>      </p><p>      鼠尾胶原蛋白可用于包被细胞培养器皿，培养一些不易贴壁的细胞，也可用于制备三维胶，模拟真实的生长环境，使细胞在三维环境中生长</p><p>&nbsp;</p><ul><li><p>细胞培养器皿表面包被浓度：1-5μg/cm2，以2μg/cm2 为例，用无菌0.006mol/L（0.36g/L）乙酸将胶原蛋白稀释到0.012mg/ml，按照以下表格加入：</p><p>6孔板：一个孔表面积9.5cm2，加入0.012mg/ml胶原的体积：1580μL</p><p>12孔板：孔面积3.8cm2，加入0.012mg/ml胶原的体积：600μL</p><p>24孔板：孔面积1.9cm2，加入0.012mg/ml胶原的体积：300μL</p><p>96孔板：孔面积0.3cm2，加入0.012mg/ml胶原的体积：50μL</p><p>35mm培养皿：皿面积8cm2，加入0.012mg/ml胶原的体积：1330μL</p><p>60mm培养皿：皿面积21cm2，加入0.012mg/ml胶原的体积：3500μL</p><p>100mm培养皿：皿面积55cm2，加入0.012mg/ml胶原的体积：9170μL</p></li><li><p>确保 Collagen I铺满器皿表面，开盖在超净台上过夜晾干，或者室温放置1h，用PBS洗3-4次后直接使用。包被好的器皿在4-25℃至少可保存3个月以上的时间</p></li></ul><h4><a name='header-n173' class='md-header-anchor '></a>8、三维胶原的制备--利用鼠尾胶Collagen I ：</h4><ul><li><p>鼠尾胶原I型蛋白浓度在1mg/ml以上，pH在7左右可形成具有一定强度的三维胶，建议成胶浓度1-2mg/ml，胶原蛋白溶解于0.006mol/L 乙酸中，在成胶过程中需要加入0.06*体积的0.1mol/L NaOH来中和。</p></li><li><p>需要的溶液：均需无菌、预冷；</p><p>10X PBS，可含10mg/L 的酚红用于pH指示（或者10X培养液）</p><p>0.1mol/L NaOH</p><p>0.1mol/L 乙酸（一般不用）</p><p>双蒸水</p><h6><a name='header-n183' class='md-header-anchor '></a>不含细胞的三维胶原的制备</h6><p>以配置1ml，1mg/ml 三维胶为例：将200μL collagen I(5mg/ml)加到置于冰浴的离心管中，加入690μl 双蒸水；加到12μl 0.1mol/L NaOH中，混匀；加入100μl 10X PBS或者10X 培养液，混匀后立即加入到培养器皿（混匀后pH为7左右）；将培养皿在室温25℃左右放置20min，待胶凝固后转移到培养箱内。如果使用的是10X PBS，使用前需要加入适量体积的细胞培养液预平衡</p><h6><a name='header-n185' class='md-header-anchor '></a>含细胞的三维胶原的制备</h6><p>以配置1ml，1mg/ml 三维胶为例：准备好悬浮于培养液的细胞，放于冰浴中，将200μL Collagen I(5mg/ml)加到12μl 0.1mol/L NaOH中，混匀；再加入23μl 10X PBS或者10X 培养液，混匀，（混匀后pH为7左右）；加入760μL 的细胞悬浮液，混匀后立即加入到培养器皿；将培养皿在室温25℃左右放置20min，待胶凝固后加入适量体积的细胞培养液，转移到培养箱中培养。</p><h6><a name='header-n187' class='md-header-anchor '></a>注意：Collagen I 在室温下pH中性时可迅速成胶，操作过程中需要保持低温。</h6></li></ul><p>&nbsp;</p><h4><a name='header-n189' class='md-header-anchor '></a>9、台盼蓝染色：</h4><ul><li>检测细胞存活率。台盼蓝是细胞活性染料，检测细胞膜的完整性，确认细胞是否存活，活细胞不会染成蓝色，而死细胞会染成淡蓝色。</li><li>细胞悬液和0.4%的台盼蓝溶液9：1混合，（终浓度为0.04%）</li><li>三分钟内计数细胞(活细胞无色透明，死细胞染成明显的蓝色)</li><li>活细胞数  /  (活细胞+死细胞数)*100%</li></ul><p>&nbsp;</p><h4><a name='header-n200' class='md-header-anchor '></a>10、细胞培养</h4><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang=""><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 9px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> 试剂：DMEM培养液(内含20% FBS)、0.25%胰酶、Hank’s液、三抗液(1%青、链、制霉菌素)、DMEM培养液(内含10% FBS)</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> 材料：新生鼠的皮肤组织和肺组织；Hela细胞</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> 仪器：超净工作台、镊子、手术钳、二氧化碳培养箱、水浴锅、离心机、吸管、酒精灯、酒精棉球、培养皿、培养瓶、离心管、倒置显 &nbsp; &nbsp; &nbsp; 微镜、正置显微镜、血球计数板、盖玻片</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 90px;"></div><div class="CodeMirror-gutters" style="display: none; height: 90px;"></div></div></div></pre><ul><li><p>原代细胞培养</p><p>     消化法：</p><ul><li>将新生小鼠剪刀断头处死，置75%酒精泡2~3s，将其带入超净台内置平皿中</li><li>取欲培养组织(皮肤组织)置于另一平皿</li><li>用三抗液洗涤一次、Hank’s液洗涤两次</li><li>用手术剪将组织剪成小块(1mm2)，转移至离心管中</li><li>视组织块量加入5倍的0.25%胰酶液，37℃水浴中消化30分钟，每隔5分钟振荡一次，使细胞分离</li><li>待组织变得疏松，颜色略为发白时，加入3ml DMEM培养基(含20%FBS)以终止胰蛋白酶消化作用</li><li>1000rpm，离心10分钟，弃上清液</li><li>加入DMEM培养基 5ml，转移至25ml细胞培养瓶中，37℃下培养</li><li>一周后观察</li></ul></li></ul><p>&nbsp;</p><p><span>	</span>      植块法：</p><p><span>	</span>      - 将上述处理过的新生小鼠进行解剖，取出肺部组织，置于另一平皿</p><p><span>	</span>      -<span>	</span>用三抗液、Hank’s液、DMEM培养液各洗涤一次</p><p><span>	</span>      -<span>	</span>在DMEM培养液中用手术剪将组织剪成小块(1mm2)</p><p>              - 将组织块转移到培养瓶，贴附于瓶底面</p><p>              - 反转瓶底朝上，将培养液加至瓶中，培养液勿接触组织块</p><p>              - 置37℃培养箱静置3—5小时后，轻轻翻转培养瓶，使组织浸入培养液中（勿使组织漂起），37℃继续培养</p><p>              - 一周后移去组织块，镜下观察</p><p>&nbsp;</p><ul><li><p>细胞计数：</p><ul><li>将Hela细胞原培养液丢弃</li><li>加入0.25%胰蛋白酶液，轻晃后丢弃</li><li>加0.25%胰蛋白酶液，静置1min40s，显微镜下观察细胞形态</li><li>细胞变圆后丢弃胰蛋白酶液</li><li>加入3ml培养液DMEM(含10%FBS)，吹打成单细胞悬液</li><li>取10μl加入血球计数板，进行计数（细胞数/ml=4大格细胞数/4*10000）</li></ul></li></ul><p>&nbsp;</p><h4><a name='header-n253' class='md-header-anchor '></a>10、药品购买：</h4><ul><li>PBS自己配，胰酶，双抗，谷氨酰胺都在张静那里购买的</li></ul><p>&nbsp;</p><h4><a name='header-n258' class='md-header-anchor '></a>11、胰酶配置：</h4><ul><li>5ml胰酶(10X)+45ml过滤的PBS加入50ml离心管，摇匀即可</li></ul></div>
+</body>
+</html>
