@@ -1,0 +1,1614 @@
+# -*- coding: mbcs -*-
+#
+# Abaqus/CAE Release 6.13-1 replay file
+# Internal Version: 2013_05_16-10.28.56 126354
+# Run by RenLi on Tue Jun 25 20:49:44 2019
+#
+
+# from driverUtils import executeOnCaeGraphicsStartup
+# executeOnCaeGraphicsStartup()
+#: Executing "onCaeGraphicsStartup()" in the site directory ...
+#: Abaqus Error: 
+#: This error may have occurred due to a change to the Abaqus Scripting
+#: Interface. Please see the Abaqus Scripting Manual for the details of
+#: these changes. Also see the "Example environment files" section of 
+#: the Abaqus Site Guide for up-to-date examples of common tasks in the
+#: environment file.
+#: Execution of "onCaeGraphicsStartup()" in the site directory failed.
+from abaqus import *
+from abaqusConstants import *
+session.Viewport(name='Viewport: 1', origin=(0.0, 0.0), width=158.27197265625, 
+    height=69.0260391235352)
+session.viewports['Viewport: 1'].makeCurrent()
+session.viewports['Viewport: 1'].maximize()
+from caeModules import *
+from driverUtils import executeOnCaeStartup
+executeOnCaeStartup()
+session.viewports['Viewport: 1'].partDisplay.geometryOptions.setValues(
+    referenceRepresentation=ON)
+o1 = session.openOdb(
+    name='C:/Users/RenLi/__matlab/__model_cochlea/3d_model_abaqus/MODEL01/model01-ac-spiral.odb')
+session.viewports['Viewport: 1'].setValues(displayedObject=o1)
+#: Model: C:/Users/RenLi/__matlab/__model_cochlea/3d_model_abaqus/MODEL01/model01-ac-spiral.odb
+#: Number of Assemblies:         1
+#: Number of Assembly instances: 0
+#: Number of Part instances:     1
+#: Number of Meshes:             1
+#: Number of Element Sets:       362
+#: Number of Node Sets:          5
+#: Number of Steps:              1
+session.viewports['Viewport: 1'].view.setValues(nearPlane=20.6638, 
+    farPlane=36.8848, width=23.0409, height=9.85415, cameraPosition=(7.06845, 
+    -3.02194, 28.5905), cameraUpVector=(-0.0786359, 0.99003, -0.116861), 
+    cameraTarget=(-0.21135, 2.85291, 1.49404))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=19.9735, 
+    farPlane=37.8043, width=22.2712, height=9.52495, cameraPosition=(2.60719, 
+    -18.3693, 20.5888), cameraUpVector=(0.0308446, 0.881458, 0.471255), 
+    cameraTarget=(-0.22818, 2.79501, 1.46385))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=20.8027, 
+    farPlane=36.9752, width=18.1861, height=7.77781)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=21.5579, 
+    farPlane=36.0401, width=18.8463, height=8.06017, cameraPosition=(-0.066819, 
+    -11.4278, 26.3657), cameraUpVector=(0.102339, 0.978868, 0.177043), 
+    cameraTarget=(-0.248832, 2.84862, 1.50847))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=21.4366, 
+    farPlane=36.1613, width=18.9081, height=8.0866)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=21.4378, 
+    farPlane=36.1601, width=18.9092, height=8.08707, viewOffsetX=1.53287, 
+    viewOffsetY=-0.336028)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=21.4176, 
+    farPlane=36.1803, width=19.0265, height=8.13725, viewOffsetX=1.53143, 
+    viewOffsetY=-0.335712)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=21.1727, 
+    farPlane=36.5882, width=18.809, height=8.04422, cameraPosition=(-0.696318, 
+    -14.9919, 24.0158), cameraUpVector=(0.0132157, 0.948246, 0.317261), 
+    cameraTarget=(-0.309753, 2.64042, 1.41747), viewOffsetX=1.51392, 
+    viewOffsetY=-0.331874)
+leaf = dgo.LeafFromElementSets(elementSets=('INST1.BM', ))
+session.viewports['Viewport: 1'].odbDisplay.displayGroup.replace(leaf=leaf)
+dg = session.viewports['Viewport: 1'].odbDisplay.displayGroup
+dg = session.DisplayGroup(name='BM', objectToCopy=dg)
+session.viewports['Viewport: 1'].odbDisplay.setValues(visibleDisplayGroups=(dg, 
+    ))
+session.viewports['Viewport: 1'].odbDisplay.displayGroupInstances['BM'].setValues(
+    lockOptions=OFF)
+leaf = dgo.LeafFromElementSets(elementSets=('INST1.WALL01', ))
+session.viewports['Viewport: 1'].odbDisplay.displayGroup.replace(leaf=leaf)
+dg = session.viewports['Viewport: 1'].odbDisplay.displayGroup
+dg = session.DisplayGroup(name='wall', objectToCopy=dg)
+session.viewports['Viewport: 1'].odbDisplay.setValues(visibleDisplayGroups=(dg, 
+    ))
+session.viewports['Viewport: 1'].odbDisplay.displayGroupInstances['wall'].setValues(
+    lockOptions=OFF)
+leaf = dgo.LeafFromElementSets(elementSets=('INST1.WALL02', ))
+session.viewports['Viewport: 1'].odbDisplay.displayGroup.replace(leaf=leaf)
+dg = session.viewports['Viewport: 1'].odbDisplay.displayGroup
+dg = session.DisplayGroup(name='lim', objectToCopy=dg)
+session.viewports['Viewport: 1'].odbDisplay.setValues(visibleDisplayGroups=(dg, 
+    ))
+session.viewports['Viewport: 1'].odbDisplay.displayGroupInstances['lim'].setValues(
+    lockOptions=OFF)
+session.viewports['Viewport: 1'].odbDisplay.displayGroupInstances.syncOptions(
+    name='lim', updateInstances=OFF)
+session.viewports['Viewport: 1'].view.setProjection(projection=PARALLEL)
+session.viewports['Viewport: 1'].view.setProjection(projection=PERSPECTIVE)
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    DEFORMED, ))
+session.viewports['Viewport: 1'].enableMultipleColors()
+session.viewports['Viewport: 1'].setColor(initialColor='#BDBDBD')
+cmap=session.viewports['Viewport: 1'].colorMappings['Set']
+session.viewports['Viewport: 1'].setColor(colorMapping=cmap)
+session.viewports['Viewport: 1'].disableMultipleColors()
+session.viewports['Viewport: 1'].odbDisplay.displayGroupInstances['lim'].setValues(
+    lockOptions=ON)
+dg1= session.displayGroups['wall']
+dg2= session.displayGroups['lim']
+session.viewports['Viewport: 1'].odbDisplay.setValues(visibleDisplayGroups=(
+    dg1, dg2, ))
+session.viewports['Viewport: 1'].odbDisplay.displayGroupInstances['wall'].setValues(
+    lockOptions=ON)
+session.viewports['Viewport: 1'].odbDisplay.displayGroupInstances['wall'].setValues(
+    lockOptions=OFF)
+session.viewports['Viewport: 1'].odbDisplay.displayGroupInstances.syncOptions(
+    name='wall', updateInstances=OFF)
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    DEFORMED, ))
+session.viewports['Viewport: 1'].odbDisplay.commonOptions.setValues(
+    translucency=ON)
+session.viewports['Viewport: 1'].odbDisplay.commonOptions.setValues(
+    translucencyFactor=0.35)
+session.viewports['Viewport: 1'].odbDisplay.commonOptions.setValues(
+    translucencyFactor=0.4)
+session.viewports['Viewport: 1'].odbDisplay.commonOptions.setValues(
+    translucencyFactor=0.45)
+session.viewports['Viewport: 1'].odbDisplay.commonOptions.setValues(
+    translucencyFactor=0.5)
+session.viewports['Viewport: 1'].odbDisplay.commonOptions.setValues(
+    translucencyFactor=0.55)
+session.viewports['Viewport: 1'].odbDisplay.commonOptions.setValues(
+    translucencyFactor=0.6)
+session.viewports['Viewport: 1'].odbDisplay.commonOptions.setValues(
+    translucencyFactor=0.45)
+session.viewports['Viewport: 1'].odbDisplay.commonOptions.setValues(
+    translucencyFactor=0.4)
+session.viewports['Viewport: 1'].odbDisplay.commonOptions.setValues(
+    translucencyFactor=0.3)
+session.viewports['Viewport: 1'].odbDisplay.commonOptions.setValues(
+    translucencyFactor=0.25)
+session.viewports['Viewport: 1'].odbDisplay.commonOptions.setValues(
+    translucencyFactor=0.2)
+session.viewports['Viewport: 1'].odbDisplay.commonOptions.setValues(
+    translucencyFactor=0.25)
+session.viewports['Viewport: 1'].odbDisplay.commonOptions.setValues(
+    translucencyFactor=0.3)
+session.viewports['Viewport: 1'].odbDisplay.commonOptions.setValues(
+    translucencyFactor=0.35)
+session.viewports['Viewport: 1'].odbDisplay.commonOptions.setValues(
+    translucencyFactor=0.35)
+session.viewports['Viewport: 1'].odbDisplay.commonOptions.setValues(
+    renderStyle=HIDDEN, )
+session.viewports['Viewport: 1'].odbDisplay.commonOptions.setValues(
+    renderStyle=FILLED, )
+session.viewports['Viewport: 1'].odbDisplay.commonOptions.setValues(
+    renderStyle=WIREFRAME, )
+session.viewports['Viewport: 1'].odbDisplay.commonOptions.setValues(
+    renderStyle=SHADED, )
+session.viewports['Viewport: 1'].odbDisplay.commonOptions.setValues(
+    visibleEdges=FEATURE)
+session.viewports['Viewport: 1'].odbDisplay.commonOptions.setValues(
+    translucencyFactor=0.25)
+session.viewports['Viewport: 1'].odbDisplay.commonOptions.setValues(
+    translucencyFactor=0.2)
+session.viewports['Viewport: 1'].odbDisplay.commonOptions.setValues(
+    translucencyFactor=0.15)
+session.viewports['Viewport: 1'].odbDisplay.commonOptions.setValues(
+    translucencyFactor=0.1)
+session.viewports['Viewport: 1'].odbDisplay.commonOptions.setValues(
+    translucencyFactor=0.1)
+dg1= session.displayGroups['BM']
+dg2= session.displayGroups['wall']
+dg3= session.displayGroups['lim']
+session.viewports['Viewport: 1'].odbDisplay.setValues(visibleDisplayGroups=(
+    dg1, dg2, dg3, ))
+session.viewports['Viewport: 1'].odbDisplay.displayGroupInstances['wall'].setValues(
+    lockOptions=ON)
+session.viewports['Viewport: 1'].odbDisplay.displayGroupInstances.syncOptions(
+    name='BM', updateInstances=OFF)
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+session.viewports['Viewport: 1'].odbDisplay.displayGroupInstances['BM'].setValues(
+    lockOptions=ON)
+session.viewports['Viewport: 1'].odbDisplay.displayGroupInstances['BM'].setValues(
+    lockOptions=OFF)
+session.viewports['Viewport: 1'].odbDisplay.displayGroupInstances['BM'].setValues(
+    lockOptions=ON)
+session.viewports['Viewport: 1'].odbDisplay.displayGroupInstances['BM'].setValues(
+    lockOptions=OFF)
+session.viewports['Viewport: 1'].odbDisplay.displayGroupInstances['BM'].setValues(
+    lockOptions=ON)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=21.3485, 
+    farPlane=36.4125, width=17.9555, height=7.67918)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=21.0684, 
+    farPlane=37.8259, width=17.7199, height=7.57846, cameraPosition=(5.96373, 
+    -20.1908, 18.4946), cameraUpVector=(-0.138219, 0.825382, 0.547394), 
+    cameraTarget=(1.75373, 2.38335, 0.980007))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=21.2983, 
+    farPlane=37.5959, width=16.5566, height=7.08091)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=21.2781, 
+    farPlane=37.6161, width=16.5409, height=7.07421, viewOffsetX=-1.0962, 
+    viewOffsetY=0.166567)
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='U', outputPosition=NODAL, refinement=(INVARIANT, 
+    'Magnitude'), )
+#: Warning: Invariant computations using complex tensor component magnitudes may not be meaningful due to potential phase differences among components.
+leaf = dgo.LeafFromElementSets(elementSets=('INST1.OW', ))
+session.viewports['Viewport: 1'].odbDisplay.displayGroup.replace(leaf=leaf)
+#* Cannot perform the requested display group operation. This is most likely 
+#* caused when more than one display groups are displayed.
+session.viewports['Viewport: 1'].odbDisplay.displayGroupInstances['BM'].setValues(
+    lockOptions=OFF)
+session.viewports['Viewport: 1'].odbDisplay.displayGroupInstances['wall'].setValues(
+    lockOptions=OFF)
+session.viewports['Viewport: 1'].odbDisplay.displayGroupInstances['lim'].setValues(
+    lockOptions=OFF)
+session.viewports['Viewport: 1'].odbDisplay.displayGroupInstances.syncOptions(
+    name='lim', updateInstances=OFF)
+leaf = dgo.LeafFromElementSets(elementSets=('INST1.OW', ))
+session.viewports['Viewport: 1'].odbDisplay.displayGroup.replace(leaf=leaf)
+#* Cannot perform the requested display group operation. This is most likely 
+#* caused when more than one display groups are displayed.
+session.viewports['Viewport: 1'].odbDisplay.displayGroupInstances.syncOptions(
+    name='wall', updateInstances=OFF)
+session.viewports['Viewport: 1'].odbDisplay.displayGroupInstances.syncOptions(
+    name='BM', updateInstances=OFF)
+session.viewports['Viewport: 1'].odbDisplay.displayGroupInstances.syncOptions(
+    name='lim', updateInstances=OFF)
+session.viewports['Viewport: 1'].odbDisplay.displayGroupInstances.syncOptions(
+    name='BM', updateInstances=OFF)
+dg1= session.displayGroups['lim']
+session.viewports['Viewport: 1'].odbDisplay.setValues(visibleDisplayGroups=(
+    dg1, ))
+leaf = dgo.LeafFromElementSets(elementSets=('INST1.OW', ))
+session.viewports['Viewport: 1'].odbDisplay.displayGroup.replace(leaf=leaf)
+dg = session.viewports['Viewport: 1'].odbDisplay.displayGroup
+dg = session.DisplayGroup(name='ow', objectToCopy=dg)
+session.viewports['Viewport: 1'].odbDisplay.setValues(visibleDisplayGroups=(dg, 
+    ))
+session.viewports['Viewport: 1'].odbDisplay.displayGroupInstances['ow'].setValues(
+    lockOptions=OFF)
+leaf = dgo.LeafFromElementSets(elementSets=('INST1.RW', ))
+session.viewports['Viewport: 1'].odbDisplay.displayGroup.replace(leaf=leaf)
+dg = session.viewports['Viewport: 1'].odbDisplay.displayGroup
+dg = session.DisplayGroup(name='rw', objectToCopy=dg)
+session.viewports['Viewport: 1'].odbDisplay.setValues(visibleDisplayGroups=(dg, 
+    ))
+session.viewports['Viewport: 1'].odbDisplay.displayGroupInstances['rw'].setValues(
+    lockOptions=OFF)
+dg1= session.displayGroups['wall']
+session.viewports['Viewport: 1'].odbDisplay.setValues(visibleDisplayGroups=(
+    dg1, ))
+session.viewports['Viewport: 1'].odbDisplay.displayGroupInstances['wall'].setValues(
+    lockOptions=ON)
+dg1= session.displayGroups['rw']
+session.viewports['Viewport: 1'].odbDisplay.setValues(visibleDisplayGroups=(
+    dg1, ))
+dg1= session.displayGroups['wall']
+session.viewports['Viewport: 1'].odbDisplay.setValues(visibleDisplayGroups=(
+    dg1, ))
+dg1= session.displayGroups['rw']
+dg2= session.displayGroups['wall']
+session.viewports['Viewport: 1'].odbDisplay.setValues(visibleDisplayGroups=(
+    dg1, dg2, ))
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+#: Warning: Invariant computations using complex tensor component magnitudes may not be meaningful due to potential phase differences among components.
+session.viewports['Viewport: 1'].odbDisplay.displayGroupInstances['rw'].setValues(
+    lockOptions=ON)
+dg1= session.displayGroups['ow']
+dg2= session.displayGroups['rw']
+dg3= session.displayGroups['wall']
+session.viewports['Viewport: 1'].odbDisplay.setValues(visibleDisplayGroups=(
+    dg1, dg2, dg3, ))
+#: Warning: Invariant computations using complex tensor component magnitudes may not be meaningful due to potential phase differences among components.
+session.viewports['Viewport: 1'].odbDisplay.displayGroupInstances['ow'].setValues(
+    lockOptions=ON)
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+#: Warning: All active display groups are currently locked; therefore, plot options or the plot state may not be changed.
+#: 
+#: Use the Display Group Manager to unlock display groups.
+session.viewports['Viewport: 1'].odbDisplay.displayGroupInstances['ow'].setValues(
+    lockOptions=OFF)
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+#: Warning: Invariant computations using complex tensor component magnitudes may not be meaningful due to potential phase differences among components.
+session.viewports['Viewport: 1'].odbDisplay.displayGroupInstances['ow'].setValues(
+    lockOptions=ON)
+dg1= session.displayGroups['lim']
+dg2= session.displayGroups['ow']
+dg3= session.displayGroups['rw']
+dg4= session.displayGroups['wall']
+session.viewports['Viewport: 1'].odbDisplay.setValues(visibleDisplayGroups=(
+    dg1, dg2, dg3, dg4, ))
+#: Warning: Invariant computations using complex tensor component magnitudes may not be meaningful due to potential phase differences among components.
+session.viewports['Viewport: 1'].odbDisplay.displayGroupInstances.syncOptions(
+    name='lim', updateInstances=OFF)
+session.viewports['Viewport: 1'].odbDisplay.displayGroupInstances['lim'].setValues(
+    lockOptions=ON)
+dg1= session.displayGroups['BM']
+dg2= session.displayGroups['lim']
+dg3= session.displayGroups['ow']
+dg4= session.displayGroups['rw']
+dg5= session.displayGroups['wall']
+session.viewports['Viewport: 1'].odbDisplay.setValues(visibleDisplayGroups=(
+    dg1, dg2, dg3, dg4, dg5, ))
+#: Warning: Invariant computations using complex tensor component magnitudes may not be meaningful due to potential phase differences among components.
+session.viewports['Viewport: 1'].odbDisplay.displayGroupInstances['BM'].setValues(
+    lockOptions=ON)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=20.7386, 
+    farPlane=38.6912, width=17.7173, height=7.57732, cameraPosition=(6.85944, 
+    -17.7958, 21.3285), cameraUpVector=(-0.262851, 0.842594, 0.470048), 
+    cameraTarget=(-0.923736, 2.79164, 1.21536))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=21.3889, 
+    farPlane=38.0409, width=15.7536, height=6.7375)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=21.4885, 
+    farPlane=38.0429, width=15.827, height=6.76888, cameraPosition=(5.53002, 
+    -19.4804, 19.9568), cameraUpVector=(-0.255025, 0.812798, 0.523757), 
+    cameraTarget=(-0.91924, 2.79734, 1.22))
+session.animationController.setValues(animationType=HARMONIC, viewports=(
+    'Viewport: 1', ))
+session.animationController.play(duration=UNLIMITED)
+session.animationController.animationOptions.setValues(
+    relativeScaling=FULL_CYCLE)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=21.3099, 
+    farPlane=36.8311, width=15.6954, height=6.71262, cameraPosition=(22.1057, 
+    2.63076, 20.0949), cameraUpVector=(-0.854455, -0.0391831, 0.518046), 
+    cameraTarget=(-0.973918, 2.7244, 1.21954))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=19.4608, 
+    farPlane=38.1298, width=14.3335, height=6.13016, cameraPosition=(19.2054, 
+    21.2545, 12.5251), cameraUpVector=(-0.662875, -0.236935, 0.710253), 
+    cameraTarget=(-0.899599, 2.24718, 1.41351))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=21.1911, 
+    farPlane=36.6585, width=15.6079, height=6.67519, cameraPosition=(27.0369, 
+    1.56882, 11.0086), cameraUpVector=(-0.617109, 0.0232831, 0.786533), 
+    cameraTarget=(-1.17702, 2.94453, 1.46723))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=20.4093, 
+    farPlane=37.4805, width=15.0321, height=6.42893, cameraPosition=(26.7782, 
+    -4.68205, 8.38655), cameraUpVector=(-0.519762, 0.149029, 0.841212), 
+    cameraTarget=(-1.16906, 3.13699, 1.54796))
+session.animationController.setValues(animationType=NONE)
+#: Warning: Invariant computations using complex tensor component magnitudes may not be meaningful due to potential phase differences among components.
+session.animationController.setValues(animationType=HARMONIC, viewports=(
+    'Viewport: 1', ))
+session.animationController.play(duration=UNLIMITED)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=21.9786, 
+    farPlane=36.59, width=16.1879, height=6.92325, cameraPosition=(3.25963, 
+    -25.9183, 2.83856), cameraUpVector=(0.0361953, 0.377737, 0.925205), 
+    cameraTarget=(-0.635761, 3.61854, 1.67376))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=22.1845, 
+    farPlane=36.4561, width=16.3396, height=6.98812, cameraPosition=(-0.480447, 
+    -25.8323, 6.2684), cameraUpVector=(-0.25736, 0.470207, 0.844199), 
+    cameraTarget=(-0.567937, 3.61698, 1.61156))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=21.8399, 
+    farPlane=36.8601, width=16.0858, height=6.87958, cameraPosition=(0.0358019, 
+    -24.6714, 10.9898), cameraUpVector=(-0.183321, 0.606457, 0.773695), 
+    cameraTarget=(-0.576654, 3.59738, 1.53184))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=20.7018, 
+    farPlane=37.9669, width=15.2476, height=6.52107, cameraPosition=(8.60049, 
+    -22.458, 12.6926), cameraUpVector=(-0.2159, 0.626637, 0.748807), 
+    cameraTarget=(-0.712436, 3.56229, 1.50484))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=20.6861, 
+    farPlane=37.9826, width=16.1031, height=6.88698)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=20.701, 
+    farPlane=37.9677, width=16.1147, height=6.89193, viewOffsetX=0.219312, 
+    viewOffsetY=-0.744557)
+session.animationController.setValues(animationType=NONE)
+#: Warning: Invariant computations using complex tensor component magnitudes may not be meaningful due to potential phase differences among components.
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=5 )
+#: Warning: Invariant computations using complex tensor component magnitudes may not be meaningful due to potential phase differences among components.
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=4 )
+#: Warning: Invariant computations using complex tensor component magnitudes may not be meaningful due to potential phase differences among components.
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=3 )
+#: Warning: Invariant computations using complex tensor component magnitudes may not be meaningful due to potential phase differences among components.
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=2 )
+#: Warning: Invariant computations using complex tensor component magnitudes may not be meaningful due to potential phase differences among components.
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=1 )
+#: Warning: Invariant computations using complex tensor component magnitudes may not be meaningful due to potential phase differences among components.
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=0 )
+#: Warning: Invariant computations using complex tensor component magnitudes may not be meaningful due to potential phase differences among components.
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=1 )
+#: Warning: Invariant computations using complex tensor component magnitudes may not be meaningful due to potential phase differences among components.
+session.animationController.setValues(animationType=HARMONIC, viewports=(
+    'Viewport: 1', ))
+session.animationController.play(duration=UNLIMITED)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=20.3437, 
+    farPlane=37.7592, width=15.8366, height=6.77298, cameraPosition=(11.1744, 
+    -14.2309, 21.7082), cameraUpVector=(-0.191084, 0.891526, 0.410693), 
+    cameraTarget=(-0.685446, 3.83649, 1.16893), viewOffsetX=0.215527, 
+    viewOffsetY=-0.731706)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=21.0618, 
+    farPlane=36.8052, width=16.3956, height=7.01208, cameraPosition=(3.65023, 
+    -15.754, 23.0621), cameraUpVector=(-0.133028, 0.911568, 0.389034), 
+    cameraTarget=(-0.541343, 3.92644, 1.06079), viewOffsetX=0.223135, 
+    viewOffsetY=-0.757535)
+session.animationController.setValues(animationType=NONE)
+#: Warning: Invariant computations using complex tensor component magnitudes may not be meaningful due to potential phase differences among components.
+session.viewports['Viewport: 1'].view.setValues(nearPlane=20.1053, 
+    farPlane=38.3421, width=15.651, height=6.69363, cameraPosition=(20.7707, 
+    -10.4424, 16.3322), cameraUpVector=(-0.547778, 0.540547, 0.638551), 
+    cameraTarget=(-1.18567, 3.22142, 1.49433), viewOffsetX=0.213001, 
+    viewOffsetY=-0.723132)
+session.viewports['Viewport: 1'].odbDisplay.displayGroupInstances['BM'].setValues(
+    lockOptions=OFF)
+session.viewports['Viewport: 1'].odbDisplay.displayGroupInstances.syncOptions(
+    name='BM', updateInstances=OFF)
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='U', outputPosition=NODAL, refinement=(COMPONENT, 'U1'), )
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='U', outputPosition=NODAL, refinement=(COMPONENT, 'U3'), )
+session.viewports['Viewport: 1'].odbDisplay.setPrimaryVariable(
+    variableLabel='U', outputPosition=NODAL, refinement=(INVARIANT, 
+    'Magnitude'), )
+#: Warning: Invariant computations using complex tensor component magnitudes may not be meaningful due to potential phase differences among components.
+session.viewports['Viewport: 1'].view.setValues(nearPlane=20.3721, 
+    farPlane=38.0752, width=14.667, height=6.27277, viewOffsetX=0.215828, 
+    viewOffsetY=-0.732729)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=20.2626, 
+    farPlane=38.2092, width=14.5881, height=6.23906, cameraPosition=(18.0385, 
+    -13.8287, 16.5371), cameraUpVector=(-0.530796, 0.551612, 0.643413), 
+    cameraTarget=(-1.17487, 3.27883, 1.46647), viewOffsetX=0.214668, 
+    viewOffsetY=-0.72879)
+session.viewports['Viewport: 1'].odbDisplay.displayGroupInstances['BM'].setValues(
+    lockOptions=ON)
+session.viewports['Viewport: 1'].odbDisplay.displayGroupInstances.syncOptions(
+    name='ow', updateInstances=OFF)
+session.viewports['Viewport: 1'].odbDisplay.displayGroupInstances['ow'].setValues(
+    lockOptions=OFF)
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    DEFORMED, ))
+#: Warning: Invariant computations using complex tensor component magnitudes may not be meaningful due to potential phase differences among components.
+session.viewports['Viewport: 1'].odbDisplay.displayGroupInstances['ow'].setValues(
+    lockOptions=ON)
+session.viewports['Viewport: 1'].odbDisplay.displayGroupInstances['wall'].setValues(
+    lockOptions=OFF)
+session.viewports['Viewport: 1'].odbDisplay.displayGroupInstances['rw'].setValues(
+    lockOptions=OFF)
+session.viewports['Viewport: 1'].odbDisplay.displayGroupInstances['wall'].setValues(
+    lockOptions=ON)
+session.viewports['Viewport: 1'].odbDisplay.displayGroupInstances['rw'].setValues(
+    lockOptions=ON)
+session.viewports['Viewport: 1'].odbDisplay.displayGroupInstances['rw'].setValues(
+    lockOptions=OFF)
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    DEFORMED, ))
+#: Warning: Invariant computations using complex tensor component magnitudes may not be meaningful due to potential phase differences among components.
+session.viewports['Viewport: 1'].odbDisplay.displayGroupInstances['rw'].setValues(
+    lockOptions=ON)
+session.viewports['Viewport: 1'].odbDisplay.displayGroupInstances['BM'].setValues(
+    lockOptions=OFF)
+session.viewports['Viewport: 1'].odbDisplay.displayGroupInstances['BM'].setValues(
+    lockOptions=ON)
+session.viewports['Viewport: 1'].odbDisplay.displayGroupInstances['BM'].setValues(
+    lockOptions=OFF)
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    UNDEFORMED, ))
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+#: Warning: Invariant computations using complex tensor component magnitudes may not be meaningful due to potential phase differences among components.
+session.viewports['Viewport: 1'].view.setValues(nearPlane=20.4139, 
+    farPlane=37.7611, width=14.6971, height=6.28564, cameraPosition=(15.3334, 
+    -11.6376, 20.9859), cameraUpVector=(-0.684373, 0.545173, 0.48417), 
+    cameraTarget=(-1.31349, 3.2427, 1.2273), viewOffsetX=0.216271, 
+    viewOffsetY=-0.734232)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=20.6688, 
+    farPlane=37.3167, width=14.8806, height=6.36412, cameraPosition=(16.1441, 
+    -7.00185, 23.0186), cameraUpVector=(-0.741655, 0.544222, 0.392134), 
+    cameraTarget=(-1.36462, 3.16852, 1.13357), viewOffsetX=0.218971, 
+    viewOffsetY=-0.743398)
+session.animationController.setValues(animationType=HARMONIC, viewports=(
+    'Viewport: 1', ))
+session.animationController.play(duration=UNLIMITED)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=21.5696, 
+    farPlane=36.641, width=15.5291, height=6.6415, cameraPosition=(25.4616, 
+    2.09247, 14.7163), cameraUpVector=(-0.711474, 0.0864405, 0.697376), 
+    cameraTarget=(-1.31372, 2.45941, 1.60545), viewOffsetX=0.228514, 
+    viewOffsetY=-0.775797)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=22.2074, 
+    farPlane=36.0033, width=10.9553, height=4.68536, viewOffsetX=0.235271, 
+    viewOffsetY=-0.798736)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=21.5713, 
+    farPlane=36.2658, width=10.6415, height=4.55115, cameraPosition=(21.7651, 
+    5.7719, 19.8273), cameraUpVector=(-0.837865, -0.117807, 0.533014), 
+    cameraTarget=(-1.3523, 2.18971, 1.34223), viewOffsetX=0.228532, 
+    viewOffsetY=-0.775857)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=21.3575, 
+    farPlane=36.4796, width=12.2125, height=5.22305, viewOffsetX=0.226266, 
+    viewOffsetY=-0.768165)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=20.6256, 
+    farPlane=37.7597, width=11.794, height=5.04407, cameraPosition=(19.2518, 
+    -12.2709, 16.5936), cameraUpVector=(-0.737128, 0.269736, 0.619585), 
+    cameraTarget=(-1.38943, 2.99348, 1.43171), viewOffsetX=0.218512, 
+    viewOffsetY=-0.741841)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=21.0818, 
+    farPlane=37.2241, width=12.0549, height=5.15564, cameraPosition=(22.712, 
+    -5.6573, 16.8807), cameraUpVector=(-0.725437, 0.262969, 0.636073), 
+    cameraTarget=(-1.36064, 2.90198, 1.5122), viewOffsetX=0.223345, 
+    viewOffsetY=-0.75825)
+session.animationController.setValues(animationType=NONE)
+#: Warning: Invariant computations using complex tensor component magnitudes may not be meaningful due to potential phase differences among components.
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=2 )
+#: Warning: Invariant computations using complex tensor component magnitudes may not be meaningful due to potential phase differences among components.
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=3 )
+#: Warning: Invariant computations using complex tensor component magnitudes may not be meaningful due to potential phase differences among components.
+session.animationController.setValues(animationType=HARMONIC, viewports=(
+    'Viewport: 1', ))
+session.animationController.play(duration=UNLIMITED)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=21.329, 
+    farPlane=36.5133, width=12.1963, height=5.21609, cameraPosition=(20.2339, 
+    7.13049, 21.3094), cameraUpVector=(-0.874933, -0.105912, 0.472519), 
+    cameraTarget=(-1.35024, 2.34766, 1.30451), viewOffsetX=0.225964, 
+    viewOffsetY=-0.767141)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=21.5673, 
+    farPlane=36.527, width=12.3326, height=5.27438, cameraPosition=(23.9729, 
+    5.24629, 17.0747), cameraUpVector=(-0.777165, -0.0124372, 0.629173), 
+    cameraTarget=(-1.33477, 2.48337, 1.55581), viewOffsetX=0.228488, 
+    viewOffsetY=-0.775711)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=21.8301, 
+    farPlane=36.3268, width=12.4828, height=5.33866, cameraPosition=(24.0182, 
+    1.73048, 17.1483), cameraUpVector=(-0.774741, 0.0731686, 0.62803), 
+    cameraTarget=(-1.373, 2.62661, 1.54611), viewOffsetX=0.231272, 
+    viewOffsetY=-0.785162)
+session.animationController.setValues(animationType=NONE)
+#: Warning: Invariant computations using complex tensor component magnitudes may not be meaningful due to potential phase differences among components.
+session.viewports['Viewport: 1'].odbDisplay.displayGroupInstances['ow'].setValues(
+    lockOptions=OFF)
+session.viewports['Viewport: 1'].odbDisplay.displayGroupInstances['rw'].setValues(
+    lockOptions=OFF)
+session.viewports['Viewport: 1'].odbDisplay.displayGroupInstances.syncOptions(
+    name='rw', updateInstances=OFF)
+dg1=session.displayGroups['BM']
+dg2=session.displayGroups['lim']
+dg3=session.displayGroups['ow']
+dg4=session.displayGroups['wall']
+session.viewports['Viewport: 1'].odbDisplay.setValues(visibleDisplayGroups=(
+    dg1, dg2, dg3, dg4, ))
+#: Warning: Invariant computations using complex tensor component magnitudes may not be meaningful due to potential phase differences among components.
+session.viewports['Viewport: 1'].odbDisplay.displayGroupInstances.syncOptions(
+    name='ow', updateInstances=OFF)
+dg1=session.displayGroups['BM']
+dg2=session.displayGroups['lim']
+dg3=session.displayGroups['wall']
+session.viewports['Viewport: 1'].odbDisplay.setValues(visibleDisplayGroups=(
+    dg1, dg2, dg3, ))
+#: Warning: Invariant computations using complex tensor component magnitudes may not be meaningful due to potential phase differences among components.
+session.viewports['Viewport: 1'].view.setValues(nearPlane=22.0227, 
+    farPlane=36.134, width=11.1399, height=4.76433, viewOffsetX=0.233312, 
+    viewOffsetY=-0.792089)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=21.303, 
+    farPlane=37.0015, width=10.7759, height=4.60863, cameraPosition=(23.7943, 
+    -4.26642, 15.9061), cameraUpVector=(-0.657253, 0.375559, 0.653432), 
+    cameraTarget=(-1.332, 3.06574, 1.62844), viewOffsetX=0.225687, 
+    viewOffsetY=-0.766203)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=20.9915, 
+    farPlane=37.3349, width=10.6184, height=4.54125, cameraPosition=(21.7645, 
+    -8.53849, 16.3789), cameraUpVector=(-0.655379, 0.380917, 0.652212), 
+    cameraTarget=(-1.34409, 3.12552, 1.58401), viewOffsetX=0.222387, 
+    viewOffsetY=-0.755001)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=21.3066, 
+    farPlane=37.0199, width=8.81354, height=3.76937, viewOffsetX=0.225725, 
+    viewOffsetY=-0.766333)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=21.2899, 
+    farPlane=37.0366, width=8.80663, height=3.76642, viewOffsetX=0.314135, 
+    viewOffsetY=-1.63691)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=21.2929, 
+    farPlane=37.0335, width=8.78705, height=3.75804, viewOffsetX=0.31418, 
+    viewOffsetY=-1.63714)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=21.4937, 
+    farPlane=37.2872, width=8.86993, height=3.79349, cameraPosition=(23.5036, 
+    -9.27776, 13.1859), cameraUpVector=(-0.557201, 0.375965, 0.74039), 
+    cameraTarget=(-1.10677, 3.11337, 1.79586), viewOffsetX=0.317143, 
+    viewOffsetY=-1.65258)
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    DEFORMED, ))
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+#: Warning: Invariant computations using complex tensor component magnitudes may not be meaningful due to potential phase differences among components.
+session.viewports['Viewport: 1'].view.setValues(nearPlane=21.2586, 
+    farPlane=37.5223, width=10.2532, height=4.38511, viewOffsetX=0.313674, 
+    viewOffsetY=-1.6345)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=21.2735, 
+    farPlane=37.5074, width=10.2604, height=4.38818, viewOffsetX=0.562815, 
+    viewOffsetY=-0.590261)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=21.2735, 
+    farPlane=37.5074, width=10.2605, height=4.38819, cameraPosition=(23.4878, 
+    -9.39713, 13.0901), cameraUpVector=(-0.616067, 0.261475, 0.743029), 
+    cameraTarget=(-1.12252, 2.994, 1.70003), viewOffsetX=0.562816, 
+    viewOffsetY=-0.590262)
+session.animationController.setValues(animationType=HARMONIC, viewports=(
+    'Viewport: 1', ))
+session.animationController.play(duration=UNLIMITED)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=21.5389, 
+    farPlane=37.1963, width=10.3885, height=4.44295, cameraPosition=(22.5853, 
+    -5.49987, 17.5506), cameraUpVector=(-0.710136, 0.338671, 0.617259), 
+    cameraTarget=(-1.1573, 3.02545, 1.65877), viewOffsetX=0.569837, 
+    viewOffsetY=-0.597625)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=21.6634, 
+    farPlane=37.0718, width=9.49025, height=4.05879, viewOffsetX=0.573131, 
+    viewOffsetY=-0.601079)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=21.6546, 
+    farPlane=37.0806, width=9.4864, height=4.05714, viewOffsetX=1.15668, 
+    viewOffsetY=-1.44373)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=21.142, 
+    farPlane=37.1416, width=9.26186, height=3.96111, cameraPosition=(20.0209, 
+    -9.38324, 18.059), cameraUpVector=(-0.707419, 0.377715, 0.597403), 
+    cameraTarget=(-1.34483, 3.15395, 1.46782), viewOffsetX=1.1293, 
+    viewOffsetY=-1.40956)
+session.animationController.setValues(animationType=NONE)
+#: Warning: Invariant computations using complex tensor component magnitudes may not be meaningful due to potential phase differences among components.
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=2 )
+#: Warning: Invariant computations using complex tensor component magnitudes may not be meaningful due to potential phase differences among components.
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=1 )
+#: Warning: Invariant computations using complex tensor component magnitudes may not be meaningful due to potential phase differences among components.
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=0 )
+#: Warning: Invariant computations using complex tensor component magnitudes may not be meaningful due to potential phase differences among components.
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=1 )
+#: Warning: Invariant computations using complex tensor component magnitudes may not be meaningful due to potential phase differences among components.
+session.animationController.setValues(animationType=HARMONIC, viewports=(
+    'Viewport: 1', ))
+session.animationController.play(duration=UNLIMITED)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=22.5693, 
+    farPlane=35.7832, width=9.88713, height=4.22853, cameraPosition=(19.5, 
+    2.34553, 22.7732), cameraUpVector=(-0.83621, 0.407106, 0.367446), 
+    cameraTarget=(-1.3456, 3.16611, 1.47226), viewOffsetX=1.20554, 
+    viewOffsetY=-1.50472)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=21.5152, 
+    farPlane=36.8374, width=15.6318, height=6.68541, viewOffsetX=1.14923, 
+    viewOffsetY=-1.43444)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=21.6083, 
+    farPlane=36.7442, width=15.6995, height=6.71435, viewOffsetX=0.457483, 
+    viewOffsetY=-1.02217)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=20.8783, 
+    farPlane=36.8421, width=15.1692, height=6.48754, cameraPosition=(9.04783, 
+    -8.60736, 26.1147), cameraUpVector=(-0.80945, 0.549814, 0.206143), 
+    cameraTarget=(-1.41549, 3.49696, 0.956311), viewOffsetX=0.442029, 
+    viewOffsetY=-0.98764)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=20.4741, 
+    farPlane=37.816, width=14.8756, height=6.36198, cameraPosition=(17.9102, 
+    -8.19379, 21.1181), cameraUpVector=(-0.724744, 0.481784, 0.492576), 
+    cameraTarget=(-1.40663, 3.36454, 1.56803), viewOffsetX=0.433472, 
+    viewOffsetY=-0.968522)
+session.animationController.setValues(animationType=NONE)
+#: Warning: Invariant computations using complex tensor component magnitudes may not be meaningful due to potential phase differences among components.
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=2 )
+#: Warning: Invariant computations using complex tensor component magnitudes may not be meaningful due to potential phase differences among components.
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=3 )
+#: Warning: Invariant computations using complex tensor component magnitudes may not be meaningful due to potential phase differences among components.
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=4 )
+#: Warning: Invariant computations using complex tensor component magnitudes may not be meaningful due to potential phase differences among components.
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=5 )
+#: Warning: Invariant computations using complex tensor component magnitudes may not be meaningful due to potential phase differences among components.
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=6 )
+#: Warning: Invariant computations using complex tensor component magnitudes may not be meaningful due to potential phase differences among components.
+session.animationController.setValues(animationType=HARMONIC, viewports=(
+    'Viewport: 1', ))
+session.animationController.play(duration=UNLIMITED)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=20.6917, 
+    farPlane=38.3037, width=15.0337, height=6.42959, cameraPosition=(24.4807, 
+    16.9979, 8.98169), cameraUpVector=(-0.493584, -0.225485, 0.839959), 
+    cameraTarget=(-0.463931, 2.15477, 2.17098), viewOffsetX=0.438078, 
+    viewOffsetY=-0.978813)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=20.3882, 
+    farPlane=38.1012, width=14.8132, height=6.33531, cameraPosition=(13.5857, 
+    25.7182, 13.6497), cameraUpVector=(-0.409203, -0.539812, 0.735633), 
+    cameraTarget=(-0.188618, 1.95189, 2.05785), viewOffsetX=0.431653, 
+    viewOffsetY=-0.964457)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=20.3203, 
+    farPlane=38.3878, width=14.7639, height=6.31422, cameraPosition=(19.4137, 
+    22.1567, 11.7311), cameraUpVector=(-0.457082, -0.419727, 0.784159), 
+    cameraTarget=(-0.361461, 2.02719, 2.10381), viewOffsetX=0.430216, 
+    viewOffsetY=-0.961246)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=20.7681, 
+    farPlane=38.1057, width=15.0892, height=6.45336, cameraPosition=(25.217, 
+    13.7083, 11.2826), cameraUpVector=(-0.548818, -0.261561, 0.793968), 
+    cameraTarget=(-0.672273, 2.12569, 2.08874), viewOffsetX=0.439696, 
+    viewOffsetY=-0.982427)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=21.4219, 
+    farPlane=37.4518, width=10.7476, height=4.59654, viewOffsetX=0.453538, 
+    viewOffsetY=-1.01336)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=21.1399, 
+    farPlane=37.8564, width=10.6061, height=4.53602, cameraPosition=(21.2676, 
+    -14.941, 10.0596), cameraUpVector=(-0.22798, 0.593897, 0.771564), 
+    cameraTarget=(-0.886782, 3.42374, 2.25841), viewOffsetX=0.447567, 
+    viewOffsetY=-1.00002)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=21.1114, 
+    farPlane=37.8848, width=10.8882, height=4.65666, viewOffsetX=0.446964, 
+    viewOffsetY=-0.998672)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=22.0925, 
+    farPlane=38.0077, width=11.3942, height=4.87306, cameraPosition=(13.7563, 
+    -13.7072, -18.988), cameraUpVector=(0.373918, -0.240218, 0.895813), 
+    cameraTarget=(-0.056313, 2.17285, 2.1301), viewOffsetX=0.467735, 
+    viewOffsetY=-1.04508)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=23.4313, 
+    farPlane=36.5754, width=12.0847, height=5.16838, cameraPosition=(29.4539, 
+    4.99426, 3.27049), cameraUpVector=(-0.356778, 0.0822337, 0.930563), 
+    cameraTarget=(-0.284784, 2.931, 2.731), viewOffsetX=0.49608, 
+    viewOffsetY=-1.10841)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=22.834, 
+    farPlane=37.0068, width=11.7766, height=5.03662, cameraPosition=(28.7106, 
+    0.124309, 7.56717), cameraUpVector=(-0.478587, 0.0694248, 0.875291), 
+    cameraTarget=(-0.58144, 2.79966, 2.69324), viewOffsetX=0.483433, 
+    viewOffsetY=-1.08015)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=22.8687, 
+    farPlane=36.9721, width=11.7945, height=5.04427, viewOffsetX=1.53102, 
+    viewOffsetY=-1.5429)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=22.2076, 
+    farPlane=37.7059, width=11.4535, height=4.89845, cameraPosition=(22.4144, 
+    8.81233, 20.0346), cameraUpVector=(-0.837262, 0.0980541, 0.537938), 
+    cameraTarget=(-1.21743, 3.14687, 2.76103), viewOffsetX=1.48676, 
+    viewOffsetY=-1.4983)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=21.8272, 
+    farPlane=36.8898, width=11.2573, height=4.81453, cameraPosition=(21.0928, 
+    -1.49639, 20.9467), cameraUpVector=(-0.832481, 0.172002, 0.526679), 
+    cameraTarget=(-1.72463, 2.98705, 2.28667), viewOffsetX=1.46129, 
+    viewOffsetY=-1.47263)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=22.427, 
+    farPlane=36.2899, width=7.65863, height=3.27544, viewOffsetX=1.50144, 
+    viewOffsetY=-1.51309)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=22.3995, 
+    farPlane=36.3173, width=7.64925, height=3.27143, viewOffsetX=1.74854, 
+    viewOffsetY=-2.30417)
+session.animationController.setValues(animationType=NONE)
+#: Warning: Invariant computations using complex tensor component magnitudes may not be meaningful due to potential phase differences among components.
+session.viewports['Viewport: 1'].odbDisplay.setFrame(step=0, frame=5 )
+#: Warning: Invariant computations using complex tensor component magnitudes may not be meaningful due to potential phase differences among components.
+session.viewports['Viewport: 1'].view.setValues(nearPlane=22.7932, 
+    farPlane=37.2341, width=7.78368, height=3.32892, cameraPosition=(21.8137, 
+    9.27191, 20.692), cameraUpVector=(-0.846162, -0.0359461, 0.531712), 
+    cameraTarget=(-0.97139, 2.56556, 2.66991), viewOffsetX=1.77927, 
+    viewOffsetY=-2.34466)
+session.viewports['Viewport: 1'].odbDisplay.commonOptions.setValues(
+    deformationScaling=UNIFORM)
+#: Warning: Invariant computations using complex tensor component magnitudes may not be meaningful due to potential phase differences among components.
+session.viewports['Viewport: 1'].odbDisplay.commonOptions.setValues(
+    uniformScaleFactor=30)
+#: Warning: Invariant computations using complex tensor component magnitudes may not be meaningful due to potential phase differences among components.
+session.viewports['Viewport: 1'].view.setValues(nearPlane=139.008, 
+    farPlane=188.616, width=111.664, height=47.7563)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=140.804, 
+    farPlane=186.819, width=113.107, height=48.3735, viewOffsetX=6.62579, 
+    viewOffsetY=-18.8268)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=150.792, 
+    farPlane=176.831, width=49.7424, height=21.2738, viewOffsetX=7.09581, 
+    viewOffsetY=-20.1623)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=153.07, 
+    farPlane=174.553, width=31.7902, height=13.596, viewOffsetX=7.203, 
+    viewOffsetY=-20.4669)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=153.874, 
+    farPlane=173.749, width=25.9818, height=11.1119, viewOffsetX=7.24085, 
+    viewOffsetY=-20.5744)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=154.52, 
+    farPlane=175.592, width=26.0909, height=11.1585, cameraPosition=(75.8705, 
+    127.216, 82.1471), cameraUpVector=(-0.589861, -0.381347, 0.711786), 
+    cameraTarget=(2.15135, 8.77588, 27.7276), viewOffsetX=7.27124, 
+    viewOffsetY=-20.6608)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=153.994, 
+    farPlane=175.469, width=26.002, height=11.1205, cameraPosition=(105.7, 
+    98.6744, 86.4773), cameraUpVector=(-0.597513, -0.345221, 0.723741), 
+    cameraTarget=(5.19214, 4.57913, 27.5851), viewOffsetX=7.24648, 
+    viewOffsetY=-20.5904)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=155.232, 
+    farPlane=174.231, width=17.9444, height=7.67447, viewOffsetX=7.30472, 
+    viewOffsetY=-20.7559)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=155.086, 
+    farPlane=173.56, width=17.9275, height=7.66723, cameraPosition=(124.411, 
+    57.4575, 96.0739), cameraUpVector=(-0.665043, -0.30132, 0.683319), 
+    cameraTarget=(4.96844, -0.901949, 27.1407), viewOffsetX=7.29783, 
+    viewOffsetY=-20.7363)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=155.172, 
+    farPlane=173.672, width=17.9374, height=7.67148, cameraPosition=(132.834, 
+    62.3538, 80.5249), cameraUpVector=(-0.581739, -0.292093, 0.759119), 
+    cameraTarget=(7.86948, -0.0229736, 26.5143), viewOffsetX=7.30188, 
+    viewOffsetY=-20.7478)
+session.animationController.setValues(animationType=HARMONIC, viewports=(
+    'Viewport: 1', ))
+session.animationController.play(duration=UNLIMITED)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=156.935, 
+    farPlane=173.877, width=18.1413, height=7.75866, cameraPosition=(38.9869, 
+    157.254, 51.9246), cameraUpVector=(-0.525972, -0.346288, 0.776813), 
+    cameraTarget=(-0.555066, 15.1559, 26.0642), viewOffsetX=7.38486, 
+    viewOffsetY=-20.9836)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=157.211, 
+    farPlane=174.23, width=18.1732, height=7.77231, cameraPosition=(-42.7656, 
+    158, 48.1337), cameraUpVector=(-0.0272346, -0.49694, 0.867358), 
+    cameraTarget=(-0.808108, 16.0194, 25.6551), viewOffsetX=7.39785, 
+    viewOffsetY=-21.0205)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=157.384, 
+    farPlane=173.418, width=18.1933, height=7.78089, cameraPosition=(19.5006, 
+    154.617, 68.565), cameraUpVector=(-0.087664, -0.579852, 0.809992), 
+    cameraTarget=(6.79744, 11.5021, 26.3634), viewOffsetX=7.40601, 
+    viewOffsetY=-21.0437)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=156.514, 
+    farPlane=172.676, width=18.0928, height=7.73791, cameraPosition=(139.606, 
+    0.164071, 90.8012), cameraUpVector=(-0.701928, 0.00500077, 0.71223), 
+    cameraTarget=(4.03943, -3.62719, 27.3065), viewOffsetX=7.36508, 
+    viewOffsetY=-20.9274)
+session.animationController.setValues(animationType=NONE)
+#: Warning: Invariant computations using complex tensor component magnitudes may not be meaningful due to potential phase differences among components.
+session.viewports['Viewport: 1'].odbDisplay.displayGroupInstances.syncOptions(
+    name='BM', updateInstances=OFF)
+session.viewports['Viewport: 1'].odbDisplay.displayGroupInstances['BM'].setValues(
+    lockOptions=ON)
+dg1=session.displayGroups['lim']
+dg2=session.displayGroups['wall']
+session.viewports['Viewport: 1'].odbDisplay.setValues(visibleDisplayGroups=(
+    dg1, dg2, ))
+dg1=session.displayGroups['wall']
+session.viewports['Viewport: 1'].odbDisplay.setValues(visibleDisplayGroups=(
+    dg1, ))
+session.viewports['Viewport: 1'].odbDisplay.setValues(visibleDisplayGroups=())
+leaf = dgo.LeafFromElementSets(elementSets=('INST1.FLUID_YMINUS', ))
+session.viewports['Viewport: 1'].odbDisplay.displayGroup.replace(leaf=leaf)
+leaf = dgo.LeafFromElementSets(elementSets=('INST1.FLUID_YPLUS', ))
+session.viewports['Viewport: 1'].odbDisplay.displayGroup.replace(leaf=leaf)
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+#: Warning: Invariant computations using complex tensor component magnitudes may not be meaningful due to potential phase differences among components.
+dg1= session.displayGroups['BM']
+session.viewports['Viewport: 1'].odbDisplay.setValues(visibleDisplayGroups=(
+    dg1, ))
+session.viewports['Viewport: 1'].odbDisplay.displayGroupInstances['BM'].setValues(
+    lockOptions=OFF)
+#: Warning: Invariant computations using complex tensor component magnitudes may not be meaningful due to potential phase differences among components.
+dg1= session.displayGroups['All']
+session.viewports['Viewport: 1'].odbDisplay.setValues(visibleDisplayGroups=(
+    dg1, ))
+#: Warning: Invariant computations using complex tensor component magnitudes may not be meaningful due to potential phase differences among components.
+session.viewports['Viewport: 1'].odbDisplay.displayGroupInstances['All'].setValues(
+    lockOptions=ON)
+session.viewports['Viewport: 1'].odbDisplay.setValues(visibleDisplayGroups=())
+leaf = dgo.LeafFromElementSets(elementSets=('INST1.FLUID_YPLUS', ))
+session.viewports['Viewport: 1'].odbDisplay.displayGroup.replace(leaf=leaf)
+#: Warning: Invariant computations using complex tensor component magnitudes may not be meaningful due to potential phase differences among components.
+dg = session.viewports['Viewport: 1'].odbDisplay.displayGroup
+dg = session.DisplayGroup(name='DisplayGroup-7', objectToCopy=dg)
+session.viewports['Viewport: 1'].odbDisplay.setValues(visibleDisplayGroups=(dg, 
+    ))
+session.viewports['Viewport: 1'].odbDisplay.displayGroupInstances['DisplayGroup-7'].setValues(
+    lockOptions=OFF)
+#: Warning: Invariant computations using complex tensor component magnitudes may not be meaningful due to potential phase differences among components.
+session.viewports['Viewport: 1'].odbDisplay.displayGroupInstances['DisplayGroup-7'].setValues(
+    lockOptions=ON)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=188.977, 
+    farPlane=350.103, width=140.94, height=60.2772, cameraPosition=(169.687, 
+    119.958, 75.2179), cameraUpVector=(-0.601517, -0.223491, 0.766961), 
+    cameraTarget=(-54.3033, 1.99816, -17.6352))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=190.772, 
+    farPlane=348.309, width=142.278, height=60.8496)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=190.794, 
+    farPlane=348.287, width=142.295, height=60.8566)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=174.072, 
+    farPlane=365.008, width=231.926, height=99.1903)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=194.126, 
+    farPlane=344.955, width=131.312, height=56.1595)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=192.606, 
+    farPlane=346.475, width=130.284, height=55.7198, viewOffsetX=-8.48002, 
+    viewOffsetY=-2.54675)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=205.41, 
+    farPlane=333.671, width=47.4386, height=20.2885, viewOffsetX=-9.04376, 
+    viewOffsetY=-2.71605)
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    UNDEFORMED, ))
+#: Warning: All active display groups are currently locked; therefore, plot options or the plot state may not be changed.
+#: 
+#: Use the Display Group Manager to unlock display groups.
+session.viewports['Viewport: 1'].odbDisplay.displayGroupInstances['DisplayGroup-7'].setValues(
+    lockOptions=OFF)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=204.983, 
+    farPlane=334.098, width=47.34, height=20.2463, viewOffsetX=-23.6191, 
+    viewOffsetY=0.149883)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=208.582, 
+    farPlane=330.499, width=23.658, height=10.1181, viewOffsetX=-24.0338, 
+    viewOffsetY=0.152515)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=209.294, 
+    farPlane=329.787, width=18.5556, height=7.93586, viewOffsetX=-24.1158, 
+    viewOffsetY=0.153035)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=208.789, 
+    farPlane=324.36, width=18.5109, height=7.91672, cameraPosition=(158.043, 
+    141.931, 62.5377), cameraUpVector=(-0.547903, -0.255223, 0.796658), 
+    cameraTarget=(-56.9933, 0.487902, -17.8435), viewOffsetX=-24.0576, 
+    viewOffsetY=0.152666)
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    UNDEFORMED, ))
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+#: Warning: Invariant computations using complex tensor component magnitudes may not be meaningful due to potential phase differences among components.
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    UNDEFORMED, ))
+session.viewports['Viewport: 1'].odbDisplay.commonOptions.setValues(
+    deformationScaling=AUTO)
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+#: Warning: Invariant computations using complex tensor component magnitudes may not be meaningful due to potential phase differences among components.
+session.viewports['Viewport: 1'].view.setValues(nearPlane=59.099, 
+    farPlane=100.222, width=24.7378, height=10.5799)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=61.7241, 
+    farPlane=100.936, width=25.8367, height=11.0499, cameraPosition=(48.8355, 
+    -47.2786, 12.2522), cameraUpVector=(-0.599998, 0.0344051, 0.799261))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=60.0046, 
+    farPlane=101.659, width=25.1171, height=10.7421, cameraPosition=(50.4688, 
+    -31.6084, 34.1032), cameraUpVector=(-0.69166, 0.233944, 0.683284), 
+    cameraTarget=(-11.9608, 2.37296, -1.86408))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=60.0962, 
+    farPlane=101.568, width=25.1555, height=10.7585, viewOffsetX=2.11366, 
+    viewOffsetY=-1.92223)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=61.0707, 
+    farPlane=100.593, width=18.9381, height=8.09945, viewOffsetX=2.14794, 
+    viewOffsetY=-1.9534)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=61.173, 
+    farPlane=100.604, width=18.9698, height=8.11302, cameraPosition=(50.3448, 
+    -34.8487, 30.9319), cameraUpVector=(-0.661772, 0.233979, 0.712259), 
+    cameraTarget=(-11.9778, 2.34245, -1.90928), viewOffsetX=2.15154, 
+    viewOffsetY=-1.95667)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=61.8742, 
+    farPlane=99.903, width=14.3961, height=6.15694, viewOffsetX=2.1762, 
+    viewOffsetY=-1.9791)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=62.3441, 
+    farPlane=99.4331, width=11.1752, height=4.77942, viewOffsetX=2.19273, 
+    viewOffsetY=-1.99413)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=62.1763, 
+    farPlane=99.5507, width=11.1451, height=4.76655, cameraPosition=(50.8389, 
+    -31.114, 33.9844), cameraUpVector=(-0.673839, 0.264792, 0.689802), 
+    cameraTarget=(-11.9402, 2.47632, -1.74109), viewOffsetX=2.18683, 
+    viewOffsetY=-1.98876)
+session.animationController.setValues(animationType=HARMONIC, viewports=(
+    'Viewport: 1', ))
+session.animationController.play(duration=UNLIMITED)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=62.9155, 
+    farPlane=98.8115, width=6.29946, height=2.69415, viewOffsetX=2.21283, 
+    viewOffsetY=-2.0124)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=63.2243, 
+    farPlane=98.5027, width=4.18029, height=1.78783, viewOffsetX=2.22369, 
+    viewOffsetY=-2.02228)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=62.0536, 
+    farPlane=99.6734, width=11.7723, height=5.03478, viewOffsetX=2.18252, 
+    viewOffsetY=-1.98483)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=62.0858, 
+    farPlane=99.6412, width=11.7784, height=5.03739, viewOffsetX=6.43503, 
+    viewOffsetY=-3.82779)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=62.342, 
+    farPlane=99.385, width=10.1054, height=4.3219, viewOffsetX=6.46158, 
+    viewOffsetY=-3.84358)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=62.3359, 
+    farPlane=99.3911, width=10.1045, height=4.32148, cameraPosition=(61.9541, 
+    -16.2673, 28.4115), cameraUpVector=(0.233514, 0.219483, -0.947258), 
+    cameraTarget=(-0.825042, 17.3231, -7.31394), viewOffsetX=6.46095, 
+    viewOffsetY=-3.84321)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=61.5005, 
+    farPlane=100.226, width=15.4851, height=6.62265, viewOffsetX=6.37437, 
+    viewOffsetY=-3.79171)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=61.5308, 
+    farPlane=100.196, width=15.4927, height=6.62593, viewOffsetX=9.44855, 
+    viewOffsetY=-6.04199)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=61.5349, 
+    farPlane=100.192, width=15.4663, height=6.61461, viewOffsetX=9.44918, 
+    viewOffsetY=-6.0424)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=62.916, 
+    farPlane=94.4367, width=15.8134, height=6.76308, cameraPosition=(38.2613, 
+    -9.75258, 60.0081), cameraUpVector=(0.644506, 0.0859445, -0.759754), 
+    cameraTarget=(-0.109758, 17.0203, -4.46451), viewOffsetX=9.66125, 
+    viewOffsetY=-6.17801)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=60.8488, 
+    farPlane=96.5039, width=31.4475, height=13.4495, viewOffsetX=8.39137, 
+    viewOffsetY=-6.88809)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=61.2332, 
+    farPlane=96.1195, width=27.0397, height=11.5643, viewOffsetX=8.44438, 
+    viewOffsetY=-6.93161)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=61.1897, 
+    farPlane=96.1629, width=27.0205, height=11.5561, viewOffsetX=7.60699, 
+    viewOffsetY=-1.03659)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=62.1619, 
+    farPlane=95.1908, width=20.8391, height=8.91246, viewOffsetX=7.72785, 
+    viewOffsetY=-1.05306)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=62.9404, 
+    farPlane=94.4123, width=15.5067, height=6.6319, viewOffsetX=7.82463, 
+    viewOffsetY=-1.06625)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=62.911, 
+    farPlane=94.4416, width=15.4995, height=6.62881, viewOffsetX=11.2052, 
+    viewOffsetY=-2.6541)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=63.9292, 
+    farPlane=93.4235, width=8.82579, height=3.77461, viewOffsetX=11.3866, 
+    viewOffsetY=-2.69706)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=63.9086, 
+    farPlane=93.444, width=8.82295, height=3.7734, viewOffsetX=9.62879, 
+    viewOffsetY=-1.16488)
+session.viewports['Viewport: 1'].view.setValues(viewOffsetX=9.66534, 
+    viewOffsetY=-0.532496)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=63.4244, 
+    farPlane=93.9283, width=11.9723, height=5.12033, viewOffsetX=9.5921, 
+    viewOffsetY=-0.528461)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=60.5016, 
+    farPlane=83.2665, width=11.4206, height=4.88437, cameraPosition=(-9.63408, 
+    38.2556, 65.5908), cameraUpVector=(0.564672, -0.822018, 0.0736974), 
+    cameraTarget=(7.83003, 11.4096, -7.34847), viewOffsetX=9.15006, 
+    viewOffsetY=-0.504108)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=60.582, 
+    farPlane=83.186, width=11.4358, height=4.89086, viewOffsetX=7.09837, 
+    viewOffsetY=2.42839)
+session.viewports['Viewport: 1'].view.setValues(width=11.5513, height=4.94027, 
+    viewOffsetX=7.08834, viewOffsetY=2.42039)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=60.5653, 
+    farPlane=83.2027, width=11.5481, height=4.9389, viewOffsetX=7.02487, 
+    viewOffsetY=3.94517)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=60.8635, 
+    farPlane=82.9046, width=9.59986, height=4.10566, viewOffsetX=7.05945, 
+    viewOffsetY=3.96459)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=60.8566, 
+    farPlane=82.9115, width=9.59877, height=4.1052, viewOffsetX=8.17188, 
+    viewOffsetY=5.46521)
+session.viewports['Viewport: 1'].view.setValues(viewOffsetX=11.1651, 
+    viewOffsetY=5.29463)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=61.1859, 
+    farPlane=82.5822, width=7.43504, height=3.17982, viewOffsetX=11.2255, 
+    viewOffsetY=5.32328)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=45.4716, 
+    farPlane=81.7483, width=5.52551, height=2.36315, cameraPosition=(-66.4488, 
+    -21.121, 27.5731), cameraUpVector=(0.78471, -0.411857, 0.463255), 
+    cameraTarget=(-0.03318, 17.7144, 6.91852), viewOffsetX=8.34246, 
+    viewOffsetY=3.95611)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=45.7516, 
+    farPlane=81.4683, width=5.55954, height=2.3777, cameraPosition=(-67.3362, 
+    -20.6544, 25.5968), cameraUpVector=(0.756898, -0.302599, 0.579257), 
+    cameraTarget=(-0.9206, 18.181, 4.94222), viewOffsetX=8.39383, 
+    viewOffsetY=3.98047)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=45.0501, 
+    farPlane=81.9171, width=5.47429, height=2.34124, cameraPosition=(-66.4879, 
+    0.225854, 35.3767), cameraUpVector=(0.758717, -0.291162, 0.582729), 
+    cameraTarget=(2.53184, 14.8428, -1.61582), viewOffsetX=8.26513, 
+    viewOffsetY=3.91944)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=45.0626, 
+    farPlane=81.9046, width=5.47581, height=2.34189, viewOffsetX=6.36547, 
+    viewOffsetY=3.94648)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=45.2509, 
+    farPlane=81.7162, width=4.23302, height=1.81038, viewOffsetX=6.39207, 
+    viewOffsetY=3.96297)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=45.0411, 
+    farPlane=81.926, width=5.5936, height=2.39227, viewOffsetX=6.36244, 
+    viewOffsetY=3.9446)
+session.animationController.setValues(animationType=NONE)
+#: Warning: Invariant computations using complex tensor component magnitudes may not be meaningful due to potential phase differences among components.
+dg1= session.displayGroups['BM']
+session.viewports['Viewport: 1'].odbDisplay.setValues(visibleDisplayGroups=(
+    dg1, ))
+#: Warning: Invariant computations using complex tensor component magnitudes may not be meaningful due to potential phase differences among components.
+dg1= session.displayGroups['lim']
+dg2= session.displayGroups['BM']
+session.viewports['Viewport: 1'].odbDisplay.setValues(visibleDisplayGroups=(
+    dg1, dg2, ))
+#: Warning: Invariant computations using complex tensor component magnitudes may not be meaningful due to potential phase differences among components.
+session.viewports['Viewport: 1'].odbDisplay.displayGroupInstances['lim'].setValues(
+    lockOptions=OFF)
+session.viewports['Viewport: 1'].odbDisplay.displayGroupInstances.syncOptions(
+    name='lim', updateInstances=OFF)
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+#: Warning: Invariant computations using complex tensor component magnitudes may not be meaningful due to potential phase differences among components.
+session.viewports['Viewport: 1'].view.setValues(nearPlane=67.5763, 
+    farPlane=80.5632, width=11.0631, height=4.73145, viewOffsetX=9.54573, 
+    viewOffsetY=5.91818)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=65.6013, 
+    farPlane=80.0151, width=10.7398, height=4.59318, cameraPosition=(-27.8778, 
+    64.498, 31.8008), cameraUpVector=(0.678598, -0.458878, 0.573529), 
+    cameraTarget=(6.69059, 5.92161, -9.66792), viewOffsetX=9.26674, 
+    viewOffsetY=5.74521)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=64.02, 
+    farPlane=81.5964, width=21.1117, height=9.02907, viewOffsetX=9.04337, 
+    viewOffsetY=5.60672)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=64.5965, 
+    farPlane=81.0041, width=21.3019, height=9.11038, cameraPosition=(58.3636, 
+    21.3494, 43.6556), cameraUpVector=(-0.676001, -0.566658, 0.471085), 
+    cameraTarget=(4.24299, -4.52269, -8.76009), viewOffsetX=9.12481, 
+    viewOffsetY=5.65721)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=63.9735, 
+    farPlane=81.3651, width=21.0965, height=9.02253, cameraPosition=(45.7482, 
+    46.2534, 40.8245), cameraUpVector=(-0.599562, -0.569106, 0.562711), 
+    cameraTarget=(7.43724, -5.93696, -5.58937), viewOffsetX=9.03681, 
+    viewOffsetY=5.60265)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=64.5035, 
+    farPlane=80.8351, width=17.8855, height=7.64927, viewOffsetX=9.11168, 
+    viewOffsetY=5.64907)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=64.4836, 
+    farPlane=80.855, width=17.88, height=7.64691, viewOffsetX=10.4314, 
+    viewOffsetY=4.80003)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=65.1681, 
+    farPlane=80.1705, width=13.4401, height=5.74805, viewOffsetX=10.5421, 
+    viewOffsetY=4.85098)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=65.5069, 
+    farPlane=80.4467, width=13.51, height=5.77794, cameraPosition=(37.3272, 
+    59.3409, 32.9371), cameraUpVector=(-0.482417, -0.579392, 0.656947), 
+    cameraTarget=(9.18397, -5.23499, -4.26134), viewOffsetX=10.5969, 
+    viewOffsetY=4.8762)
+leaf = dgo.LeafFromElementSets(elementSets=('INST1.BM0000214700', ))
+session.viewports['Viewport: 1'].odbDisplay.displayGroup.replace(leaf=leaf)
+#* Cannot perform the requested display group operation. This is most likely 
+#* caused when more than one display groups are displayed.
+leaf = dgo.LeafFromElementSets(elementSets=('INST1.BM0000214700', ))
+session.viewports['Viewport: 1'].odbDisplay.displayGroup.replace(leaf=leaf)
+#* Cannot perform the requested display group operation. This is most likely 
+#* caused when more than one display groups are displayed.
+dg1=session.displayGroups['BM']
+session.viewports['Viewport: 1'].odbDisplay.setValues(visibleDisplayGroups=(
+    dg1, ))
+#: Warning: Invariant computations using complex tensor component magnitudes may not be meaningful due to potential phase differences among components.
+session.viewports['Viewport: 1'].odbDisplay.setValues(visibleDisplayGroups=())
+leaf = dgo.LeafFromElementSets(elementSets=('INST1.BM0000214700', ))
+session.viewports['Viewport: 1'].odbDisplay.displayGroup.replace(leaf=leaf)
+#: Warning: Invariant computations using complex tensor component magnitudes may not be meaningful due to potential phase differences among components.
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    UNDEFORMED, ))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.213063, 
+    farPlane=0.434012, width=0.259603, height=0.111027)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.202647, 
+    farPlane=0.444429, width=0.342314, height=0.146401)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.205766, 
+    farPlane=0.441309, width=0.347583, height=0.148654, viewOffsetX=0.105098, 
+    viewOffsetY=-0.00720624)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.0793394, 
+    farPlane=0.567736, width=0.460358, height=0.196886, viewOffsetX=0.0405238, 
+    viewOffsetY=-0.00277859)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.697465, 
+    farPlane=1.39493, width=2.14091, height=0.915625, cameraPosition=(0.517772, 
+    0.861215, 0.495129), viewOffsetX=0.11051, viewOffsetY=-0.0075773)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.675828, 
+    farPlane=1.4101, width=2.0745, height=0.88722, viewOffsetX=0.605452, 
+    viewOffsetY=0.0110903)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.521187, 
+    farPlane=1.56474, width=2.38421, height=1.01968, viewOffsetX=0.466915, 
+    viewOffsetY=0.00855266)
+leaf = dgo.LeafFromElementSets(elementSets=('INST1.BM0000214708', ))
+session.viewports['Viewport: 1'].odbDisplay.displayGroup.add(leaf=leaf)
+leaf = dgo.LeafFromElementSets(elementSets=('INST1.BM0000214716', ))
+session.viewports['Viewport: 1'].odbDisplay.displayGroup.add(leaf=leaf)
+leaf = dgo.LeafFromElementSets(elementSets=('INST1.BM0000214724', ))
+session.viewports['Viewport: 1'].odbDisplay.displayGroup.add(leaf=leaf)
+leaf = dgo.LeafFromElementSets(elementSets=('INST1.BM0000214732', ))
+session.viewports['Viewport: 1'].odbDisplay.displayGroup.add(leaf=leaf)
+leaf = dgo.LeafFromElementSets(elementSets=('INST1.BM0000214740', 
+    'INST1.BM0000214748', 'INST1.BM0000214756', 'INST1.BM0000214764', 
+    'INST1.BM0000214772', 'INST1.BM0000214780', 'INST1.BM0000214788', 
+    'INST1.BM0000214796', ))
+session.viewports['Viewport: 1'].odbDisplay.displayGroup.add(leaf=leaf)
+leaf = dgo.LeafFromElementSets(elementSets=('INST1.BM0000214700', ))
+session.viewports['Viewport: 1'].odbDisplay.displayGroup.replace(leaf=leaf)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.66017, 
+    farPlane=3.76406, width=2.8457, height=1.21705)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.27036, 
+    farPlane=4.15387, width=4.89214, height=2.09227)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.36881, 
+    farPlane=4.05542, width=5.10428, height=2.183, viewOffsetX=-0.247663, 
+    viewOffsetY=-0.510979)
+leaf = dgo.LeafFromElementSets(elementSets=('INST1.BM', ))
+session.viewports['Viewport: 1'].odbDisplay.displayGroup.replace(leaf=leaf)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=14.7827, 
+    farPlane=28.6439, width=13.0877, height=5.59736, viewOffsetX=1.89733, 
+    viewOffsetY=-0.255835)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=13.2709, 
+    farPlane=26.4209, width=11.7493, height=5.02492, cameraPosition=(16.7038, 
+    9.45708, 11.1347), cameraUpVector=(-0.666751, -0.350627, 0.65765), 
+    cameraTarget=(-0.942796, 2.52281, 0.552578), viewOffsetX=1.70329, 
+    viewOffsetY=-0.229671)
+leaf = dgo.LeafFromElementSets(elementSets=('INST1.BM0000214700', ))
+session.viewports['Viewport: 1'].odbDisplay.displayGroup.replace(leaf=leaf)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.226145, 
+    farPlane=0.424912, width=0.222713, height=0.0952498)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.215323, 
+    farPlane=0.435735, width=0.300145, height=0.128366)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.195314, 
+    farPlane=0.455744, width=0.406456, height=0.173833)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.160308, 
+    farPlane=0.490749, width=0.545259, height=0.233196)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.0846122, 
+    farPlane=0.566446, width=0.556488, height=0.237999)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.687292, 
+    farPlane=1.37458, width=2.2489, height=0.961808, cameraPosition=(0.990091, 
+    0.337114, 0.510032))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.616137, 
+    farPlane=1.43923, width=2.28822, height=0.978626)
+leaf = dgo.LeafFromElementSets(elementSets=('INST1.BM', ))
+session.viewports['Viewport: 1'].odbDisplay.displayGroup.replace(leaf=leaf)
+leaf = dgo.LeafFromElementSets(elementSets=('INST1.BM0000214700', 
+    'INST1.BM0000214708', 'INST1.BM0000214716', 'INST1.BM0000214724', 
+    'INST1.BM0000214732', 'INST1.BM0000214740', 'INST1.BM0000214748', 
+    'INST1.BM0000214756', 'INST1.BM0000214764', 'INST1.BM0000214772', 
+    'INST1.BM0000214780', 'INST1.BM0000214788', 'INST1.BM0000214796', 
+    'INST1.BM0000214804', 'INST1.BM0000214812', 'INST1.BM0000214820', 
+    'INST1.BM0000214828', 'INST1.BM0000214836', 'INST1.BM0000214844', 
+    'INST1.BM0000214852', 'INST1.BM0000214860', 'INST1.BM0000214868', 
+    'INST1.BM0000214876', 'INST1.BM0000214884', 'INST1.BM0000214892', 
+    'INST1.BM0000214900', 'INST1.BM0000214908', 'INST1.BM0000214916', 
+    'INST1.BM0000214924', 'INST1.BM0000214932', 'INST1.BM0000214940', 
+    'INST1.BM0000214948', 'INST1.BM0000214956', 'INST1.BM0000214964', 
+    'INST1.BM0000214972', 'INST1.BM0000214980', 'INST1.BM0000214988', 
+    'INST1.BM0000214996', 'INST1.BM0000215004', 'INST1.BM0000215012', 
+    'INST1.BM0000215020', 'INST1.BM0000215028', 'INST1.BM0000215036', 
+    'INST1.BM0000215044', 'INST1.BM0000215052', 'INST1.BM0000215060', 
+    'INST1.BM0000215068', 'INST1.BM0000215076', 'INST1.BM0000215084', 
+    'INST1.BM0000215092', 'INST1.BM0000215100', 'INST1.BM0000215108', 
+    'INST1.BM0000215116', 'INST1.BM0000215124', 'INST1.BM0000215132', 
+    'INST1.BM0000215140', 'INST1.BM0000215148', 'INST1.BM0000215156', 
+    'INST1.BM0000215164', 'INST1.BM0000215172', 'INST1.BM0000215180', 
+    'INST1.BM0000215188', 'INST1.BM0000215196', 'INST1.BM0000215204', 
+    'INST1.BM0000215212', 'INST1.BM0000215220', 'INST1.BM0000215228', 
+    'INST1.BM0000215236', 'INST1.BM0000215244', 'INST1.BM0000215252', 
+    'INST1.BM0000215260', 'INST1.BM0000215268', 'INST1.BM0000215276', 
+    'INST1.BM0000215284', 'INST1.BM0000215292', 'INST1.BM0000215300', 
+    'INST1.BM0000215308', 'INST1.BM0000215316', 'INST1.BM0000215324', 
+    'INST1.BM0000215332', 'INST1.BM0000215340', 'INST1.BM0000215348', 
+    'INST1.BM0000215356', 'INST1.BM0000215364', 'INST1.BM0000215372', 
+    'INST1.BM0000215380', 'INST1.BM0000215388', 'INST1.BM0000215396', 
+    'INST1.BM0000215404', 'INST1.BM0000215412', 'INST1.BM0000215420', 
+    'INST1.BM0000215428', 'INST1.BM0000215436', 'INST1.BM0000215444', 
+    'INST1.BM0000215452', 'INST1.BM0000215460', 'INST1.BM0000215468', 
+    'INST1.BM0000215476', 'INST1.BM0000215484', 'INST1.BM0000215492', 
+    'INST1.BM0000215500', 'INST1.BM0000215508', 'INST1.BM0000215516', 
+    'INST1.BM0000215524', 'INST1.BM0000215532', 'INST1.BM0000215540', 
+    'INST1.BM0000215548', 'INST1.BM0000215556', 'INST1.BM0000215564', 
+    'INST1.BM0000215572', 'INST1.BM0000215580', 'INST1.BM0000215588', 
+    'INST1.BM0000215596', 'INST1.BM0000215604', 'INST1.BM0000215612', 
+    'INST1.BM0000215620', 'INST1.BM0000215628', 'INST1.BM0000215636', 
+    'INST1.BM0000215644', 'INST1.BM0000215652', 'INST1.BM0000215660', 
+    'INST1.BM0000215668', 'INST1.BM0000215676', 'INST1.BM0000215684', 
+    'INST1.BM0000215692', 'INST1.BM0000215700', 'INST1.BM0000215708', 
+    'INST1.BM0000215716', 'INST1.BM0000215724', 'INST1.BM0000215732', 
+    'INST1.BM0000215740', 'INST1.BM0000215748', 'INST1.BM0000215756', 
+    'INST1.BM0000215764', 'INST1.BM0000215772', 'INST1.BM0000215780', 
+    'INST1.BM0000215788', 'INST1.BM0000215796', 'INST1.BM0000215804', 
+    'INST1.BM0000215812', 'INST1.BM0000215820', 'INST1.BM0000215828', 
+    'INST1.BM0000215836', 'INST1.BM0000215844', 'INST1.BM0000215852', 
+    'INST1.BM0000215860', 'INST1.BM0000215868', 'INST1.BM0000215876', 
+    'INST1.BM0000215884', 'INST1.BM0000215892', 'INST1.BM0000215900', 
+    'INST1.BM0000215908', 'INST1.BM0000215916', 'INST1.BM0000215924', 
+    'INST1.BM0000215932', 'INST1.BM0000215940', 'INST1.BM0000215948', 
+    'INST1.BM0000215956', 'INST1.BM0000215964', 'INST1.BM0000215972', 
+    'INST1.BM0000215980', 'INST1.BM0000215988', 'INST1.BM0000215996', 
+    'INST1.BM0000216004', 'INST1.BM0000216012', 'INST1.BM0000216020', 
+    'INST1.BM0000216028', 'INST1.BM0000216036', 'INST1.BM0000216044', 
+    'INST1.BM0000216052', 'INST1.BM0000216060', 'INST1.BM0000216068', 
+    'INST1.BM0000216076', 'INST1.BM0000216084', 'INST1.BM0000216092', 
+    'INST1.BM0000216100', 'INST1.BM0000216108', 'INST1.BM0000216116', 
+    'INST1.BM0000216124', 'INST1.BM0000216132', 'INST1.BM0000216140', 
+    'INST1.BM0000216148', 'INST1.BM0000216156', 'INST1.BM0000216164', 
+    'INST1.BM0000216172', 'INST1.BM0000216180', 'INST1.BM0000216188', 
+    'INST1.BM0000216196', 'INST1.BM0000216204', 'INST1.BM0000216212', 
+    'INST1.BM0000216220', 'INST1.BM0000216228', 'INST1.BM0000216236', 
+    'INST1.BM0000216244', 'INST1.BM0000216252', 'INST1.BM0000216260', 
+    'INST1.BM0000216268', 'INST1.BM0000216276', 'INST1.BM0000216284', 
+    'INST1.BM0000216292', 'INST1.BM0000216300', 'INST1.BM0000216308', 
+    'INST1.BM0000216316', 'INST1.BM0000216324', 'INST1.BM0000216332', 
+    'INST1.BM0000216340', 'INST1.BM0000216348', 'INST1.BM0000216356', 
+    'INST1.BM0000216364', 'INST1.BM0000216372', 'INST1.BM0000216380', 
+    'INST1.BM0000216388', 'INST1.BM0000216396', 'INST1.BM0000216404', 
+    'INST1.BM0000216412', 'INST1.BM0000216420', 'INST1.BM0000216428', 
+    'INST1.BM0000216436', 'INST1.BM0000216444', 'INST1.BM0000216452', 
+    'INST1.BM0000216460', 'INST1.BM0000216468', 'INST1.BM0000216476', 
+    'INST1.BM0000216484', 'INST1.BM0000216492', 'INST1.BM0000216500', 
+    'INST1.BM0000216508', 'INST1.BM0000216516', 'INST1.BM0000216524', 
+    'INST1.BM0000216532', 'INST1.BM0000216540', 'INST1.BM0000216548', 
+    'INST1.BM0000216556', 'INST1.BM0000216564', 'INST1.BM0000216572', 
+    'INST1.BM0000216580', 'INST1.BM0000216588', 'INST1.BM0000216596', 
+    'INST1.BM0000216604', 'INST1.BM0000216612', 'INST1.BM0000216620', 
+    'INST1.BM0000216628', 'INST1.BM0000216636', 'INST1.BM0000216644', 
+    'INST1.BM0000216652', 'INST1.BM0000216660', 'INST1.BM0000216668', 
+    'INST1.BM0000216676', 'INST1.BM0000216684', 'INST1.BM0000216692', 
+    'INST1.BM0000216700', 'INST1.BM0000216708', 'INST1.BM0000216716', 
+    'INST1.BM0000216724', 'INST1.BM0000216732', 'INST1.BM0000216740', 
+    'INST1.BM0000216748', 'INST1.BM0000216756', 'INST1.BM0000216764', 
+    'INST1.BM0000216772', 'INST1.BM0000216780', 'INST1.BM0000216788', 
+    'INST1.BM0000216796', 'INST1.BM0000216804', 'INST1.BM0000216812', 
+    'INST1.BM0000216820', 'INST1.BM0000216828', 'INST1.BM0000216836', 
+    'INST1.BM0000216844', 'INST1.BM0000216852', 'INST1.BM0000216860', 
+    'INST1.BM0000216868', 'INST1.BM0000216876', 'INST1.BM0000216884', 
+    'INST1.BM0000216892', 'INST1.BM0000216900', 'INST1.BM0000216908', 
+    'INST1.BM0000216916', 'INST1.BM0000216924', 'INST1.BM0000216932', 
+    'INST1.BM0000216940', 'INST1.BM0000216948', 'INST1.BM0000216956', 
+    'INST1.BM0000216964', 'INST1.BM0000216972', 'INST1.BM0000216980', 
+    'INST1.BM0000216988', 'INST1.BM0000216996', 'INST1.BM0000217004', 
+    'INST1.BM0000217012', 'INST1.BM0000217020', 'INST1.BM0000217028', 
+    'INST1.BM0000217036', 'INST1.BM0000217044', 'INST1.BM0000217052', 
+    'INST1.BM0000217060', 'INST1.BM0000217068', 'INST1.BM0000217076', 
+    'INST1.BM0000217084', 'INST1.BM0000217092', 'INST1.BM0000217100', 
+    'INST1.BM0000217108', 'INST1.BM0000217116', 'INST1.BM0000217124', 
+    'INST1.BM0000217132', 'INST1.BM0000217140', 'INST1.BM0000217148', 
+    'INST1.BM0000217156', 'INST1.BM0000217164', 'INST1.BM0000217172', 
+    'INST1.BM0000217180', 'INST1.BM0000217188', 'INST1.BM0000217196', 
+    'INST1.BM0000217204', 'INST1.BM0000217212', 'INST1.BM0000217220', 
+    'INST1.BM0000217228', 'INST1.BM0000217236', 'INST1.BM0000217244', 
+    'INST1.BM0000217252', 'INST1.BM0000217260', 'INST1.BM0000217268', 
+    'INST1.BM0000217276', 'INST1.BM0000217284', 'INST1.BM0000217292', 
+    'INST1.BM0000217300', 'INST1.BM0000217308', 'INST1.BM0000217316', 
+    'INST1.BM0000217324', 'INST1.BM0000217332', 'INST1.BM0000217340', 
+    'INST1.BM0000217348', 'INST1.BM0000217356', 'INST1.BM0000217364', 
+    'INST1.BM0000217372', 'INST1.BM0000217380', 'INST1.BM0000217388', 
+    'INST1.BM0000217396', 'INST1.BM0000217404', 'INST1.BM0000217412', 
+    'INST1.BM0000217420', 'INST1.BM0000217428', 'INST1.BM0000217436', 
+    'INST1.BM0000217444', 'INST1.BM0000217452', 'INST1.BM0000217460', 
+    'INST1.BM0000217468', 'INST1.BM0000217476', 'INST1.BM0000217484', ))
+session.viewports['Viewport: 1'].odbDisplay.displayGroup.replace(leaf=leaf)
+leaf = dgo.LeafFromElementSets(elementSets=('INST1.BM0000214700', 
+    'INST1.BM0000214708', 'INST1.BM0000214716', 'INST1.BM0000214724', 
+    'INST1.BM0000214732', 'INST1.BM0000214740', 'INST1.BM0000214748', 
+    'INST1.BM0000214756', 'INST1.BM0000214764', 'INST1.BM0000214772', 
+    'INST1.BM0000214780', 'INST1.BM0000214788', 'INST1.BM0000214796', 
+    'INST1.BM0000214804', 'INST1.BM0000214812', 'INST1.BM0000214820', 
+    'INST1.BM0000214828', 'INST1.BM0000214836', 'INST1.BM0000214844', 
+    'INST1.BM0000214852', 'INST1.BM0000214860', 'INST1.BM0000214868', 
+    'INST1.BM0000214876', 'INST1.BM0000214884', 'INST1.BM0000214892', 
+    'INST1.BM0000214900', 'INST1.BM0000214908', 'INST1.BM0000214916', 
+    'INST1.BM0000214924', 'INST1.BM0000214932', 'INST1.BM0000214940', 
+    'INST1.BM0000214948', 'INST1.BM0000214956', 'INST1.BM0000214964', 
+    'INST1.BM0000214972', 'INST1.BM0000214980', 'INST1.BM0000214988', 
+    'INST1.BM0000214996', 'INST1.BM0000215004', 'INST1.BM0000215012', 
+    'INST1.BM0000215020', 'INST1.BM0000215028', 'INST1.BM0000215036', 
+    'INST1.BM0000215044', 'INST1.BM0000215052', 'INST1.BM0000215060', 
+    'INST1.BM0000215068', 'INST1.BM0000215076', 'INST1.BM0000215084', 
+    'INST1.BM0000215092', 'INST1.BM0000215100', 'INST1.BM0000215108', 
+    'INST1.BM0000215116', 'INST1.BM0000215124', 'INST1.BM0000215132', 
+    'INST1.BM0000215140', 'INST1.BM0000215148', 'INST1.BM0000215156', 
+    'INST1.BM0000215164', 'INST1.BM0000215172', 'INST1.BM0000215180', 
+    'INST1.BM0000215188', 'INST1.BM0000215196', 'INST1.BM0000215204', 
+    'INST1.BM0000215212', 'INST1.BM0000215220', 'INST1.BM0000215228', 
+    'INST1.BM0000215236', 'INST1.BM0000215244', 'INST1.BM0000215252', 
+    'INST1.BM0000215260', 'INST1.BM0000215268', 'INST1.BM0000215276', 
+    'INST1.BM0000215284', 'INST1.BM0000215292', 'INST1.BM0000215300', 
+    'INST1.BM0000215308', 'INST1.BM0000215316', 'INST1.BM0000215324', 
+    'INST1.BM0000215332', 'INST1.BM0000215340', 'INST1.BM0000215348', 
+    'INST1.BM0000215356', 'INST1.BM0000215364', 'INST1.BM0000215372', 
+    'INST1.BM0000215380', 'INST1.BM0000215388', 'INST1.BM0000215396', 
+    'INST1.BM0000215404', 'INST1.BM0000215412', 'INST1.BM0000215420', 
+    'INST1.BM0000215428', 'INST1.BM0000215436', 'INST1.BM0000215444', 
+    'INST1.BM0000215452', 'INST1.BM0000215460', 'INST1.BM0000215468', 
+    'INST1.BM0000215476', 'INST1.BM0000215484', 'INST1.BM0000215492', 
+    'INST1.BM0000215500', 'INST1.BM0000215508', 'INST1.BM0000215516', 
+    'INST1.BM0000215524', 'INST1.BM0000215532', 'INST1.BM0000215540', 
+    'INST1.BM0000215548', 'INST1.BM0000215556', 'INST1.BM0000215564', 
+    'INST1.BM0000215572', 'INST1.BM0000215580', 'INST1.BM0000215588', 
+    'INST1.BM0000215596', 'INST1.BM0000215604', 'INST1.BM0000215612', 
+    'INST1.BM0000215620', 'INST1.BM0000215628', 'INST1.BM0000215636', 
+    'INST1.BM0000215644', 'INST1.BM0000215652', 'INST1.BM0000215660', 
+    'INST1.BM0000215668', 'INST1.BM0000215676', 'INST1.BM0000215684', 
+    'INST1.BM0000215692', 'INST1.BM0000215700', 'INST1.BM0000215708', 
+    'INST1.BM0000215716', 'INST1.BM0000215724', 'INST1.BM0000215732', 
+    'INST1.BM0000215740', 'INST1.BM0000215748', 'INST1.BM0000215756', 
+    'INST1.BM0000215764', 'INST1.BM0000215772', 'INST1.BM0000215780', 
+    'INST1.BM0000215788', 'INST1.BM0000215796', 'INST1.BM0000215804', 
+    'INST1.BM0000215812', 'INST1.BM0000215820', 'INST1.BM0000215828', 
+    'INST1.BM0000215836', 'INST1.BM0000215844', 'INST1.BM0000215852', 
+    'INST1.BM0000215860', 'INST1.BM0000215868', 'INST1.BM0000215876', 
+    'INST1.BM0000215884', 'INST1.BM0000215892', 'INST1.BM0000215900', 
+    'INST1.BM0000215908', 'INST1.BM0000215916', 'INST1.BM0000215924', 
+    'INST1.BM0000215932', 'INST1.BM0000215940', 'INST1.BM0000215948', 
+    'INST1.BM0000215956', 'INST1.BM0000215964', 'INST1.BM0000215972', 
+    'INST1.BM0000215980', 'INST1.BM0000215988', 'INST1.BM0000215996', 
+    'INST1.BM0000216004', 'INST1.BM0000216012', 'INST1.BM0000216020', 
+    'INST1.BM0000216028', 'INST1.BM0000216036', 'INST1.BM0000216044', 
+    'INST1.BM0000216052', 'INST1.BM0000216060', 'INST1.BM0000216068', 
+    'INST1.BM0000216076', 'INST1.BM0000216084', 'INST1.BM0000216092', 
+    'INST1.BM0000216100', 'INST1.BM0000216108', 'INST1.BM0000216116', 
+    'INST1.BM0000216124', 'INST1.BM0000216132', 'INST1.BM0000216140', 
+    'INST1.BM0000216148', 'INST1.BM0000216156', 'INST1.BM0000216164', 
+    'INST1.BM0000216172', 'INST1.BM0000216180', 'INST1.BM0000216188', 
+    'INST1.BM0000216196', 'INST1.BM0000216204', 'INST1.BM0000216212', 
+    'INST1.BM0000216220', 'INST1.BM0000216228', 'INST1.BM0000216236', 
+    'INST1.BM0000216244', 'INST1.BM0000216252', 'INST1.BM0000216260', 
+    'INST1.BM0000216268', 'INST1.BM0000216276', 'INST1.BM0000216284', 
+    'INST1.BM0000216292', 'INST1.BM0000216300', 'INST1.BM0000216308', 
+    'INST1.BM0000216316', 'INST1.BM0000216324', 'INST1.BM0000216332', 
+    'INST1.BM0000216340', 'INST1.BM0000216348', 'INST1.BM0000216356', 
+    'INST1.BM0000216364', 'INST1.BM0000216372', 'INST1.BM0000216380', 
+    'INST1.BM0000216388', 'INST1.BM0000216396', 'INST1.BM0000216404', 
+    'INST1.BM0000216412', 'INST1.BM0000216420', 'INST1.BM0000216428', 
+    'INST1.BM0000216436', 'INST1.BM0000216444', 'INST1.BM0000216452', 
+    'INST1.BM0000216460', 'INST1.BM0000216468', 'INST1.BM0000216476', 
+    'INST1.BM0000216484', 'INST1.BM0000216492', 'INST1.BM0000216500', 
+    'INST1.BM0000216508', 'INST1.BM0000216516', 'INST1.BM0000216524', 
+    'INST1.BM0000216532', 'INST1.BM0000216540', 'INST1.BM0000216548', 
+    'INST1.BM0000216556', 'INST1.BM0000216564', 'INST1.BM0000216572', 
+    'INST1.BM0000216580', 'INST1.BM0000216588', 'INST1.BM0000216596', 
+    'INST1.BM0000216604', 'INST1.BM0000216612', 'INST1.BM0000216620', 
+    'INST1.BM0000216628', 'INST1.BM0000216636', 'INST1.BM0000216644', 
+    'INST1.BM0000216652', 'INST1.BM0000216660', 'INST1.BM0000216668', 
+    'INST1.BM0000216676', 'INST1.BM0000216684', 'INST1.BM0000216692', 
+    'INST1.BM0000216700', 'INST1.BM0000216708', 'INST1.BM0000216716', 
+    'INST1.BM0000216724', 'INST1.BM0000216732', 'INST1.BM0000216740', 
+    'INST1.BM0000216748', 'INST1.BM0000216756', 'INST1.BM0000216764', 
+    'INST1.BM0000216772', 'INST1.BM0000216780', 'INST1.BM0000216788', 
+    'INST1.BM0000216796', 'INST1.BM0000216804', 'INST1.BM0000216812', 
+    'INST1.BM0000216820', 'INST1.BM0000216828', 'INST1.BM0000216836', 
+    'INST1.BM0000216844', 'INST1.BM0000216852', 'INST1.BM0000216860', 
+    'INST1.BM0000216868', 'INST1.BM0000216876', 'INST1.BM0000216884', 
+    'INST1.BM0000216892', 'INST1.BM0000216900', 'INST1.BM0000216908', 
+    'INST1.BM0000216916', 'INST1.BM0000216924', 'INST1.BM0000216932', 
+    'INST1.BM0000216940', 'INST1.BM0000216948', 'INST1.BM0000216956', 
+    'INST1.BM0000216964', 'INST1.BM0000216972', 'INST1.BM0000216980', 
+    'INST1.BM0000216988', 'INST1.BM0000216996', 'INST1.BM0000217004', 
+    'INST1.BM0000217012', 'INST1.BM0000217020', 'INST1.BM0000217028', 
+    'INST1.BM0000217036', 'INST1.BM0000217044', 'INST1.BM0000217052', 
+    'INST1.BM0000217060', 'INST1.BM0000217068', 'INST1.BM0000217076', 
+    'INST1.BM0000217084', 'INST1.BM0000217092', 'INST1.BM0000217100', 
+    'INST1.BM0000217108', 'INST1.BM0000217116', 'INST1.BM0000217124', 
+    'INST1.BM0000217132', 'INST1.BM0000217140', 'INST1.BM0000217148', 
+    'INST1.BM0000217156', 'INST1.BM0000217164', 'INST1.BM0000217172', 
+    'INST1.BM0000217180', 'INST1.BM0000217188', 'INST1.BM0000217196', 
+    'INST1.BM0000217204', 'INST1.BM0000217212', 'INST1.BM0000217220', 
+    'INST1.BM0000217228', 'INST1.BM0000217236', 'INST1.BM0000217244', 
+    'INST1.BM0000217252', 'INST1.BM0000217260', 'INST1.BM0000217268', 
+    'INST1.BM0000217276', 'INST1.BM0000217284', 'INST1.BM0000217292', 
+    'INST1.BM0000217300', 'INST1.BM0000217308', 'INST1.BM0000217316', 
+    'INST1.BM0000217324', 'INST1.BM0000217332', 'INST1.BM0000217340', 
+    'INST1.BM0000217348', 'INST1.BM0000217356', 'INST1.BM0000217364', 
+    'INST1.BM0000217372', 'INST1.BM0000217380', 'INST1.BM0000217388', 
+    'INST1.BM0000217396', 'INST1.BM0000217404', 'INST1.BM0000217412', 
+    'INST1.BM0000217420', 'INST1.BM0000217428', 'INST1.BM0000217436', 
+    'INST1.BM0000217444', 'INST1.BM0000217452', 'INST1.BM0000217460', 
+    'INST1.BM0000217468', 'INST1.BM0000217476', 'INST1.BM0000217484', ))
+session.viewports['Viewport: 1'].odbDisplay.displayGroup.replace(leaf=leaf)
+leaf = dgo.LeafFromElementSets(elementSets=('INST1.BM0000214700', ))
+session.viewports['Viewport: 1'].odbDisplay.displayGroup.replace(leaf=leaf)
+leaf = dgo.LeafFromElementSets(elementSets=('INST1.BM0000214708', ))
+session.viewports['Viewport: 1'].odbDisplay.displayGroup.add(leaf=leaf)
+leaf = dgo.LeafFromElementSets(elementSets=('INST1.BM0000214716', ))
+session.viewports['Viewport: 1'].odbDisplay.displayGroup.add(leaf=leaf)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.0717442, 
+    farPlane=0.397197, width=0.0643544, height=0.0275231)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.0382638, 
+    farPlane=0.430678, width=0.153453, height=0.0656286)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.0127589, 
+    farPlane=0.456183, width=0.100319, height=0.0429042)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.634343, 
+    farPlane=1.26869, width=3.22864, height=1.38082, cameraPosition=(1.00029, 
+    0.34112, 0.516146))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=0.567487, 
+    farPlane=1.33086, width=2.76702, height=1.1834)
+session.viewports['Viewport: 1'].view.setProjection(projection=PARALLEL)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.97149, 
+    farPlane=3.94297, width=5.50535, height=2.35453, cameraPosition=(2.62454, 
+    0.97937, 1.49016))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.97175, 
+    farPlane=3.92372, cameraPosition=(2.48781, 2.07859, 0.99788), 
+    cameraTarget=(0.0181517, 1.10813, -0.483096))
+leaf = dgo.LeafFromElementSets(elementSets=('INST1.BM0000214724', 
+    'INST1.BM0000214732', 'INST1.BM0000214740', 'INST1.BM0000214748', 
+    'INST1.BM0000214756', 'INST1.BM0000214764', 'INST1.BM0000214772', 
+    'INST1.BM0000214780', 'INST1.BM0000214788', 'INST1.BM0000214796', 
+    'INST1.BM0000214804', 'INST1.BM0000214812', 'INST1.BM0000214820', 
+    'INST1.BM0000214828', 'INST1.BM0000214836', 'INST1.BM0000214844', 
+    'INST1.BM0000214852', 'INST1.BM0000214860', 'INST1.BM0000214868', 
+    'INST1.BM0000214876', 'INST1.BM0000214884', 'INST1.BM0000214892', 
+    'INST1.BM0000214900', ))
+session.viewports['Viewport: 1'].odbDisplay.displayGroup.add(leaf=leaf)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=3.52419, 
+    farPlane=7.05521, cameraPosition=(5.22266, 3.16956, 2.69232), 
+    cameraTarget=(0.923677, 1.48026, 0.114355))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=3.06771, 
+    farPlane=7.51169, width=6.78442, height=2.90156)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.7282, 
+    farPlane=7.8512, width=9.05661, height=3.87333)
+leaf = dgo.LeafFromElementSets(elementSets=('INST1.BM0000214908', 
+    'INST1.BM0000214916', 'INST1.BM0000214924', 'INST1.BM0000214932', 
+    'INST1.BM0000214940', 'INST1.BM0000214948', 'INST1.BM0000214956', 
+    'INST1.BM0000214964', 'INST1.BM0000214972', 'INST1.BM0000214980', 
+    'INST1.BM0000214988', 'INST1.BM0000214996', 'INST1.BM0000215004', 
+    'INST1.BM0000215012', 'INST1.BM0000215020', 'INST1.BM0000215028', 
+    'INST1.BM0000215036', 'INST1.BM0000215044', 'INST1.BM0000215052', 
+    'INST1.BM0000215060', 'INST1.BM0000215068', 'INST1.BM0000215076', 
+    'INST1.BM0000215084', 'INST1.BM0000215092', 'INST1.BM0000215100', 
+    'INST1.BM0000215108', 'INST1.BM0000215116', 'INST1.BM0000215124', 
+    'INST1.BM0000215132', 'INST1.BM0000215140', 'INST1.BM0000215148', 
+    'INST1.BM0000215156', 'INST1.BM0000215164', 'INST1.BM0000215172', 
+    'INST1.BM0000215180', 'INST1.BM0000215188', ))
+session.viewports['Viewport: 1'].odbDisplay.displayGroup.add(leaf=leaf)
+leaf = dgo.LeafFromElementSets(elementSets=('INST1.BM0000215196', 
+    'INST1.BM0000215204', 'INST1.BM0000215212', 'INST1.BM0000215220', 
+    'INST1.BM0000215228', 'INST1.BM0000215236', 'INST1.BM0000215244', 
+    'INST1.BM0000215252', 'INST1.BM0000215260', 'INST1.BM0000215268', 
+    'INST1.BM0000215276', 'INST1.BM0000215284', 'INST1.BM0000215292', 
+    'INST1.BM0000215300', ))
+session.viewports['Viewport: 1'].odbDisplay.displayGroup.add(leaf=leaf)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=7.42937, 
+    farPlane=14.6934, cameraPosition=(10.2492, 7.66863, 5.82564), 
+    cameraTarget=(1.06603, 4.06007, 0.318772))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=7.45218, 
+    farPlane=14.6706, width=7.44477, height=3.18398, cameraPosition=(10.2686, 
+    7.63873, 5.8129), cameraTarget=(1.08542, 4.03017, 0.306036))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=6.73092, 
+    farPlane=15.3918, width=12.3471, height=5.28059)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=5.81906, 
+    farPlane=16.3037, width=18.4497, height=7.89056)
+leaf = dgo.LeafFromElementSets(elementSets=('INST1.BM0000215308', 
+    'INST1.BM0000215316', 'INST1.BM0000215324', 'INST1.BM0000215332', 
+    'INST1.BM0000215340', 'INST1.BM0000215348', 'INST1.BM0000215356', 
+    'INST1.BM0000215364', 'INST1.BM0000215372', 'INST1.BM0000215380', 
+    'INST1.BM0000215388', 'INST1.BM0000215396', 'INST1.BM0000215404', 
+    'INST1.BM0000215412', 'INST1.BM0000215420', 'INST1.BM0000215428', 
+    'INST1.BM0000215436', 'INST1.BM0000215444', 'INST1.BM0000215452', 
+    'INST1.BM0000215460', 'INST1.BM0000215468', 'INST1.BM0000215476', 
+    'INST1.BM0000215484', 'INST1.BM0000215492', 'INST1.BM0000215500', 
+    'INST1.BM0000215508', 'INST1.BM0000215516', 'INST1.BM0000215524', 
+    'INST1.BM0000215532', 'INST1.BM0000215540', 'INST1.BM0000215548', 
+    'INST1.BM0000215556', 'INST1.BM0000215564', 'INST1.BM0000215572', 
+    'INST1.BM0000215580', ))
+session.viewports['Viewport: 1'].odbDisplay.displayGroup.add(leaf=leaf)
+leaf = dgo.LeafFromElementSets(elementSets=('INST1.BM0000215588', 
+    'INST1.BM0000215596', 'INST1.BM0000215604', 'INST1.BM0000215612', 
+    'INST1.BM0000215620', 'INST1.BM0000215628', 'INST1.BM0000215636', 
+    'INST1.BM0000215644', 'INST1.BM0000215652', 'INST1.BM0000215660', 
+    'INST1.BM0000215668', 'INST1.BM0000215676', 'INST1.BM0000215684', 
+    'INST1.BM0000215692', 'INST1.BM0000215700', 'INST1.BM0000215708', 
+    'INST1.BM0000215716', 'INST1.BM0000215724', 'INST1.BM0000215732', 
+    'INST1.BM0000215740', 'INST1.BM0000215748', 'INST1.BM0000215756', 
+    'INST1.BM0000215764', 'INST1.BM0000215772', 'INST1.BM0000215780', 
+    'INST1.BM0000215788', 'INST1.BM0000215796', 'INST1.BM0000215804', 
+    'INST1.BM0000215812', 'INST1.BM0000215820', 'INST1.BM0000215828', 
+    'INST1.BM0000215836', 'INST1.BM0000215844', 'INST1.BM0000215852', 
+    'INST1.BM0000215860', 'INST1.BM0000215868', 'INST1.BM0000215876', 
+    'INST1.BM0000215884', 'INST1.BM0000215892', 'INST1.BM0000215900', ))
+session.viewports['Viewport: 1'].odbDisplay.displayGroup.add(leaf=leaf)
+leaf = dgo.LeafFromElementSets(elementSets=('INST1.BM0000215908', 
+    'INST1.BM0000215916', 'INST1.BM0000215924', 'INST1.BM0000215932', 
+    'INST1.BM0000215940', 'INST1.BM0000215948', 'INST1.BM0000215956', 
+    'INST1.BM0000215964', 'INST1.BM0000215972', 'INST1.BM0000215980', 
+    'INST1.BM0000215988', 'INST1.BM0000215996', 'INST1.BM0000216004', 
+    'INST1.BM0000216012', 'INST1.BM0000216020', 'INST1.BM0000216028', 
+    'INST1.BM0000216036', 'INST1.BM0000216044', 'INST1.BM0000216052', 
+    'INST1.BM0000216060', 'INST1.BM0000216068', 'INST1.BM0000216076', 
+    'INST1.BM0000216084', ))
+session.viewports['Viewport: 1'].odbDisplay.displayGroup.add(leaf=leaf)
+leaf = dgo.LeafFromElementSets(elementSets=('INST1.BM0000216092', 
+    'INST1.BM0000216100', 'INST1.BM0000216108', 'INST1.BM0000216116', 
+    'INST1.BM0000216124', 'INST1.BM0000216132', 'INST1.BM0000216140', 
+    'INST1.BM0000216148', 'INST1.BM0000216156', 'INST1.BM0000216164', 
+    'INST1.BM0000216172', 'INST1.BM0000216180', 'INST1.BM0000216188', 
+    'INST1.BM0000216196', 'INST1.BM0000216204', 'INST1.BM0000216212', 
+    'INST1.BM0000216220', 'INST1.BM0000216228', 'INST1.BM0000216236', 
+    'INST1.BM0000216244', 'INST1.BM0000216252', 'INST1.BM0000216260', 
+    'INST1.BM0000216268', 'INST1.BM0000216276', 'INST1.BM0000216284', 
+    'INST1.BM0000216292', 'INST1.BM0000216300', 'INST1.BM0000216308', ))
+session.viewports['Viewport: 1'].odbDisplay.displayGroup.add(leaf=leaf)
+leaf = dgo.LeafFromElementSets(elementSets=('INST1.BM0000216316', 
+    'INST1.BM0000216324', 'INST1.BM0000216332', 'INST1.BM0000216340', 
+    'INST1.BM0000216348', 'INST1.BM0000216356', 'INST1.BM0000216364', 
+    'INST1.BM0000216372', 'INST1.BM0000216380', 'INST1.BM0000216388', 
+    'INST1.BM0000216396', 'INST1.BM0000216404', 'INST1.BM0000216412', 
+    'INST1.BM0000216420', 'INST1.BM0000216428', 'INST1.BM0000216436', 
+    'INST1.BM0000216444', 'INST1.BM0000216452', 'INST1.BM0000216460', 
+    'INST1.BM0000216468', 'INST1.BM0000216476', 'INST1.BM0000216484', 
+    'INST1.BM0000216492', 'INST1.BM0000216500', 'INST1.BM0000216508', 
+    'INST1.BM0000216516', 'INST1.BM0000216524', 'INST1.BM0000216532', 
+    'INST1.BM0000216540', 'INST1.BM0000216548', 'INST1.BM0000216556', 
+    'INST1.BM0000216564', 'INST1.BM0000216572', 'INST1.BM0000216580', 
+    'INST1.BM0000216588', 'INST1.BM0000216596', 'INST1.BM0000216604', 
+    'INST1.BM0000216612', 'INST1.BM0000216620', 'INST1.BM0000216628', ))
+session.viewports['Viewport: 1'].odbDisplay.displayGroup.add(leaf=leaf)
+leaf = dgo.LeafFromElementSets(elementSets=('INST1.BM0000216636', 
+    'INST1.BM0000216644', 'INST1.BM0000216652', 'INST1.BM0000216660', 
+    'INST1.BM0000216668', 'INST1.BM0000216676', 'INST1.BM0000216684', 
+    'INST1.BM0000216692', 'INST1.BM0000216700', 'INST1.BM0000216708', 
+    'INST1.BM0000216716', 'INST1.BM0000216724', 'INST1.BM0000216732', 
+    'INST1.BM0000216740', 'INST1.BM0000216748', 'INST1.BM0000216756', 
+    'INST1.BM0000216764', 'INST1.BM0000216772', 'INST1.BM0000216780', 
+    'INST1.BM0000216788', 'INST1.BM0000216796', 'INST1.BM0000216804', 
+    'INST1.BM0000216812', 'INST1.BM0000216820', 'INST1.BM0000216828', 
+    'INST1.BM0000216836', 'INST1.BM0000216844', 'INST1.BM0000216852', 
+    'INST1.BM0000216860', 'INST1.BM0000216868', 'INST1.BM0000216876', 
+    'INST1.BM0000216884', 'INST1.BM0000216892', 'INST1.BM0000216900', 
+    'INST1.BM0000216908', 'INST1.BM0000216916', 'INST1.BM0000216924', 
+    'INST1.BM0000216932', 'INST1.BM0000216940', 'INST1.BM0000216948', ))
+session.viewports['Viewport: 1'].odbDisplay.displayGroup.add(leaf=leaf)
+leaf = dgo.LeafFromElementSets(elementSets=('INST1.BM0000216956', 
+    'INST1.BM0000216964', 'INST1.BM0000216972', 'INST1.BM0000216980', 
+    'INST1.BM0000216988', 'INST1.BM0000216996', 'INST1.BM0000217004', 
+    'INST1.BM0000217012', 'INST1.BM0000217020', 'INST1.BM0000217028', 
+    'INST1.BM0000217036', 'INST1.BM0000217044', 'INST1.BM0000217052', 
+    'INST1.BM0000217060', 'INST1.BM0000217068', 'INST1.BM0000217076', 
+    'INST1.BM0000217084', 'INST1.BM0000217092', 'INST1.BM0000217100', 
+    'INST1.BM0000217108', 'INST1.BM0000217116', 'INST1.BM0000217124', 
+    'INST1.BM0000217132', 'INST1.BM0000217140', 'INST1.BM0000217148', 
+    'INST1.BM0000217156', 'INST1.BM0000217164', 'INST1.BM0000217172', 
+    'INST1.BM0000217180', 'INST1.BM0000217188', 'INST1.BM0000217196', 
+    'INST1.BM0000217204', 'INST1.BM0000217212', 'INST1.BM0000217220', 
+    'INST1.BM0000217228', 'INST1.BM0000217236', 'INST1.BM0000217244', 
+    'INST1.BM0000217252', 'INST1.BM0000217260', 'INST1.BM0000217268', 
+    'INST1.BM0000217276', 'INST1.BM0000217284', 'INST1.BM0000217292', ))
+session.viewports['Viewport: 1'].odbDisplay.displayGroup.add(leaf=leaf)
+leaf = dgo.LeafFromElementSets(elementSets=('INST1.BM0000217300', 
+    'INST1.BM0000217308', 'INST1.BM0000217316', 'INST1.BM0000217324', 
+    'INST1.BM0000217332', 'INST1.BM0000217340', 'INST1.BM0000217348', 
+    'INST1.BM0000217356', 'INST1.BM0000217364', 'INST1.BM0000217372', 
+    'INST1.BM0000217380', 'INST1.BM0000217388', 'INST1.BM0000217396', 
+    'INST1.BM0000217404', 'INST1.BM0000217412', 'INST1.BM0000217420', 
+    'INST1.BM0000217428', 'INST1.BM0000217436', 'INST1.BM0000217444', 
+    'INST1.BM0000217452', 'INST1.BM0000217460', 'INST1.BM0000217468', 
+    'INST1.BM0000217476', 'INST1.BM0000217484', ))
+session.viewports['Viewport: 1'].odbDisplay.displayGroup.add(leaf=leaf)
+session.viewports['Viewport: 1'].enableMultipleColors()
+session.viewports['Viewport: 1'].setColor(initialColor='#BDBDBD')
+cmap=session.viewports['Viewport: 1'].colorMappings['Material']
+session.viewports['Viewport: 1'].setColor(colorMapping=cmap)
+session.viewports['Viewport: 1'].disableMultipleColors()
+session.viewports['Viewport: 1'].view.setValues(nearPlane=5.07822, 
+    farPlane=17.8051, width=11.834, height=5.06117)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=5.07822, 
+    farPlane=17.8051, cameraPosition=(9.35196, 7.60978, 7.36042), 
+    cameraTarget=(0.168795, 4.00122, 1.85355))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=5.54695, 
+    farPlane=17.3363, width=8.69695, height=3.71951)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=5.61006, 
+    farPlane=17.2393, cameraPosition=(9.38445, 7.22789, 7.54042), 
+    cameraUpVector=(-0.673381, -0.37061, 0.639692), cameraTarget=(0.169199, 
+    3.99647, 1.85579))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=4.82593, 
+    farPlane=18.0234, width=13.9448, height=5.96392)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=4.92826, 
+    farPlane=17.9211, width=13.26, height=5.67102)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=4.92826, 
+    farPlane=17.9211, cameraPosition=(9.39566, 7.50436, 7.3651), cameraTarget=(
+    0.180405, 4.27294, 1.68047))

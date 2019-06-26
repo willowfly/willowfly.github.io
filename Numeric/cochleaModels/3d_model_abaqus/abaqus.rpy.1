@@ -1,0 +1,623 @@
+# -*- coding: mbcs -*-
+#
+# Abaqus/CAE Release 6.13-1 replay file
+# Internal Version: 2013_05_16-10.28.56 126354
+# Run by RenLi on Tue Jun 25 16:24:37 2019
+#
+
+# from driverUtils import executeOnCaeGraphicsStartup
+# executeOnCaeGraphicsStartup()
+#: Executing "onCaeGraphicsStartup()" in the site directory ...
+#: Abaqus Error: 
+#: This error may have occurred due to a change to the Abaqus Scripting
+#: Interface. Please see the Abaqus Scripting Manual for the details of
+#: these changes. Also see the "Example environment files" section of 
+#: the Abaqus Site Guide for up-to-date examples of common tasks in the
+#: environment file.
+#: Execution of "onCaeGraphicsStartup()" in the site directory failed.
+from abaqus import *
+from abaqusConstants import *
+session.Viewport(name='Viewport: 1', origin=(0.0, 0.0), width=158.27197265625, 
+    height=69.0260391235352)
+session.viewports['Viewport: 1'].makeCurrent()
+session.viewports['Viewport: 1'].maximize()
+from caeModules import *
+from driverUtils import executeOnCaeStartup
+executeOnCaeStartup()
+session.viewports['Viewport: 1'].partDisplay.geometryOptions.setValues(
+    referenceRepresentation=ON)
+a = mdb.models['Model-1'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+mdb.ModelFromInputFile(name='model01-ac-spiral', 
+    inputFileName='C:/Users/RenLi/__matlab/__model_cochlea/3d_model_abaqus/MODEL01/model01-ac-spiral.inp')
+#: The model "model01-ac-spiral" has been created.
+#: WARNING: Empty part PART1. This occurred while reading keyword options within part definition. 
+#: WARNING: Part instance INST1 references an empty part. A new part named INST1 will be created from the mesh data in part instance INST1. 
+#: The part "INST1" has been imported from the input file.
+#: 
+#: WARNING: The following keywords/parameters are not yet supported by the input file reader:
+#: ---------------------------------------------------------------------------------
+#: *NSET, ELSET
+#: *PREPRINT
+#: The model "model01-ac-spiral" has been imported from an input file. 
+#: Please scroll up to check for error and warning messages.
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    optimizationTasks=OFF, geometricRestrictions=OFF, stopConditions=OFF)
+a = mdb.models['model01-ac-spiral'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=70.4288, 
+    farPlane=109.496, width=39.3755, height=16.8401)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=72.1624, 
+    farPlane=111.845, width=40.3447, height=17.2546, cameraPosition=(72.0684, 
+    -42.0711, -58.9714), cameraUpVector=(-0.330938, 0.85525, -0.398782), 
+    cameraTarget=(17.2765, -1.00356, -0.622962))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=70.4753, 
+    farPlane=113.737, width=39.4015, height=16.8512, cameraPosition=(80.1909, 
+    -42.503, -49.7774), cameraUpVector=(-0.28535, 0.840102, -0.461308), 
+    cameraTarget=(17.4567, -1.01314, -0.418959))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=70.8679, 
+    farPlane=113.345, width=37.3024, height=15.9535, viewOffsetX=-0.274372, 
+    viewOffsetY=-0.0961412)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=74.355, 
+    farPlane=109.858, width=15.0067, height=6.41807, viewOffsetX=-0.287872, 
+    viewOffsetY=-0.100872)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=75.4815, 
+    farPlane=108.731, width=6.88688, height=2.94538, viewOffsetX=-0.292233, 
+    viewOffsetY=-0.1024)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=75.7852, 
+    farPlane=108.428, width=4.76247, height=2.03681, viewOffsetX=-0.293409, 
+    viewOffsetY=-0.102812)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=71.5704, 
+    farPlane=111.738, width=4.49761, height=1.92354, cameraPosition=(-67.3517, 
+    -29.9886, 25.4206), cameraUpVector=(-0.032474, 0.988611, -0.146947), 
+    cameraTarget=(14.3124, -0.467799, 1.91029), viewOffsetX=-0.277091, 
+    viewOffsetY=-0.0970941)
+session.viewports['Viewport: 1'].enableMultipleColors()
+session.viewports['Viewport: 1'].setColor(initialColor='#BDBDBD')
+cmap=session.viewports['Viewport: 1'].colorMappings['Material']
+session.viewports['Viewport: 1'].setColor(colorMapping=cmap)
+session.viewports['Viewport: 1'].disableMultipleColors()
+session.viewports['Viewport: 1'].enableMultipleColors()
+session.viewports['Viewport: 1'].setColor(initialColor='#BDBDBD')
+cmap=session.viewports['Viewport: 1'].colorMappings['Section']
+session.viewports['Viewport: 1'].setColor(colorMapping=cmap)
+session.viewports['Viewport: 1'].disableMultipleColors()
+session.viewports['Viewport: 1'].enableMultipleColors()
+session.viewports['Viewport: 1'].setColor(initialColor='#BDBDBD')
+cmap=session.viewports['Viewport: 1'].colorMappings['Set']
+session.viewports['Viewport: 1'].setColor(colorMapping=cmap)
+session.viewports['Viewport: 1'].disableMultipleColors()
+session.viewports['Viewport: 1'].view.setValues(nearPlane=70.6182, 
+    farPlane=112.69, width=10.9807, height=4.69624, viewOffsetX=-0.273404, 
+    viewOffsetY=-0.0958023)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=69.056, 
+    farPlane=113.342, width=10.7378, height=4.59235, cameraPosition=(-74.8934, 
+    1.93052, -11.8613), cameraUpVector=(0.25446, 0.694197, 0.673305), 
+    cameraTarget=(14.086, -0.186381, 1.23123), viewOffsetX=-0.267356, 
+    viewOffsetY=-0.093683)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=69.3235, 
+    farPlane=113.569, width=10.7794, height=4.61014, cameraPosition=(-75.1199, 
+    0.209366, 12.4811), cameraUpVector=(0.402899, 0.751539, 0.522362), 
+    cameraTarget=(14.178, -0.180385, 1.57369), viewOffsetX=-0.268392, 
+    viewOffsetY=-0.0940459)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=69.1009, 
+    farPlane=113.792, width=12.1952, height=5.21566, viewOffsetX=-0.26753, 
+    viewOffsetY=-0.0937439)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=69.1065, 
+    farPlane=113.787, width=12.1962, height=5.21608, viewOffsetX=-1.14799, 
+    viewOffsetY=-1.00404)
+Mdb()
+#: A new model database has been created.
+#: The model "Model-1" has been created.
+session.viewports['Viewport: 1'].setValues(displayedObject=None)
+a = mdb.models['Model-1'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+mdb.ModelFromInputFile(name='model01-ac-spiral', 
+    inputFileName='C:/Users/RenLi/__matlab/__model_cochlea/3d_model_abaqus/MODEL01/model01-ac-spiral.inp')
+#: The model "model01-ac-spiral" has been created.
+#: WARNING: Empty part PART1. This occurred while reading keyword options within part definition. 
+#: WARNING: Part instance INST1 references an empty part. A new part named INST1 will be created from the mesh data in part instance INST1. 
+#: The part "INST1" has been imported from the input file.
+#: 
+#: WARNING: The following keywords/parameters are not yet supported by the input file reader:
+#: ---------------------------------------------------------------------------------
+#: *NSET, ELSET
+#: *PREPRINT
+#: The model "model01-ac-spiral" has been imported from an input file. 
+#: Please scroll up to check for error and warning messages.
+a = mdb.models['model01-ac-spiral'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=70.3012, 
+    farPlane=111.766, width=48.8753, height=20.903, cameraPosition=(63.1751, 
+    -12.5525, 77.1371), cameraUpVector=(-0.0722526, 0.983837, -0.163842), 
+    cameraTarget=(16.7019, 1.99368, 0.852827))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=76.075, 
+    farPlane=105.569, width=52.8895, height=22.6198, cameraPosition=(29.9071, 
+    -43.1257, 78.2636), cameraUpVector=(-0.305668, 0.930193, 0.203245), 
+    cameraTarget=(16.5076, 1.81512, 0.859409))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=79.1211, 
+    farPlane=102.523, width=30.0099, height=12.8346)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=69.2341, 
+    farPlane=113.388, width=26.2598, height=11.2308, cameraPosition=(80.7367, 
+    63.5342, -17.5119), cameraUpVector=(-0.415506, 0.202737, 0.886709), 
+    cameraTarget=(16.6867, 2.19091, 0.521972))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=67.6739, 
+    farPlane=116.249, width=25.668, height=10.9777, cameraPosition=(102.63, 
+    30.8114, -0.720812), cameraUpVector=(-0.415507, 0.231267, 0.879699), 
+    cameraTarget=(16.8806, 1.90105, 0.670707))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=73.1337, 
+    farPlane=113.321, width=27.7389, height=11.8634, cameraPosition=(71.9299, 
+    -64.5871, 30.9178), cameraUpVector=(-0.34434, 0.52599, 0.777666), 
+    cameraTarget=(16.3934, 0.387057, 1.17282))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=73.8887, 
+    farPlane=112.566, width=20.961, height=8.96458)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=73.8457, 
+    farPlane=112.609, width=20.9488, height=8.95938, viewOffsetX=-6.95401, 
+    viewOffsetY=1.76209)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=87.6613, 
+    farPlane=110.208, width=24.868, height=10.6356, cameraPosition=(-1.43248, 
+    -59.815, 76.5898), cameraUpVector=(0.368863, 0.884966, 0.284209), 
+    cameraTarget=(14.5161, -8.89708, 3.48901), viewOffsetX=-8.25501, 
+    viewOffsetY=2.09175)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=84.4587, 
+    farPlane=113.41, width=41.1084, height=17.5812, viewOffsetX=-7.95342, 
+    viewOffsetY=2.01533)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=84.6352, 
+    farPlane=113.234, width=41.1943, height=17.618, viewOffsetX=14.9184, 
+    viewOffsetY=5.8994)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=86.785, 
+    farPlane=111.084, width=27.494, height=11.7586, viewOffsetX=15.2973, 
+    viewOffsetY=6.04925)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=87.941, 
+    farPlane=109.928, width=19.3538, height=8.27722, viewOffsetX=15.5011, 
+    viewOffsetY=6.12982)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=87.901, 
+    farPlane=109.968, width=19.345, height=8.27346, viewOffsetX=12.495, 
+    viewOffsetY=9.73664)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=89.1581, 
+    farPlane=108.711, width=11.088, height=4.7421, viewOffsetX=12.6737, 
+    viewOffsetY=9.87588)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=89.8231, 
+    farPlane=108.046, width=6.53057, height=2.79299, viewOffsetX=12.7682, 
+    viewOffsetY=9.94954)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=89.3988, 
+    farPlane=108.47, width=9.27747, height=3.96779, viewOffsetX=12.7079, 
+    viewOffsetY=9.90254)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=88.4579, 
+    farPlane=109.411, width=15.4521, height=6.60855, viewOffsetX=12.5741, 
+    viewOffsetY=9.79831)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=86.4691, 
+    farPlane=111.4, width=28.269, height=12.0901, viewOffsetX=12.2914, 
+    viewOffsetY=9.57802)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=82.3837, 
+    farPlane=115.485, width=53.55, height=22.9022, viewOffsetX=11.7107, 
+    viewOffsetY=9.12548)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=76.7386, 
+    farPlane=121.13, width=87.175, height=37.283, viewOffsetX=10.9083, 
+    viewOffsetY=8.50018)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=67.578, 
+    farPlane=130.291, width=135.004, height=57.7385, viewOffsetX=9.60613, 
+    viewOffsetY=7.48548)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=69.7113, 
+    farPlane=128.158, width=139.266, height=59.5612, viewOffsetX=6.20111, 
+    viewOffsetY=5.98939)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=79.5306, 
+    farPlane=118.338, width=85.6461, height=36.6291, viewOffsetX=7.07458, 
+    viewOffsetY=6.83304)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=80.8554, 
+    farPlane=117.013, width=68.9369, height=29.4829, viewOffsetX=7.19243, 
+    viewOffsetY=6.94686)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=85.8828, 
+    farPlane=111.986, width=35.0518, height=14.991, viewOffsetX=7.63964, 
+    viewOffsetY=7.3788)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=85.574, 
+    farPlane=112.295, width=34.9259, height=14.9371, viewOffsetX=-0.344321, 
+    viewOffsetY=5.40755)
+Mdb()
+#: A new model database has been created.
+#: The model "Model-1" has been created.
+session.viewports['Viewport: 1'].setValues(displayedObject=None)
+a = mdb.models['Model-1'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+mdb.ModelFromInputFile(name='model01-ac-spiral', 
+    inputFileName='C:/Users/RenLi/__matlab/__model_cochlea/3d_model_abaqus/MODEL01/model01-ac-spiral.inp')
+#: The model "model01-ac-spiral" has been created.
+#: WARNING: Empty part PART1. This occurred while reading keyword options within part definition. 
+#: WARNING: Part instance INST1 references an empty part. A new part named INST1 will be created from the mesh data in part instance INST1. 
+#: The part "INST1" has been imported from the input file.
+#: 
+#: WARNING: The following keywords/parameters are not yet supported by the input file reader:
+#: ---------------------------------------------------------------------------------
+#: *NSET, ELSET
+#: *PREPRINT
+#: The model "model01-ac-spiral" has been imported from an input file. 
+#: Please scroll up to check for error and warning messages.
+a = mdb.models['model01-ac-spiral'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=20.9293, 
+    farPlane=36.3756, width=23.337, height=9.98075, cameraPosition=(-5.72873, 
+    -1.91904, 29.2161), cameraUpVector=(0.300828, 0.945843, -0.121995), 
+    cameraTarget=(-0.211352, 2.8529, 1.49404))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=18.9527, 
+    farPlane=38.5563, width=21.1331, height=9.03818, cameraPosition=(-9.85014, 
+    -18.1613, 18.4362), cameraUpVector=(0.553456, 0.634974, 0.538975), 
+    cameraTarget=(-0.20944, 2.86044, 1.49904))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=18.8077, 
+    farPlane=38.6241, width=20.9714, height=8.96903, cameraPosition=(-14.4445, 
+    -18.1544, 14.8246), cameraUpVector=(0.499961, 0.544016, 0.673859), 
+    cameraTarget=(-0.223619, 2.86046, 1.48789))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=19.8871, 
+    farPlane=37.5447, width=15.037, height=6.43104)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=21.1166, 
+    farPlane=36.6723, width=15.9667, height=6.82864, cameraPosition=(2.65362, 
+    -21.4697, 16.3883), cameraUpVector=(-0.142859, 0.762543, 0.630967), 
+    cameraTarget=(-0.193758, 2.85467, 1.49062))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=20.9358, 
+    farPlane=36.8595, width=15.83, height=6.77017, cameraPosition=(10.8957, 
+    -7.24468, 25.9777), cameraUpVector=(-0.594594, 0.778085, 0.202589), 
+    cameraTarget=(-0.128522, 2.96726, 1.56652))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=21.2733, 
+    farPlane=36.5221, width=13.8104, height=5.90642)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=20.0072, 
+    farPlane=37.5961, width=12.9885, height=5.55491, cameraPosition=(-21.5141, 
+    -11.157, -12.0363), cameraUpVector=(-0.307564, 0.281375, 0.908973), 
+    cameraTarget=(-0.38866, 2.93586, 1.2614))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=20.3908, 
+    farPlane=36.891, width=13.2375, height=5.66143, cameraPosition=(-26.2875, 
+    -7.63957, 7.675), cameraUpVector=(0.530405, 0.108081, 0.840826), 
+    cameraTarget=(-0.41119, 2.95246, 1.35444))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=22.556, 
+    farPlane=34.4415, width=14.6432, height=6.26259, cameraPosition=(-9.23625, 
+    2.92022, 28.6146), cameraUpVector=(0.862625, 0.500801, -0.0712535), 
+    cameraTarget=(-0.42594, 2.94333, 1.33633))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=22.745, 
+    farPlane=34.2655, width=14.7659, height=6.31507, cameraPosition=(3.03897, 
+    0.562548, 29.6759), cameraUpVector=(0.697133, 0.612684, -0.372322), 
+    cameraTarget=(-0.497856, 2.95714, 1.33011))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=22.6901, 
+    farPlane=34.3204, width=14.8622, height=6.35625)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=21.8979, 
+    farPlane=35.1491, width=14.3433, height=6.13435, cameraPosition=(-7.49372, 
+    -1.69964, 28.7243), cameraUpVector=(0.796361, 0.60344, -0.0408565), 
+    cameraTarget=(-0.438548, 2.96988, 1.33547))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=21.39, 
+    farPlane=35.6572, width=17.7762, height=7.60254)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=21.4537, 
+    farPlane=35.5935, width=17.8291, height=7.62517, viewOffsetX=0.833434, 
+    viewOffsetY=-0.559742)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=20.8435, 
+    farPlane=38.1354, width=17.3221, height=7.40831, cameraPosition=(-7.65905, 
+    -19.4178, 19.1395), cameraUpVector=(0.32971, 0.768996, 0.547665), 
+    cameraTarget=(-1.17183, 2.52437, 1.87151), viewOffsetX=0.809731, 
+    viewOffsetY=-0.543823)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=21.4427, 
+    farPlane=37.7867, width=17.82, height=7.62127, cameraPosition=(-4.2548, 
+    -21.35, 17.7882), cameraUpVector=(0.229982, 0.772133, 0.592383), 
+    cameraTarget=(-1.16534, 2.3022, 1.88991), viewOffsetX=0.833007, 
+    viewOffsetY=-0.559456)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=22.091, 
+    farPlane=37.1384, width=13.4813, height=5.76566, viewOffsetX=0.858194, 
+    viewOffsetY=-0.576372)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=22.0319, 
+    farPlane=37.1975, width=13.4452, height=5.75026, viewOffsetX=0.863855, 
+    viewOffsetY=-0.447401)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=22.0528, 
+    farPlane=37.1766, width=13.3147, height=5.69442, viewOffsetX=0.864675, 
+    viewOffsetY=-0.447826)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=21.9262, 
+    farPlane=37.3664, width=13.2382, height=5.66173, cameraPosition=(-5.48972, 
+    -22.063, 16.3666), cameraUpVector=(0.163594, 0.749684, 0.641257), 
+    cameraTarget=(-1.26413, 2.2446, 1.7718), viewOffsetX=0.85971, 
+    viewOffsetY=-0.445254)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=21.6463, 
+    farPlane=37.6461, width=14.9844, height=6.40854, viewOffsetX=0.848737, 
+    viewOffsetY=-0.439571)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=21.6733, 
+    farPlane=37.6192, width=15.0031, height=6.41654, viewOffsetX=1.26704, 
+    viewOffsetY=-0.244602)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=21.7041, 
+    farPlane=37.5884, width=14.82, height=6.33821, viewOffsetX=1.26884, 
+    viewOffsetY=-0.24495)
+session.viewports['Viewport: 1'].setColor(globalTranslucency=True)
+session.viewports['Viewport: 1'].setColor(globalTranslucency=False)
+p = mdb.models['model01-ac-spiral'].parts['INST1']
+session.viewports['Viewport: 1'].setValues(displayedObject=p)
+session.viewports['Viewport: 1'].partDisplay.setValues(sectionAssignments=ON, 
+    engineeringFeatures=ON)
+session.viewports['Viewport: 1'].partDisplay.geometryOptions.setValues(
+    referenceRepresentation=OFF)
+a = mdb.models['model01-ac-spiral'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=21.6476, 
+    farPlane=37.6448, width=15.1398, height=6.47498, viewOffsetX=1.26554, 
+    viewOffsetY=-0.244313)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=21.5778, 
+    farPlane=37.7235, width=15.091, height=6.4541, cameraPosition=(-6.19524, 
+    -22.5438, 15.2598), cameraUpVector=(0.120851, 0.731155, 0.671422), 
+    cameraTarget=(-1.30715, 2.20994, 1.65533), viewOffsetX=1.26146, 
+    viewOffsetY=-0.243525)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=21.5574, 
+    farPlane=37.6717, width=15.0767, height=6.448, cameraPosition=(-6.03253, 
+    -21.6861, 16.7378), cameraUpVector=(0.186275, 0.753961, 0.629956), 
+    cameraTarget=(-1.2675, 2.30269, 1.786), viewOffsetX=1.26027, 
+    viewOffsetY=-0.243294)
+set1 = mdb.models['model01-ac-spiral'].rootAssembly.allInstances['INST1'].sets['BM']
+leaf = dgm.LeafFromSets(sets=(set1, ))
+session.viewports['Viewport: 1'].assemblyDisplay.displayGroup.replace(
+    leaf=leaf)
+dg = session.viewports['Viewport: 1'].assemblyDisplay.displayGroup
+dg = session.DisplayGroup(name='BM', objectToCopy=dg)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    visibleDisplayGroups=(dg, ))
+set1 = mdb.models['model01-ac-spiral'].rootAssembly.allInstances['INST1'].sets['OW']
+leaf = dgm.LeafFromSets(sets=(set1, ))
+session.viewports['Viewport: 1'].assemblyDisplay.displayGroup.replace(
+    leaf=leaf)
+dg = session.viewports['Viewport: 1'].assemblyDisplay.displayGroup
+dg = session.DisplayGroup(name='OW', objectToCopy=dg)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    visibleDisplayGroups=(dg, ))
+set1 = mdb.models['model01-ac-spiral'].rootAssembly.allInstances['INST1'].sets['RW']
+leaf = dgm.LeafFromSets(sets=(set1, ))
+session.viewports['Viewport: 1'].assemblyDisplay.displayGroup.replace(
+    leaf=leaf)
+dg = session.viewports['Viewport: 1'].assemblyDisplay.displayGroup
+dg = session.DisplayGroup(name='RW', objectToCopy=dg)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    visibleDisplayGroups=(dg, ))
+set1 = mdb.models['model01-ac-spiral'].rootAssembly.allInstances['INST1'].sets['WALL']
+leaf = dgm.LeafFromSets(sets=(set1, ))
+session.viewports['Viewport: 1'].assemblyDisplay.displayGroup.replace(
+    leaf=leaf)
+set1 = mdb.models['model01-ac-spiral'].rootAssembly.allInstances['INST1'].sets['WALL01']
+leaf = dgm.LeafFromSets(sets=(set1, ))
+session.viewports['Viewport: 1'].assemblyDisplay.displayGroup.replace(
+    leaf=leaf)
+set1 = mdb.models['model01-ac-spiral'].rootAssembly.allInstances['INST1'].sets['WALL02']
+leaf = dgm.LeafFromSets(sets=(set1, ))
+session.viewports['Viewport: 1'].assemblyDisplay.displayGroup.replace(
+    leaf=leaf)
+dg = session.viewports['Viewport: 1'].assemblyDisplay.displayGroup
+dg = session.DisplayGroup(name='LAMI', objectToCopy=dg)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    visibleDisplayGroups=(dg, ))
+set1 = mdb.models['model01-ac-spiral'].rootAssembly.allInstances['INST1'].sets['WALL']
+leaf = dgm.LeafFromSets(sets=(set1, ))
+session.viewports['Viewport: 1'].assemblyDisplay.displayGroup.replace(
+    leaf=leaf)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=21.1739, 
+    farPlane=38.0029, width=14.8085, height=6.3333, cameraPosition=(-9.61067, 
+    -22.723, 12.702), cameraUpVector=(0.212243, 0.637241, 0.740862), 
+    cameraTarget=(-1.34243, 2.39166, 1.62878), viewOffsetX=1.23785, 
+    viewOffsetY=-0.238966)
+set1 = mdb.models['model01-ac-spiral'].rootAssembly.allInstances['INST1'].sets['WALL01']
+leaf = dgm.LeafFromSets(sets=(set1, ))
+session.viewports['Viewport: 1'].assemblyDisplay.displayGroup.replace(
+    leaf=leaf)
+set1 = mdb.models['model01-ac-spiral'].rootAssembly.allInstances['INST1'].sets['WALL01']
+leaf = dgm.LeafFromSets(sets=(set1, ))
+session.viewports['Viewport: 1'].assemblyDisplay.displayGroup.replace(
+    leaf=leaf)
+dg = session.viewports['Viewport: 1'].assemblyDisplay.displayGroup
+dg = session.DisplayGroup(name='WALL', objectToCopy=dg)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    visibleDisplayGroups=(dg, ))
+dg1= session.displayGroups['BM']
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    visibleDisplayGroups=(dg1, ))
+session.viewports['Viewport: 1'].setColor(globalTranslucency=True)
+session.viewports['Viewport: 1'].enableMultipleColors()
+session.viewports['Viewport: 1'].setColor(initialColor='#BDBDBD')
+cmap=session.viewports['Viewport: 1'].colorMappings['Material']
+session.viewports['Viewport: 1'].setColor(colorMapping=cmap)
+session.viewports['Viewport: 1'].disableMultipleColors()
+session.viewports['Viewport: 1'].view.setValues(nearPlane=23.3058, 
+    farPlane=36.7161, width=13.7244, height=5.86964, viewOffsetX=1.36248, 
+    viewOffsetY=-0.263026)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=23.2664, 
+    farPlane=35.9888, width=13.7012, height=5.85972, cameraPosition=(-7.64844, 
+    -16.9131, 21.8227), cameraUpVector=(0.135042, 0.891422, 0.432586), 
+    cameraTarget=(-1.31272, 2.57399, 1.77678), viewOffsetX=1.36017, 
+    viewOffsetY=-0.262581)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=23.5798, 
+    farPlane=35.6218, width=13.8857, height=5.93865, cameraPosition=(-4.64233, 
+    -16.1143, 23.4661), cameraUpVector=(0.169377, 0.911213, 0.375503), 
+    cameraTarget=(-1.2088, 2.57742, 2.00553), viewOffsetX=1.37849, 
+    viewOffsetY=-0.266118)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=23.6798, 
+    farPlane=35.5217, width=13.103, height=5.6039, viewOffsetX=1.38434, 
+    viewOffsetY=-0.267247)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=23.6702, 
+    farPlane=35.5314, width=13.0977, height=5.60162, viewOffsetX=0.988521, 
+    viewOffsetY=0.299231)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=23.4763, 
+    farPlane=35.7869, width=12.9904, height=5.55573, cameraPosition=(-5.76481, 
+    -17.9031, 21.4451), cameraUpVector=(0.183107, 0.867406, 0.462687), 
+    cameraTarget=(-1.238, 2.57888, 1.90732), viewOffsetX=0.980423, 
+    viewOffsetY=0.29678)
+dg1= session.displayGroups['OW']
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    visibleDisplayGroups=(dg1, ))
+dg1= session.displayGroups['BM']
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    visibleDisplayGroups=(dg1, ))
+session.viewports['Viewport: 1'].enableMultipleColors()
+session.viewports['Viewport: 1'].setColor(initialColor='#BDBDBD')
+cmap=session.viewports['Viewport: 1'].colorMappings['Assembly']
+session.viewports['Viewport: 1'].setColor(colorMapping=cmap)
+session.viewports['Viewport: 1'].disableMultipleColors()
+session.viewports['Viewport: 1'].enableMultipleColors()
+session.viewports['Viewport: 1'].setColor(initialColor='#BDBDBD')
+cmap=session.viewports['Viewport: 1'].colorMappings['Part']
+session.viewports['Viewport: 1'].setColor(colorMapping=cmap)
+session.viewports['Viewport: 1'].disableMultipleColors()
+session.viewports['Viewport: 1'].enableMultipleColors()
+session.viewports['Viewport: 1'].setColor(initialColor='#BDBDBD')
+cmap=session.viewports['Viewport: 1'].colorMappings['Part instance']
+session.viewports['Viewport: 1'].setColor(colorMapping=cmap)
+session.viewports['Viewport: 1'].disableMultipleColors()
+session.viewports['Viewport: 1'].enableMultipleColors()
+session.viewports['Viewport: 1'].setColor(initialColor='#BDBDBD')
+cmap=session.viewports['Viewport: 1'].colorMappings['Section']
+session.viewports['Viewport: 1'].setColor(colorMapping=cmap)
+session.viewports['Viewport: 1'].disableMultipleColors()
+session.viewports['Viewport: 1'].enableMultipleColors()
+session.viewports['Viewport: 1'].setColor(initialColor='#BDBDBD')
+cmap=session.viewports['Viewport: 1'].colorMappings['Set']
+session.viewports['Viewport: 1'].setColor(colorMapping=cmap)
+session.viewports['Viewport: 1'].disableMultipleColors()
+session.viewports['Viewport: 1'].enableMultipleColors()
+session.viewports['Viewport: 1'].setColor(initialColor='#BDBDBD')
+cmap=session.viewports['Viewport: 1'].colorMappings['Display group']
+session.viewports['Viewport: 1'].setColor(colorMapping=cmap)
+session.viewports['Viewport: 1'].disableMultipleColors()
+session.viewports['Viewport: 1'].setColor(translucency=0.55)
+session.viewports['Viewport: 1'].setColor(translucency=0.6)
+session.viewports['Viewport: 1'].setColor(translucency=0.65)
+session.viewports['Viewport: 1'].setColor(translucency=0.7)
+session.viewports['Viewport: 1'].setColor(translucency=0.85)
+session.viewports['Viewport: 1'].setColor(translucency=0.9)
+session.viewports['Viewport: 1'].setColor(translucency=0.95)
+session.viewports['Viewport: 1'].setColor(translucency=1)
+session.viewports['Viewport: 1'].setColor(translucency=1)
+leaf = dgm.Leaf(leafType=DEFAULT_MODEL)
+session.viewports['Viewport: 1'].assemblyDisplay.displayGroup.either(leaf=leaf)
+leaf = dgm.Leaf(leafType=DEFAULT_MODEL)
+session.viewports['Viewport: 1'].assemblyDisplay.displayGroup.either(leaf=leaf)
+dg1= session.displayGroups['LAMI']
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    visibleDisplayGroups=(dg1, ))
+session.viewports['Viewport: 1'].setColor(globalTranslucency=False)
+session.viewports['Viewport: 1'].view.setProjection(projection=PARALLEL)
+session.viewports['Viewport: 1'].view.setProjection(projection=PERSPECTIVE)
+session.viewports['Viewport: 1'].view.setProjection(projection=PARALLEL)
+session.viewports['Viewport: 1'].enableMultipleColors()
+session.viewports['Viewport: 1'].setColor(initialColor='#BDBDBD')
+cmap=session.viewports['Viewport: 1'].colorMappings['Part']
+session.viewports['Viewport: 1'].setColor(colorMapping=cmap)
+session.viewports['Viewport: 1'].disableMultipleColors()
+session.viewports['Viewport: 1'].enableMultipleColors()
+session.viewports['Viewport: 1'].setColor(initialColor='#BDBDBD')
+cmap=session.viewports['Viewport: 1'].colorMappings['Set']
+session.viewports['Viewport: 1'].setColor(colorMapping=cmap)
+session.viewports['Viewport: 1'].disableMultipleColors()
+set1 = mdb.models['model01-ac-spiral'].rootAssembly.allInstances['INST1'].sets['FLUID_YMINUS']
+leaf = dgm.LeafFromSets(sets=(set1, ))
+session.viewports['Viewport: 1'].assemblyDisplay.displayGroup.replace(
+    leaf=leaf)
+set1 = mdb.models['model01-ac-spiral'].rootAssembly.allInstances['INST1'].sets['OW']
+leaf = dgm.LeafFromSets(sets=(set1, ))
+session.viewports['Viewport: 1'].assemblyDisplay.displayGroup.replace(
+    leaf=leaf)
+set1 = mdb.models['model01-ac-spiral'].rootAssembly.allInstances['INST1'].sets['RW']
+leaf = dgm.LeafFromSets(sets=(set1, ))
+session.viewports['Viewport: 1'].assemblyDisplay.displayGroup.add(leaf=leaf)
+set1 = mdb.models['model01-ac-spiral'].rootAssembly.allInstances['INST1'].sets['WALL01']
+leaf = dgm.LeafFromSets(sets=(set1, ))
+session.viewports['Viewport: 1'].assemblyDisplay.displayGroup.add(leaf=leaf)
+set1 = mdb.models['model01-ac-spiral'].rootAssembly.allInstances['INST1'].sets['WALL02']
+leaf = dgm.LeafFromSets(sets=(set1, ))
+session.viewports['Viewport: 1'].assemblyDisplay.displayGroup.add(leaf=leaf)
+set1 = mdb.models['model01-ac-spiral'].rootAssembly.allInstances['INST1'].sets['BM']
+leaf = dgm.LeafFromSets(sets=(set1, ))
+session.viewports['Viewport: 1'].assemblyDisplay.displayGroup.add(leaf=leaf)
+session.viewports['Viewport: 1'].setColor(globalTranslucency=True)
+session.viewports['Viewport: 1'].setColor(translucency=0.95)
+session.viewports['Viewport: 1'].setColor(translucency=0.9)
+session.viewports['Viewport: 1'].setColor(translucency=0.85)
+session.viewports['Viewport: 1'].setColor(translucency=0.8)
+session.viewports['Viewport: 1'].setColor(translucency=0.75)
+session.viewports['Viewport: 1'].setColor(translucency=0.7)
+session.viewports['Viewport: 1'].setColor(translucency=0.65)
+session.viewports['Viewport: 1'].setColor(translucency=0.6)
+session.viewports['Viewport: 1'].setColor(translucency=0.55)
+session.viewports['Viewport: 1'].setColor(translucency=0.4)
+session.viewports['Viewport: 1'].setColor(translucency=0.3)
+session.viewports['Viewport: 1'].setColor(translucency=0.25)
+session.viewports['Viewport: 1'].setColor(translucency=0.2)
+session.viewports['Viewport: 1'].setColor(translucency=0.15)
+session.viewports['Viewport: 1'].setColor(translucency=0.1)
+session.viewports['Viewport: 1'].setColor(translucency=0)
+session.viewports['Viewport: 1'].setColor(translucency=0.05)
+session.viewports['Viewport: 1'].setColor(translucency=0.1)
+session.viewports['Viewport: 1'].setColor(translucency=0.15)
+session.viewports['Viewport: 1'].setColor(translucency=0.2)
+session.viewports['Viewport: 1'].setColor(translucency=0.25)
+session.viewports['Viewport: 1'].setColor(translucency=0.3)
+session.viewports['Viewport: 1'].setColor(translucency=0.45)
+session.viewports['Viewport: 1'].setColor(translucency=0.45)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=20.9546, 
+    farPlane=37.9196, width=18.8647, height=8.06805)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=20.6003, 
+    farPlane=38.143, cameraPosition=(-6.01625, -21.7764, 16.1114), 
+    cameraUpVector=(0.119918, 0.745141, 0.656037), cameraTarget=(0.186249, 
+    3.28478, 1.56834))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=20.6037, 
+    farPlane=38.1397, width=18.8424, height=8.0585)
+set1 = mdb.models['model01-ac-spiral'].rootAssembly.allInstances['INST1'].sets['WALL01']
+leaf = dgm.LeafFromSets(sets=(set1, ))
+session.viewports['Viewport: 1'].assemblyDisplay.displayGroup.replace(
+    leaf=leaf)
+session.viewports['Viewport: 1'].enableMultipleColors()
+session.viewports['Viewport: 1'].setColor(initialColor='#BDBDBD')
+cmap=session.viewports['Viewport: 1'].colorMappings['Part']
+session.viewports['Viewport: 1'].setColor(colorMapping=cmap)
+session.viewports['Viewport: 1'].disableMultipleColors()
+session.viewports['Viewport: 1'].enableMultipleColors()
+session.viewports['Viewport: 1'].setColor(initialColor='#BDBDBD')
+cmap=session.viewports['Viewport: 1'].colorMappings['Set']
+session.viewports['Viewport: 1'].setColor(colorMapping=cmap)
+session.viewports['Viewport: 1'].disableMultipleColors()
+session.viewports['Viewport: 1'].setColor(translucency=0.4)
+session.viewports['Viewport: 1'].setColor(translucency=0.35)
+session.viewports['Viewport: 1'].setColor(translucency=0.3)
+session.viewports['Viewport: 1'].setColor(translucency=0.25)
+session.viewports['Viewport: 1'].setColor(translucency=0.2)
+session.viewports['Viewport: 1'].setColor(translucency=0.15)
+session.viewports['Viewport: 1'].setColor(translucency=0.1)
+session.viewports['Viewport: 1'].setColor(translucency=0.1)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=20.4239, 
+    farPlane=38.2211, cameraPosition=(-7.56514, -22.8178, 13.2517), 
+    cameraUpVector=(0.0978687, 0.675465, 0.730868), cameraTarget=(0.199956, 
+    3.294, 1.59365))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=20.3986, 
+    farPlane=38.2462, width=19.0111, height=8.13068)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=20.8977, 
+    farPlane=38.3321, cameraPosition=(5.65638, -20.6276, 18.1427), 
+    cameraUpVector=(0.0143787, 0.817042, 0.576398), cameraTarget=(0.060544, 
+    3.27091, 1.54208))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=21.3062, 
+    farPlane=37.9237, width=16.2776, height=6.96159)
+session.viewports['Viewport: 1'].view.setValues(cameraPosition=(5.02212, 
+    -21.1109, 17.6607), cameraTarget=(-0.573715, 2.78761, 1.06011))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=22.0208, 
+    farPlane=37.3802, cameraPosition=(0.38606, -23.4885, 14.7223), 
+    cameraUpVector=(0.0428103, 0.731305, 0.680706), cameraTarget=(-0.571102, 
+    2.78895, 1.06177))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=22.0438, 
+    farPlane=37.3572, width=16.1235, height=6.89569)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=22.2509, 
+    farPlane=37.3066, cameraPosition=(0.273449, -25.2139, 10.7159), 
+    cameraUpVector=(0.0768916, 0.62359, 0.777961), cameraTarget=(-0.571363, 
+    2.78495, 1.05247))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=22.335, 
+    farPlane=37.2225, width=15.5606, height=6.65496)
+set1 = mdb.models['model01-ac-spiral'].rootAssembly.allInstances['INST1'].sets['WALL02']
+leaf = dgm.LeafFromSets(sets=(set1, ))
+session.viewports['Viewport: 1'].assemblyDisplay.displayGroup.add(leaf=leaf)
+session.viewports['Viewport: 1'].setColor(globalTranslucency=False)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=20.5021, 
+    farPlane=38.2842, cameraPosition=(-14.6814, -14.6329, 20.1504), 
+    cameraUpVector=(0.219442, 0.858648, 0.463216), cameraTarget=(0.235173, 
+    3.04788, 1.63242))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=21.8263, 
+    farPlane=37.4426, cameraPosition=(-4.69297, -14.9579, 24.6229), 
+    cameraUpVector=(0.201728, 0.920846, 0.333689), cameraTarget=(0.154138, 
+    3.05052, 1.59614))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=21.3566, 
+    farPlane=37.9123, width=18.7037, height=7.99921)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=21.3566, 
+    farPlane=37.9123, cameraPosition=(-4.6445, -15.4375, 24.258), 
+    cameraTarget=(0.202605, 2.57092, 1.23126))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=20.9579, 
+    farPlane=38.311, width=21.3721, height=9.14041)
