@@ -1,0 +1,39 @@
+﻿<html>
+<head>
+
+<!-- CSS SCRIPTS -->
+<style type="text/css">
+*  { margin:0 0; padding:0 0; }
+body{ background-color:#EEE; font-family: Helvetica,Tahoma,Arial,STXihei,"华文细黑","Microsoft YaHei","微软雅黑",sans-serif }
+h1 { background-color:#000000; font-size:40px; font-weight:bold; color:#FFFFFF; text-align:center; }
+h5 { background-color:#000000; color:#FFFFFF; text-align:center; height:20px; }
+div#content {  margin:0 auto; padding:20px 20px; width:1000px; height:800px; background-color:#EEE; border-left:solid 100px #bbb}
+a {text-decoration:none;}
+a.developping{ color:#00f }
+a.unavaliable{ color:#ccc }
+</style>
+<!-- JAVA SCRIPTS --> 
+<script language="javascript" type="text/javascript" src="p5js.libraries/p5.js"></script>
+<script language="javascript" type="text/javascript" src="gameoflife/sketch.js"></script>
+</head>
+<body>
+    <h1> Never-Never-Land </h1>
+    <h5>willowfly's personal website</h5>
+    <div id="content">
+    <h2> Game of Life (生命游戏)</h2>
+    
+    <p>The most famous celluar automaton is the well-know<strong>Game of Life</strong> created by <em>John Horton Conway</em> in 1970, the British mathematician.</p><br/>
+    <p>The universe of the <strong>Game of life</strong> is an infinite, two-dimensional grid of square cells, each is one of two possible states, alive or dead. Each cell interacts with its eight (Moore) neighbours. At each step in time, the following transitions occur:</p><br/>
+    <ul>
+    <li>Any live cell with two or three neighbors survives.</li>
+    <li>Any dead cell with three live neighbors becomes a live cell.</li>
+    <li>All other live cells die in the next generation. Similarly, all other dead cells stay dead. </li>
+    </ul><br/>
+    <p>Here we use **p5js** to fulfill an example.</p> <br/>
+    <!-- Here I will draw the canvas-->
+    <div id="canvas"> </div>
+    
+    
+    </div>
+</body>
+</html>
