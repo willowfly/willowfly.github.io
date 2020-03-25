@@ -1,0 +1,37 @@
+﻿<html>
+<head>
+<!-- CSS SCRIPTS -->
+<style type="text/css">
+*  { margin:0 0; padding:0 0; }
+body{ background-color:#EEE; font-family: Helvetica,Tahoma,Arial,STXihei,"华文细黑","Microsoft YaHei","微软雅黑",sans-serif }
+h1 { background-color:#000000; font-size:40px; font-weight:bold; color:#FFFFFF; text-align:center; }
+h5 { background-color:#000000; color:#FFFFFF; text-align:center; height:20px; }
+div#content {  margin:0 auto; padding:20px 20px; width:1000px; height:800px; background-color:#EEE; border-left:solid 100px #bbb}
+a {text-decoration:none;}
+a.developping{ color:#00f }
+a.unavaliable{ color:#ccc }
+</style>
+<!-- JAVA SCRIPTS --> 
+<script language="javascript" type="text/javascript" src="p5js.libraries/p5.js"></script>
+
+<script language="javascript" type="text/javascript" src="256rules/sketch.js"></script>
+</head>
+<body>
+    <h1> Never-Never-Land </h1>
+    <h5>willowfly's personal website</h5>
+    <div id="content">
+    <h2> Wolfram's 256 Rules (一维元胞自动机)</h2>
+    
+    <p>Here i&#39;d like to introduce the simplest one-dimensional cellular automaton. Each cell has two possible values (0 or 1), and its state at the next time step is fully decided by its two neighbors.</p><br/>
+    
+    <p>Since there are 8 possible binary states for the three cells neighboring a given cell, there are a total of 256 rules, each of which can be indexed with an 8-bit binary number. The following figure gives an example of rule 30 (00011110)<sub>2</sub>. </p><br/>
+    
+    <p><img src='256rules/ElementaryCA30Rules_750.gif' alt='ElementaryCA30Rules_750' referrerPolicy='no-referrer' /></p>
+    
+    <p>Here we use <strong>p5js</strong> to fulfill an example. You may also find a <em>matlab</em> version <a href='./256rules/main.m'>here</a>.</p><br/>
+    <!-- Here I will draw the canvas-->
+    <div id="canvas"> </div><br>
+    <div id="slider"> <strong id="sliderText"> </strong> </div>
+    </div>
+</body>
+</html>
