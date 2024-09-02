@@ -1,0 +1,7 @@
+[
+  {
+    "kind": 2,
+    "language": "javascript",
+    "value": "function setup() {\r\n    createCanvas(400, 400);\r\n  }\r\n  function draw() {\r\n    background(220);\r\n    circle(mouseX, mouseY, 100);\r\n  }"
+  }
+]
