@@ -3,7 +3,7 @@ let circles = [];
 let num = 50;
 let rad = 20;
 function setup() {
-    createCanvas(1000, 2000);
+    createCanvas(1500, 800);
     for(i = 0; i<num; i++) {
         c = new Circle(i*rad,height/2,rad);
         circles.push(c);
